@@ -154,7 +154,7 @@ Transform:
   m_GameObject: {fileID: 5535344598320702440}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.15, y: 1.54, z: -0.03473936}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -207,7 +207,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -542349192, guid: 10916e01a1abc864580a25252675f380, type: 3}
+  m_Sprite: {fileID: 1234212302, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -248,6 +248,33 @@ MonoBehaviour:
   fireCooldown: 0.5
   audioSource: {fileID: 0}
   fireSFX: {fileID: 0}
+  spriteRenderer: {fileID: 5979962198657952123}
+  rotationSprites:
+  - {fileID: 1234212302, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: 1318454961, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: -915479718, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: -810595538, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: -495310302, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: 1221922466, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: 1357160162, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: 1220659973, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: -1809186324, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: -595436495, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: 214211017, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: -2107756098, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: 803039081, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: 1679858017, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: 1804801257, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: -1771544652, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: 540034960, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: -1594954738, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: -269167238, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: -130595200, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: 282550380, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: -497306090, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: 2099427289, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  - {fileID: -60206543, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
+  frameCount: 24
 --- !u!50 &6798415910567704385
 Rigidbody2D:
   serializedVersion: 4
