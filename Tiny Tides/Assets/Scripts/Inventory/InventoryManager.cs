@@ -23,6 +23,8 @@ public class InventoryManager : MonoBehaviour
     private SlotClass tempSlot;
     bool isMovingItem;
 
+    private bool isOpen = false;
+
     public void Start()
     {
         slots = new GameObject[slotHolder.transform.childCount];
@@ -45,6 +47,8 @@ public class InventoryManager : MonoBehaviour
 
         Add(itemToAdd, 1);
         Remove(itemToRemove);
+
+        turnOff();
     }
     
     private void Update()
@@ -61,6 +65,14 @@ public class InventoryManager : MonoBehaviour
                 EndItemMove();
             else
                 BeginItemMove();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (isOpen)
+                turnOff();
+            else
+                turnOn();
         }
     }
 
@@ -232,4 +244,24 @@ public class InventoryManager : MonoBehaviour
         return null;
     }
     #endregion Moving Stuff
+
+    #region Turn On/Off
+    public void turnOff()
+    {
+        for (int i = 5; i < slots.Length; i++)
+        {
+            slots[i].SetActive(false);
+        }
+        isOpen = false;
+    }
+
+    public void turnOn()
+    {
+        for (int i = 5; i < slots.Length; i++)
+        {
+            slots[i].SetActive(true);
+        }
+        isOpen = true;
+    }
+    #endregion Turn On/Off
 }
