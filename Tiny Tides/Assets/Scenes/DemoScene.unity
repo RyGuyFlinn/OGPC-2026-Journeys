@@ -291,7 +291,7 @@ Transform:
   m_GameObject: {fileID: 91101389}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.1066, z: 0}
+  m_LocalPosition: {x: 0.343, y: 0.853, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -338,8 +338,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8b5b1a208f8d1054887b512976d5876a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -675,7 +675,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 999
+  m_Mass: 2
   m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -941,9 +941,9 @@ RectTransform:
   - {fileID: 1544821446}
   m_Father: {fileID: 251940158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -614.25, y: 30.25}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 117.75, y: -365.75}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &205460604
@@ -25782,8 +25782,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -44, y: -44, z: -1}
-  m_Size: {x: 80, y: 80, z: 11}
+  m_Origin: {x: -44, y: -44, z: -6}
+  m_Size: {x: 80, y: 80, z: 16}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -27486,8 +27486,8 @@ MonoBehaviour:
   pantsSlider: {fileID: 205460604}
   shirt: {fileID: 1400587956}
   pants: {fileID: 790895749}
-  saturation: 1
-  brightness: 1
+  saturation: 0.663
+  brightness: 0.684
 --- !u!1 &790895747
 GameObject:
   m_ObjectHideFlags: 0
@@ -28193,9 +28193,9 @@ RectTransform:
   - {fileID: 638909587}
   m_Father: {fileID: 251940158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -614.25, y: 54.25}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 117.75, y: -341.75}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1105913247
@@ -28622,9 +28622,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1379026068}
   - component: {fileID: 1379026069}
-  - component: {fileID: 1379026070}
   - component: {fileID: 1379026071}
   - component: {fileID: 1379026072}
+  - component: {fileID: 1379026073}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -28640,14 +28640,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379026067}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.17905983, w: 0.9838382}
+  m_LocalRotation: {x: -0, y: -0, z: 0.24087417, w: 0.9705564}
   m_LocalPosition: {x: 1.272, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 9.505917, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 91101390}
   m_Father: {fileID: 36598882}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -20.63}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 27.876}
 --- !u!114 &1379026069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28663,57 +28663,12 @@ MonoBehaviour:
   attackDelay: 0.5
   attackDuration: 0.2
   attackDamage: 1
-  knockback: 5
+  knockback: 10
   blockTime: 1
   blockDelay: 0.5
   blockReduction: 0.5
-  swordHitbox: {fileID: 1379026070}
+  swordHitbox: {fileID: 1379026073}
   animator: {fileID: 1379026071}
---- !u!61 &1379026070
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379026067}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.02502808, y: 0.10779653}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5485918, y: 0.2178124}
-  m_EdgeRadius: 0
 --- !u!95 &1379026071
 Animator:
   serializedVersion: 5
@@ -28747,6 +28702,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2510d82e55599c46a6d41dea5886230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &1379026073
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379026067}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.41238415, y: 1.544463}
+      - {x: -0.21383023, y: 0.18948857}
+      - {x: 0.2937693, y: -0.042183578}
+      - {x: 0.9277874, y: 1.2448292}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1400587954
 GameObject:
   m_ObjectHideFlags: 0

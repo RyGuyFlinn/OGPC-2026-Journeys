@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlipBasedOnPlayerPosition : MonoBehaviour
 {
     private Transform player;
-    private bool facingRight = true;
+    private bool facingRight = false;
 
     void Start()
     {
@@ -28,9 +28,11 @@ public class FlipBasedOnPlayerPosition : MonoBehaviour
 
     void Flip()
     {
+        //Flips the parents y to properly handle animation flipping
         facingRight = !facingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        Vector3 scale = transform.parent.localScale;
+        //scale.x *= -1;
+        scale.y *= -1;
+        transform.parent.localScale = scale;
     }
 }
