@@ -48,7 +48,7 @@ public class InventoryManager : MonoBehaviour
         Add(itemToAdd, 1);
         Remove(itemToRemove);
 
-        turnOff();
+        // turnOff();
     }
     
     private void Update()
@@ -67,13 +67,13 @@ public class InventoryManager : MonoBehaviour
                 BeginItemMove();
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (isOpen)
-                turnOff();
-            else
-                turnOn();
-        }
+        // if (Input.GetKeyDown(KeyCode.Tab))
+        // {
+        //     if (isOpen)
+        //         turnOff();
+        //     else
+        //         turnOn();
+        // }
     }
 
     #region Inventory Utils
@@ -246,22 +246,22 @@ public class InventoryManager : MonoBehaviour
     #endregion Moving Stuff
 
     #region Turn On/Off
-    public void turnOff()
-    {
-        for (int i = 5; i < slots.Length; i++)
-        {
-            slots[i].SetActive(false);
-        }
-        isOpen = false;
-    }
+    // public void turnOff()
+    // {
+    //     for (int i = 5; i < slots.Length; i++)
+    //     {
+    //         slots[i].SetActive(false);
+    //     }
+    //     isOpen = false;
+    // }
 
-    public void turnOn()
-    {
-        for (int i = 5; i < slots.Length; i++)
-        {
-            slots[i].SetActive(true);
-        }
-        isOpen = true;
-    }
+    // public void turnOn()
+    // {
+    //     for (int i = 5; i < slots.Length; i++)
+    //     {
+    //         slots[i].SetActive(true);
+    //     }
+    //     isOpen = true;
+    // }
     #endregion Turn On/Off
 }
