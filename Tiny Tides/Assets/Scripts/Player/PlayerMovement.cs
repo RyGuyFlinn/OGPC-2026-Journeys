@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 
-        // Normalize input to prevent faster diagonal movement
+        //Normalize input to prevent faster diagonal movement
         moveInput.Normalize();
     }
 

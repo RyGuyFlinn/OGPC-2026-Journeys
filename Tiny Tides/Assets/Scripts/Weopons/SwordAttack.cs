@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SwordAttack : MonoBehaviour
 {
@@ -27,17 +28,24 @@ public class SwordAttack : MonoBehaviour
     private bool canAttack = true;
     private bool canBlock = true;
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(Attack());
-        }
+    PlayerControls controls;
 
-        else if (Input.GetMouseButtonDown(1))
-        {
-            StartCoroutine(Block());
-        }
+    void Awake()
+    {
+        controls = new PlayerControls();
+
+        controls.GamePlay.Attack.performed += ctx => callAttack();
+        controls.GamePlay.Block.performed += ctx => callBlock();
+    }
+
+    private void callAttack()
+    {
+        StartCoroutine(Attack());
+    }
+
+    private void callBlock()
+    {
+        StartCoroutine(Block());
     }
 
     IEnumerator Attack()
@@ -101,5 +109,15 @@ public class SwordAttack : MonoBehaviour
                 }
             }
         }
+    }
+
+    void OnEnable()
+    {
+        controls.GamePlay.Enable();
+    }
+
+    void OnDisable()
+    {
+        controls.GamePlay.Disable();
     }
 }
