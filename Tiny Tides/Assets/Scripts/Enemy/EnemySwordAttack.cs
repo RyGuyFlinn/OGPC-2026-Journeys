@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SwordAttack : MonoBehaviour
+public class EnemySwordAttack : MonoBehaviour
 {
-    public static SwordAttack instance;
-
     [Header("Attack Settings")]
     public float attackDelay = 0.5f;
     public float attackDuration = 0.2f;
@@ -25,32 +23,61 @@ public class SwordAttack : MonoBehaviour
     //public AudioClip swingSound;
     //public AudioClip blockSound;
 
-    public bool attacking = false;
+    private bool attacking = false;
+    private bool playerattacking = false;
     private bool blocking = false;
     private bool canAttack = true;
     private bool canBlock = true;
+
+    [Header("AttackConditions")]
+    public Transform player;
+    public float minDistance;
+    public float AttackCooldown;
+
+    [Header("BlockingConditions")]
 
     PlayerControls controls;
 
     void Awake()
     {
-        instance = this;
+        
         controls = new PlayerControls();
-
-        controls.GamePlay.Attack.performed += ctx => callAttack();
-        controls.GamePlay.Block.performed += ctx => callBlock();
+        
+       // controls.GamePlay.Attack.performed += ctx => IfPlayerAttack();
+      //  controls.GamePlay.Block.performed += ctx => callBlock();
+        
+    }
+    void Update()
+    {
+        playerattacking = SwordAttack.instance.attacking;
+        if (playerattacking)
+        {
+            Debug.Log("Player is Attacking");
+        }
+        float playerdistance = Vector3.Distance(player.position, transform.position);
+        if ((playerdistance <= minDistance) && canAttack)
+        {
+            callAttack();
+        }
     }
 
     private void callAttack()
     {
         StartCoroutine(Attack());
+        StartCoroutine(Attackcooldown());
     }
+   
 
     private void callBlock()
     {
         StartCoroutine(Block());
     }
-
+    IEnumerator Attackcooldown()
+    {
+        canAttack = false;
+        yield return new WaitForSeconds(AttackCooldown);
+        canAttack = true;
+    }
     IEnumerator Attack()
     {
         canAttack = false;
@@ -69,10 +96,6 @@ public class SwordAttack : MonoBehaviour
 
         swordHitbox.enabled = false;
         attacking = false;
-
-        // Wait for cooldown before allowing next attack
-        yield return new WaitForSeconds(attackDelay);
-        canAttack = true;
     }
 
     IEnumerator Block()
