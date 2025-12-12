@@ -26,7 +26,8 @@ public class SwordAttack : MonoBehaviour
     //public AudioClip blockSound;
 
     public bool attacking = false;
-    private bool blocking = false;
+    public bool blocking = false;
+    private bool enemyBlocking;
     private bool canAttack = true;
     private bool canBlock = true;
 
@@ -39,6 +40,11 @@ public class SwordAttack : MonoBehaviour
 
         controls.GamePlay.Attack.performed += ctx => callAttack();
         controls.GamePlay.Block.performed += ctx => callBlock();
+    }
+
+    void Update()
+    {
+        enemyBlocking = EnemySwordAttack.instance.blocking;
     }
 
     private void callAttack()
@@ -80,7 +86,6 @@ public class SwordAttack : MonoBehaviour
         if (!blocking)
         {
             blocking = true;
-            Debug.Log("Blocking!");
 
             if (animator) animator.SetBool("Blocking", true);
 
@@ -88,7 +93,6 @@ public class SwordAttack : MonoBehaviour
 
             blocking = false;
             if (animator) animator.SetBool("Blocking", false);
-            Debug.Log("Stopped blocking.");
 
             yield return new WaitForSeconds(blockDelay); // cooldown phase
         }
@@ -106,9 +110,12 @@ public class SwordAttack : MonoBehaviour
                 {
                     // Calculate knockback direction
                     Vector2 direction = (other.transform.position - transform.position).normalized;
-
-                    // Apply damage + knockback
-                    enemy.TakeDamage(attackDamage, direction * knockback);
+                    Debug.Log("Player Attack");
+                    if (!enemyBlocking)
+                    {
+                        // Apply damage + knockback
+                        enemy.TakeDamage(attackDamage, direction * knockback);
+                    }
                 }
             }
         }

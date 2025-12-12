@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class EnemySwordAttack : MonoBehaviour
 {
+    public static EnemySwordAttack instance;
+
     [Header("Attack Settings")]
     public float attackDelay = 0.5f;
     public float attackDuration = 0.2f;
@@ -24,8 +26,9 @@ public class EnemySwordAttack : MonoBehaviour
     //public AudioClip blockSound;
 
     private bool attacking = false;
-    private bool playerattacking = false;
-    private bool blocking = false;
+    private bool playerAttacking = false;
+    private bool playerBlocking = false;
+    public bool blocking = false;
     private bool canAttack = true;
     private bool canBlock = true;
 
@@ -34,26 +37,37 @@ public class EnemySwordAttack : MonoBehaviour
     public float minDistance;
     public float AttackCooldown;
 
+    public float blockPercentage = 0.5f;
+
     [Header("BlockingConditions")]
 
     PlayerControls controls;
 
     void Awake()
     {
-        
+        instance = this;
+
         controls = new PlayerControls();
         
        // controls.GamePlay.Attack.performed += ctx => IfPlayerAttack();
       //  controls.GamePlay.Block.performed += ctx => callBlock();
         
     }
+
+    
     void Update()
     {
-        playerattacking = SwordAttack.instance.attacking;
-        if (playerattacking)
+        playerAttacking = SwordAttack.instance.attacking;
+        playerBlocking = SwordAttack.instance.blocking;
+
+        if (playerAttacking)
         {
-            Debug.Log("Player is Attacking");
+            if (Random.Range(0.0f, 1.0f) * 10 <= blockPercentage)
+            {
+                callBlock();
+            }
         }
+
         float playerdistance = Vector3.Distance(player.position, transform.position);
         if ((playerdistance <= minDistance) && canAttack)
         {
@@ -72,6 +86,7 @@ public class EnemySwordAttack : MonoBehaviour
     {
         StartCoroutine(Block());
     }
+
     IEnumerator Attackcooldown()
     {
         canAttack = false;
@@ -103,7 +118,6 @@ public class EnemySwordAttack : MonoBehaviour
         if (!blocking)
         {
             blocking = true;
-            Debug.Log("Blocking!");
 
             if (animator) animator.SetBool("Blocking", true);
 
@@ -111,7 +125,6 @@ public class EnemySwordAttack : MonoBehaviour
 
             blocking = false;
             if (animator) animator.SetBool("Blocking", false);
-            Debug.Log("Stopped blocking.");
 
             yield return new WaitForSeconds(blockDelay); // cooldown phase
         }
@@ -121,17 +134,20 @@ public class EnemySwordAttack : MonoBehaviour
     {
         if (attacking)
         {
-            if (other.tag == "Enemy")
+            if (other.tag == "Player")
             {
                 // Check if the object has an enemy health component
-                EnemyHealth enemy = other.GetComponent<EnemyHealth>();
-                if (enemy != null)
+                PlayerHealth playerH = other.GetComponent<PlayerHealth>();
+                if (playerH != null)
                 {
                     // Calculate knockback direction
                     Vector2 direction = (other.transform.position - transform.position).normalized;
 
-                    // Apply damage + knockback
-                    enemy.TakeDamage(attackDamage, direction * knockback);
+                    if (!playerBlocking)
+                    {
+                        // Apply damage + knockback
+                        playerH.TakeDamage(attackDamage);
+                    }
                 }
             }
         }
