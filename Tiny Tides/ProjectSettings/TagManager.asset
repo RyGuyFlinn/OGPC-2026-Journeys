@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - PurpleBiome
+  - RedBiome
+  - GreenBiome
+  - OrangeBiome
+  - BrownBiome
   layers:
   - Default
   - TransparentFX
