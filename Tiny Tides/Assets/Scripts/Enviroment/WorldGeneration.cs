@@ -8,7 +8,7 @@ public class WorldGeneration : MonoBehaviour
     public GameObject OpenOcean;
 
     [Header("Biomes")]
-    public GameObject[] Biomes;
+    public List<GameObject> Biomes;
     public int BiomePositionOffset = 50;
     public int BiomeSizeMin = 50;
     public int BiomeSizeMax = 75;
@@ -56,7 +56,11 @@ public class WorldGeneration : MonoBehaviour
             SpawnPos = new Vector2(Mathf.Cos(biomeAngle), Mathf.Sin(biomeAngle)) * 50;
 
             //Spawn in a random biome at the random position
-            GameObject Biome = Instantiate(Biomes[Random.Range(0, Biomes.Length)], SpawnPos, transform.rotation);
+            int RandomBiomeIndex = Random.Range(0, Biomes.Count);
+            GameObject Biome = Instantiate(Biomes[RandomBiomeIndex], SpawnPos, transform.rotation);
+
+            //Remove the biome just spawned from the biomes list so that the same biome cant spawn multiple times in the same run.
+            Biomes.RemoveAt(RandomBiomeIndex);
 
             //Change the Biome size between the min and max values
             float RandomBiomeSize = Random.Range(BiomeSizeMin, BiomeSizeMax);
@@ -66,14 +70,122 @@ public class WorldGeneration : MonoBehaviour
             BaseAngle += Mathf.PI * 2 / 3;
 
             //Spawn in the main islands into the designated biomes
-            if (Biome.CompareTag("RedBiome"))
-            {
+            if (Biome.CompareTag("RedBiome")) {
                 float biomeRadius = RandomBiomeSize * 0.5f;
+                float worldRadius = 45;
+
+                Vector2 centerPosition = transform.localPosition;
 
                 Vector2 localOffset = Random.insideUnitCircle * biomeRadius;
                 Vector2 worldPos = (Vector2)Biome.transform.position + localOffset;
 
+                float distance = Vector3.Distance(worldPos, centerPosition); //distance from ~green object~ to *black circle*
+
+                if (distance > worldRadius) //If the distance is less than the radius, it is already within the circle.
+                {
+                    Vector2 fromOriginToObject = worldPos - centerPosition;
+                    fromOriginToObject *= worldRadius / distance;
+                    worldPos = centerPosition + fromOriginToObject; 
+                }
+
                 GameObject island = Instantiate(MainRedIsland, worldPos, Quaternion.identity);
+
+                island.transform.parent = Biome.transform;                
+            }
+
+            if (Biome.CompareTag("PurpleBiome"))
+            {
+                float biomeRadius = RandomBiomeSize * 0.5f;
+                float worldRadius = 45;
+
+                Vector2 centerPosition = transform.localPosition;
+
+                Vector2 localOffset = Random.insideUnitCircle * biomeRadius;
+                Vector2 worldPos = (Vector2)Biome.transform.position + localOffset;
+
+                float distance = Vector3.Distance(worldPos, centerPosition); //distance from ~green object~ to *black circle*
+
+                if (distance > worldRadius) //If the distance is less than the radius, it is already within the circle.
+                {
+                    Vector2 fromOriginToObject = worldPos - centerPosition;
+                    fromOriginToObject *= worldRadius / distance;
+                    worldPos = centerPosition + fromOriginToObject;
+                }
+
+                GameObject island = Instantiate(MainPurpleIsland, worldPos, Quaternion.identity);
+
+                island.transform.parent = Biome.transform;
+            }
+
+            if (Biome.CompareTag("GreenBiome"))
+            {
+                float biomeRadius = RandomBiomeSize * 0.5f;
+                float worldRadius = 45;
+
+                Vector2 centerPosition = transform.localPosition;
+
+                Vector2 localOffset = Random.insideUnitCircle * biomeRadius;
+                Vector2 worldPos = (Vector2)Biome.transform.position + localOffset;
+
+                float distance = Vector3.Distance(worldPos, centerPosition); //distance from ~green object~ to *black circle*
+
+                if (distance > worldRadius) //If the distance is less than the radius, it is already within the circle.
+                {
+                    Vector2 fromOriginToObject = worldPos - centerPosition;
+                    fromOriginToObject *= worldRadius / distance;
+                    worldPos = centerPosition + fromOriginToObject;
+                }
+
+                GameObject island = Instantiate(MainGreenIsland, worldPos, Quaternion.identity);
+
+                island.transform.parent = Biome.transform;
+            }
+
+            if (Biome.CompareTag("OrangeBiome"))
+            {
+                float biomeRadius = RandomBiomeSize * 0.5f;
+                float worldRadius = 45;
+
+                Vector2 centerPosition = transform.localPosition;
+
+                Vector2 localOffset = Random.insideUnitCircle * biomeRadius;
+                Vector2 worldPos = (Vector2)Biome.transform.position + localOffset;
+
+                float distance = Vector3.Distance(worldPos, centerPosition); //distance from ~green object~ to *black circle*
+
+                if (distance > worldRadius) //If the distance is less than the radius, it is already within the circle.
+                {
+                    Vector2 fromOriginToObject = worldPos - centerPosition;
+                    fromOriginToObject *= worldRadius / distance;
+                    worldPos = centerPosition + fromOriginToObject;
+                }
+
+                GameObject island = Instantiate(MainOrangeIsland, worldPos, Quaternion.identity);
+
+                island.transform.parent = Biome.transform;
+            }
+
+            if (Biome.CompareTag("BrownBiome"))
+            {
+                float biomeRadius = RandomBiomeSize * 0.5f;
+                float worldRadius = 45;
+
+                Vector2 centerPosition = transform.localPosition;
+
+                Vector2 localOffset = Random.insideUnitCircle * biomeRadius;
+                Vector2 worldPos = (Vector2)Biome.transform.position + localOffset;
+
+                float distance = Vector3.Distance(worldPos, centerPosition); //distance from ~green object~ to *black circle*
+
+                if (distance > worldRadius) //If the distance is less than the radius, it is already within the circle.
+                {
+                    Vector2 fromOriginToObject = worldPos - centerPosition;
+                    fromOriginToObject *= worldRadius / distance;
+                    worldPos = centerPosition + fromOriginToObject;
+                }
+
+                GameObject island = Instantiate(MainBrownIsland, worldPos, Quaternion.identity);
+
                 island.transform.parent = Biome.transform;
             }
         }
