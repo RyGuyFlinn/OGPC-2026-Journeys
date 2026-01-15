@@ -26,6 +26,17 @@ public class WorldGeneration : MonoBehaviour
     public GameObject MainPurpleIsland;
     public GameObject MainBrownIsland;
 
+    [Header("Normal/Filler Islands")]
+    public int MaxIslandCount = 5;
+    public int MinIslandCount = 3;
+
+    [Space]
+    public GameObject[] RedIslands;
+    public GameObject[] OrangeIslands;
+    public GameObject[] GreenIslands;
+    public GameObject[] PurpleIslands;
+    public GameObject[] BrownIslands;
+
     void Start()
     {
         //Spawn in an empty circle for the open ocean
@@ -36,6 +47,9 @@ public class WorldGeneration : MonoBehaviour
 
         //Spawn 3 Biomes randomly on the map
         SpawnBiomes();
+
+        //Spawn the filler islands all around the world
+        SpawnIslands();
     }
 
     void Update()
@@ -185,6 +199,36 @@ public class WorldGeneration : MonoBehaviour
                 }
 
                 GameObject island = Instantiate(MainBrownIsland, worldPos, Quaternion.identity);
+
+                island.transform.parent = Biome.transform;
+            }
+        }
+    }
+
+    private void SpawnIslands()
+    {
+        if (Biome.CompareTag("RedBiome"))
+        {
+            for (int i = 0; i < Random.Range(MinIslandCount, MaxIslandCount); i++)
+            {
+                float biomeRadius = RandomBiomeSize * 0.5f;
+                float worldRadius = 45;
+
+                Vector2 centerPosition = transform.localPosition;
+
+                Vector2 localOffset = Random.insideUnitCircle * biomeRadius;
+                Vector2 worldPos = (Vector2)Biome.transform.position + localOffset;
+
+                float distance = Vector3.Distance(worldPos, centerPosition); //distance from ~green object~ to *black circle*
+
+                if (distance > worldRadius) //If the distance is less than the radius, it is already within the circle.
+                {
+                    Vector2 fromOriginToObject = worldPos - centerPosition;
+                    fromOriginToObject *= worldRadius / distance;
+                    worldPos = centerPosition + fromOriginToObject;
+                }
+
+                GameObject island = Instantiate(RedIslands[Random.Range(0, RedIslands.Count)], worldPos, Quaternion.identity);
 
                 island.transform.parent = Biome.transform;
             }
