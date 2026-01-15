@@ -48,8 +48,7 @@ public class WorldGeneration : MonoBehaviour
         //Spawn 3 Biomes randomly on the map
         SpawnBiomes();
 
-        //Spawn the filler islands all around the world
-        SpawnIslands();
+        
     }
 
     void Update()
@@ -202,10 +201,13 @@ public class WorldGeneration : MonoBehaviour
 
                 island.transform.parent = Biome.transform;
             }
+
+            //Spawn the filler islands all around the world
+            SpawnIslands(Biome, RandomBiomeSize);
         }
     }
 
-    private void SpawnIslands()
+    private void SpawnIslands(GameObject Biome, float RandomBiomeSize)
     {
         if (Biome.CompareTag("RedBiome"))
         {
@@ -228,7 +230,7 @@ public class WorldGeneration : MonoBehaviour
                     worldPos = centerPosition + fromOriginToObject;
                 }
 
-                GameObject island = Instantiate(RedIslands[Random.Range(0, RedIslands.Count)], worldPos, Quaternion.identity);
+                GameObject island = Instantiate(RedIslands[Random.Range(0, RedIslands.Length)], worldPos, Quaternion.identity);
 
                 island.transform.parent = Biome.transform;
             }
