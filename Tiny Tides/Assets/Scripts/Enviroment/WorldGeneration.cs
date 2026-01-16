@@ -31,6 +31,11 @@ public class WorldGeneration : MonoBehaviour
     public int MinIslandCount = 3;
 
     [Space]
+
+    public float IslandCheckRadius = 5f;
+    public LayerMask IslandLayer;
+
+    [Space]
     public GameObject[] RedIslands;
     public GameObject[] OrangeIslands;
     public GameObject[] GreenIslands;
@@ -209,32 +214,73 @@ public class WorldGeneration : MonoBehaviour
 
     private void SpawnIslands(GameObject Biome, float RandomBiomeSize)
     {
-        if (Biome.CompareTag("RedBiome"))
+        
+        for (int i = 0; i < Random.Range(MinIslandCount, MaxIslandCount); i++)
         {
-            for (int i = 0; i < Random.Range(MinIslandCount, MaxIslandCount); i++)
+            float biomeRadius = RandomBiomeSize * 0.5f;
+            float worldRadius = 45f;
+
+            Vector2 centerPosition = transform.localPosition;
+            Vector2 worldPos;
+
+            int attempts = 0;
+            do
             {
-                float biomeRadius = RandomBiomeSize * 0.5f;
-                float worldRadius = 45;
-
-                Vector2 centerPosition = transform.localPosition;
-
                 Vector2 localOffset = Random.insideUnitCircle * biomeRadius;
-                Vector2 worldPos = (Vector2)Biome.transform.position + localOffset;
+                worldPos = (Vector2)Biome.transform.position + localOffset;
 
-                float distance = Vector3.Distance(worldPos, centerPosition); //distance from ~green object~ to *black circle*
-
-                if (distance > worldRadius) //If the distance is less than the radius, it is already within the circle.
+                float distance = Vector2.Distance(worldPos, centerPosition);
+                if (distance > worldRadius)
                 {
-                    Vector2 fromOriginToObject = worldPos - centerPosition;
-                    fromOriginToObject *= worldRadius / distance;
-                    worldPos = centerPosition + fromOriginToObject;
+                    Vector2 dir = (worldPos - centerPosition).normalized;
+                    worldPos = centerPosition + dir * worldRadius;
                 }
 
-                GameObject island = Instantiate(RedIslands[Random.Range(0, RedIslands.Length)], worldPos, Quaternion.identity);
+                attempts++;
+                if (attempts > 10) break;
 
-                island.transform.parent = Biome.transform;
+            } while (Physics2D.OverlapCircle(worldPos, IslandCheckRadius, IslandLayer));
+
+            if (Biome.CompareTag("RedBiome"))
+            {
+                Instantiate(
+                    RedIslands[Random.Range(0, RedIslands.Length)],
+                    worldPos,
+                    Quaternion.identity
+                );
+            }
+            if (Biome.CompareTag("OrangeBiome"))
+            {
+                Instantiate(
+                    OrangeIslands[Random.Range(0, OrangeIslands.Length)],
+                    worldPos,
+                    Quaternion.identity
+                );
+            }
+            if (Biome.CompareTag("GreenBiome"))
+            {
+                Instantiate(
+                    GreenIslands[Random.Range(0, GreenIslands.Length)],
+                    worldPos,
+                    Quaternion.identity
+                );
+            }
+            if (Biome.CompareTag("PurpleBiome"))
+            {
+                Instantiate(
+                    PurpleIslands[Random.Range(0, PurpleIslands.Length)],
+                    worldPos,
+                    Quaternion.identity
+                );
+            }
+            if (Biome.CompareTag("BrownBiome"))
+            {
+                Instantiate(
+                    BrownIslands[Random.Range(0, BrownIslands.Length)],
+                    worldPos,
+                    Quaternion.identity
+                );
             }
         }
     }
-
 }

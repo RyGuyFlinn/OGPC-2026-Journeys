@@ -14,6 +14,8 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] private SlotClass[] startingItems;
 
+    public GameObject inventoryPanel;
+
     private SlotClass[] items;
 
     private GameObject[] slots;
@@ -53,27 +55,30 @@ public class InventoryManager : MonoBehaviour
     
     private void Update()
     {
-        itemPlaceHolder.SetActive(isMovingItem);
-        itemPlaceHolder.transform.position = Input.mousePosition;
-        if (isMovingItem)
-            itemPlaceHolder.GetComponent<Image>().sprite = movingSlot.GetItem().itemIcon;
-
-        if (Input.GetMouseButtonDown(0)) //We Clicked!
+        if (!isOpen)
         {
-            //Find The closest slot for the slot we clicked on
+            itemPlaceHolder.SetActive(isMovingItem);
+            itemPlaceHolder.transform.position = Input.mousePosition;
             if (isMovingItem)
-                EndItemMove();
-            else
-                BeginItemMove();
+                itemPlaceHolder.GetComponent<Image>().sprite = movingSlot.GetItem().itemIcon;
+
+            if (Input.GetMouseButtonDown(0)) //We Clicked!
+            {
+                //Find The closest slot for the slot we clicked on
+                if (isMovingItem)
+                    EndItemMove();
+                else
+                    BeginItemMove();
+            }
         }
 
-        // if (Input.GetKeyDown(KeyCode.Tab))
-        // {
-        //     if (isOpen)
-        //         turnOff();
-        //     else
-        //         turnOn();
-        // }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (isOpen)
+                turnOff();
+            else
+                turnOn();
+        }
     }
 
     #region Inventory Utils
@@ -246,22 +251,16 @@ public class InventoryManager : MonoBehaviour
     #endregion Moving Stuff
 
     #region Turn On/Off
-    // public void turnOff()
-    // {
-    //     for (int i = 5; i < slots.Length; i++)
-    //     {
-    //         slots[i].SetActive(false);
-    //     }
-    //     isOpen = false;
-    // }
+    public void turnOff()
+    {
+        inventoryPanel.SetActive(true);
+        isOpen = false;
+    }
 
-    // public void turnOn()
-    // {
-    //     for (int i = 5; i < slots.Length; i++)
-    //     {
-    //         slots[i].SetActive(true);
-    //     }
-    //     isOpen = true;
-    // }
+    public void turnOn()
+    {
+        inventoryPanel.SetActive(false);
+        isOpen = true;
+    }
     #endregion Turn On/Off
 }

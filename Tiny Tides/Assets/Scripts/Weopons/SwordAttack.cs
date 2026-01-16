@@ -44,7 +44,12 @@ public class SwordAttack : MonoBehaviour
 
     void Update()
     {
-        enemyBlocking = EnemySwordAttack.instance.blocking;
+        try {
+            enemyBlocking = EnemySwordAttack.instance.blocking;
+        }
+        catch {
+            
+        }
     }
 
     private void callAttack()

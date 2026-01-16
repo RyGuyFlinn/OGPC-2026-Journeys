@@ -10,6 +10,7 @@ TagManager:
   - GreenBiome
   - OrangeBiome
   - BrownBiome
+  - PlayerBoat
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - UI
   - Boats
   - Player
-  - 
+  - IslandLayer
   - 
   - 
   - 

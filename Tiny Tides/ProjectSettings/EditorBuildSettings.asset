@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WorldGeneration.unity
     guid: 52a63afe8b6234c4f8dbb896cea25879
+  - enabled: 1
+    path: Assets/Prefabs/Enviroment/Islands/Red/RedMainIslandScene.unity
+    guid: 0bac815495f51ca47986f8c12fb9f340
   m_configObjects: {}

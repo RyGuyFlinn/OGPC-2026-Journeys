@@ -122,6 +122,66 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &60581905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5535344598320702440, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: m_Name
+      value: PlayerShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 669340427}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
 --- !u!1 &669340424
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +243,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 75
+  orthographic size: 25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -207,13 +267,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669340424}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1147346497}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1147346497 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+  m_PrefabInstance: {fileID: 60581905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1510410892
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +324,22 @@ MonoBehaviour:
   MainGreenIsland: {fileID: 3973882018570667637, guid: 50e6e72eab7c92f47bd871bef340b762, type: 3}
   MainPurpleIsland: {fileID: 2108622064150471782, guid: d8e18ae9f0a8f8c40adce3b5784e909c, type: 3}
   MainBrownIsland: {fileID: 7748383640779667617, guid: 6b96c957fe6c0474ea35e2b5e2db42ff, type: 3}
+  MaxIslandCount: 5
+  MinIslandCount: 3
+  IslandCheckRadius: 10
+  IslandLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  RedIslands:
+  - {fileID: 6796945382322338947, guid: eb51f3a4463f82f4c87262f0b0dbd162, type: 3}
+  OrangeIslands:
+  - {fileID: 3605303901969774220, guid: 7f3baa83b548abd448d33f24a5ef4976, type: 3}
+  GreenIslands:
+  - {fileID: 3973882018570667637, guid: 64cfbb88ce299214ba1b2727443aec09, type: 3}
+  PurpleIslands:
+  - {fileID: 2108622064150471782, guid: e7deb5cab6cdb21409e077a48ca377dc, type: 3}
+  BrownIslands:
+  - {fileID: 7748383640779667617, guid: 343aa3e1081450f45893c856e8f37780, type: 3}
 --- !u!4 &1510410894
 Transform:
   m_ObjectHideFlags: 0
@@ -278,5 +359,5 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 669340427}
   - {fileID: 1510410894}
+  - {fileID: 60581905}

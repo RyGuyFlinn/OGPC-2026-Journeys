@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 1413827527942597608}
   m_Layer: 6
   m_Name: PlayerShip
-  m_TagString: Untagged
+  m_TagString: PlayerBoat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -248,33 +248,6 @@ MonoBehaviour:
   fireCooldown: 0.5
   audioSource: {fileID: 0}
   fireSFX: {fileID: 0}
-  spriteRenderer: {fileID: 5979962198657952123}
-  rotationSprites:
-  - {fileID: 1234212302, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: 1318454961, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: -915479718, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: -810595538, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: -495310302, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: 1221922466, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: 1357160162, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: 1220659973, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: -1809186324, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: -595436495, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: 214211017, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: -2107756098, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: 803039081, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: 1679858017, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: 1804801257, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: -1771544652, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: 540034960, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: -1594954738, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: -269167238, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: -130595200, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: 282550380, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: -497306090, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: 2099427289, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  - {fileID: -60206543, guid: 81993b5ef33617543b3c7f4f921c4806, type: 3}
-  frameCount: 24
 --- !u!50 &6798415910567704385
 Rigidbody2D:
   serializedVersion: 4
