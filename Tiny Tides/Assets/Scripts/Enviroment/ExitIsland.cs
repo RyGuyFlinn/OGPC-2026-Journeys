@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnterIsland : MonoBehaviour
+public class ExitIsland : MonoBehaviour
 {
-    public string sceneName = "";
-
     private bool PlayerInRange = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "PlayerBoat")
+        if (other.tag == "Player")
         {
             Debug.Log("Player stay in island area");
             PlayerInRange = true;
@@ -24,14 +22,7 @@ public class EnterIsland : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                Debug.Log("Player enter island");
-
-                WorldGeneration worldGen = GameObject.Find("WorldGeneration").GetComponent<WorldGeneration>();
-                int islandIndex = worldGen.islands.IndexOf(transform.parent.parent.gameObject);
-
-                PlayerManager.islandIndex = islandIndex;
-                Debug.Log(PlayerManager.islandIndex);
-                
+                Debug.Log("Player exiting island");
                 LoadSceneByName();
             }
         }
@@ -39,6 +30,6 @@ public class EnterIsland : MonoBehaviour
 
     public void LoadSceneByName()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("WorldGeneration");
     }
 }

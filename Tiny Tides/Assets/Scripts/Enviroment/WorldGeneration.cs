@@ -42,6 +42,11 @@ public class WorldGeneration : MonoBehaviour
     public GameObject[] PurpleIslands;
     public GameObject[] BrownIslands;
 
+    public List<GameObject> islands;
+
+    [Header("Player")]
+    public GameObject playerBoat;
+
     void Start()
     {
         //Spawn in an empty circle for the open ocean
@@ -53,7 +58,7 @@ public class WorldGeneration : MonoBehaviour
         //Spawn 3 Biomes randomly on the map
         SpawnBiomes();
 
-        
+        SpawnPlayer();
     }
 
     void Update()
@@ -62,6 +67,26 @@ public class WorldGeneration : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+    }
+
+    void SpawnPlayer()
+    {
+        int index = PlayerManager.islandIndex;
+
+        if (index < 0 || index >= islands.Count)
+        {
+            Debug.LogWarning("Invalid island index, spawning at default");
+            return;
+        }
+
+        Transform spawnPoint = new Vector2(0, 0);
+
+        if (index != 0) //Player is not on ocean or is not there first time spawning in
+        {
+            spawnPoint = islands[index].GetComponent<Island>().playerSpawnLocation.transform;
+        }
+
+        playerBoat.transform.position = spawnPoint.position;
     }
 
     private void SpawnBiomes()
@@ -108,7 +133,9 @@ public class WorldGeneration : MonoBehaviour
 
                 GameObject island = Instantiate(MainRedIsland, worldPos, Quaternion.identity);
 
-                island.transform.parent = Biome.transform;                
+                island.transform.parent = Biome.transform;
+
+                islands.Add(island);                
             }
 
             if (Biome.CompareTag("PurpleBiome"))
@@ -133,6 +160,8 @@ public class WorldGeneration : MonoBehaviour
                 GameObject island = Instantiate(MainPurpleIsland, worldPos, Quaternion.identity);
 
                 island.transform.parent = Biome.transform;
+
+                islands.Add(island);
             }
 
             if (Biome.CompareTag("GreenBiome"))
@@ -157,6 +186,8 @@ public class WorldGeneration : MonoBehaviour
                 GameObject island = Instantiate(MainGreenIsland, worldPos, Quaternion.identity);
 
                 island.transform.parent = Biome.transform;
+
+                islands.Add(island);
             }
 
             if (Biome.CompareTag("OrangeBiome"))
@@ -181,6 +212,8 @@ public class WorldGeneration : MonoBehaviour
                 GameObject island = Instantiate(MainOrangeIsland, worldPos, Quaternion.identity);
 
                 island.transform.parent = Biome.transform;
+
+                islands.Add(island);
             }
 
             if (Biome.CompareTag("BrownBiome"))
@@ -205,6 +238,8 @@ public class WorldGeneration : MonoBehaviour
                 GameObject island = Instantiate(MainBrownIsland, worldPos, Quaternion.identity);
 
                 island.transform.parent = Biome.transform;
+
+                islands.Add(island);
             }
 
             //Spawn the filler islands all around the world
@@ -243,43 +278,53 @@ public class WorldGeneration : MonoBehaviour
 
             if (Biome.CompareTag("RedBiome"))
             {
-                Instantiate(
+                GameObject island = Instantiate(
                     RedIslands[Random.Range(0, RedIslands.Length)],
                     worldPos,
                     Quaternion.identity
                 );
+
+                islands.Add(island);
             }
             if (Biome.CompareTag("OrangeBiome"))
             {
-                Instantiate(
+                GameObject island = Instantiate(
                     OrangeIslands[Random.Range(0, OrangeIslands.Length)],
                     worldPos,
                     Quaternion.identity
                 );
+
+                islands.Add(island);
             }
             if (Biome.CompareTag("GreenBiome"))
             {
-                Instantiate(
+                GameObject island = Instantiate(
                     GreenIslands[Random.Range(0, GreenIslands.Length)],
                     worldPos,
                     Quaternion.identity
                 );
+
+                islands.Add(island);
             }
             if (Biome.CompareTag("PurpleBiome"))
             {
-                Instantiate(
+                GameObject island = Instantiate(
                     PurpleIslands[Random.Range(0, PurpleIslands.Length)],
                     worldPos,
                     Quaternion.identity
                 );
+
+                islands.Add(island);
             }
             if (Biome.CompareTag("BrownBiome"))
             {
-                Instantiate(
+                GameObject island = Instantiate(
                     BrownIslands[Random.Range(0, BrownIslands.Length)],
                     worldPos,
                     Quaternion.identity
                 );
+
+                islands.Add(island);
             }
         }
     }
