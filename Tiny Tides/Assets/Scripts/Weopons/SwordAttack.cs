@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 public class SwordAttack : MonoBehaviour
 {
     public static SwordAttack instance;
-
+    public PlayerMovement playermovement;
     [Header("Attack Settings")]
-    public float attackDelay = 0.5f;
-    public float attackDuration = 0.2f;
+    public float attackDelay = 0.1f;
+    public float attackDuration = 0.1f;
     public int attackDamage = 1;
     public float knockback = 5f;
 
@@ -31,6 +31,9 @@ public class SwordAttack : MonoBehaviour
     private bool canAttack = true;
     private bool canBlock = true;
 
+    //Combo Variables
+    private float PlayerCPS;
+    private int Combo;
     PlayerControls controls;
 
     void Awake()
@@ -44,6 +47,15 @@ public class SwordAttack : MonoBehaviour
 
     void Update()
     {
+        PlayerCPS += Time.deltaTime;
+        if (Combo >= 3){
+            playermovement.speed = 1f;
+            attackDelay = 0f;
+        }
+        if (PlayerCPS > 0.35f){
+            playermovement.speed = 5f;
+            attackDelay = 0.1f;
+        }
         try {
             enemyBlocking = EnemySwordAttack.instance.blocking;
         }
@@ -54,7 +66,15 @@ public class SwordAttack : MonoBehaviour
 
     private void callAttack()
     {
-        StartCoroutine(Attack());
+        
+        if (PlayerCPS <= 0.35f){
+            Combo += 1;
+        }
+        else {
+            Combo = 0;
+        }
+        PlayerCPS = 0;
+        if (canAttack) StartCoroutine(Attack());
     }
 
     private void callBlock()
@@ -72,18 +92,19 @@ public class SwordAttack : MonoBehaviour
         //    audioSource.PlayOneShot(swingSound);
 
         if (animator) animator.SetTrigger("Attack");
-
+        
         // Enable sword hitbox for a short time
         swordHitbox.enabled = true;
-
+        Debug.Log("Damage");
         yield return new WaitForSeconds(attackDuration);
 
         swordHitbox.enabled = false;
         attacking = false;
-
+     
         // Wait for cooldown before allowing next attack
         yield return new WaitForSeconds(attackDelay);
         canAttack = true;
+     //   Debug.Log("Swing, swung, I don't have a pun");
     }
 
     IEnumerator Block()
@@ -111,15 +132,21 @@ public class SwordAttack : MonoBehaviour
             {
                 // Check if the object has an enemy health component
                 EnemyHealth enemy = other.GetComponent<EnemyHealth>();
+                EnemySwordAttack enemysword = other.GetComponent<EnemySwordAttack>();
                 if (enemy != null)
                 {
                     // Calculate knockback direction
                     Vector2 direction = (other.transform.position - transform.position).normalized;
                     Debug.Log("Player Attack");
+
                     if (!enemyBlocking)
                     {
                         // Apply damage + knockback
                         enemy.TakeDamage(attackDamage, direction * knockback);
+                    }
+                    else {
+                        Debug.Log("Blocked!");
+                        enemysword.blocking = false;
                     }
                 }
             }

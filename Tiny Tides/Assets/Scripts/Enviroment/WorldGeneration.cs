@@ -78,8 +78,9 @@ public class WorldGeneration : MonoBehaviour
             Debug.LogWarning("Invalid island index, spawning at default");
             return;
         }
-
+        /*
         Transform spawnPoint = new Vector2(0, 0);
+       
 
         if (index != 0) //Player is not on ocean or is not there first time spawning in
         {
@@ -87,7 +88,9 @@ public class WorldGeneration : MonoBehaviour
         }
 
         playerBoat.transform.position = spawnPoint.position;
+        */
     }
+    
 
     private void SpawnBiomes()
     {

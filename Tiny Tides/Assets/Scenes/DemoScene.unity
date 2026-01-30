@@ -30691,8 +30691,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a0fb4182c73e9498b2f81e9648b211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDelay: 0.5
-  attackDuration: 0.2
+  playermovement: {fileID: 780799703}
+  attackDelay: 0.1
+  attackDuration: 0.1
   attackDamage: 1
   knockback: 10
   blockTime: 1
@@ -258926,6 +258927,7 @@ MonoBehaviour:
     quantity: 1
   - item: {fileID: 11400000, guid: 5426e0c0ad7a8844a97988116b83fb12, type: 2}
     quantity: 1
+  inventoryPanel: {fileID: 0}
 --- !u!4 &1846742902
 Transform:
   m_ObjectHideFlags: 0
@@ -260189,10 +260191,10 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 974146183}
   - {fileID: 780799702}
+  - {fileID: 36598882}
   - {fileID: 188493815}
   - {fileID: 251940158}
   - {fileID: 1929202189}
-  - {fileID: 36598882}
   - {fileID: 2122539766}
   - {fileID: 1018779193}
   - {fileID: 1014240203}
