@@ -69571,7 +69571,7 @@ PrefabInstance:
     - target: {fileID: 1037466295683052116, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
       propertyPath: fireSFX
       value: 
-      objectReference: {fileID: 8300000, guid: fa825e86a91e44d4f8a7ec52974a0534, type: 3}
+      objectReference: {fileID: 8300000, guid: a032cc373e2a906488cfa9506be3f109, type: 3}
     - target: {fileID: 1037466295683052116, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
       propertyPath: audioSource
       value: 

@@ -5,7 +5,8 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] Transform target;
 
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
+    public Rigidbody2D rb2;
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();

@@ -43,6 +43,14 @@ public class EnemySwordAttack : MonoBehaviour
 
     PlayerControls controls;
 
+    [Header("Telegraphing")]
+    public GameObject Telegraph;
+
+    [Header("Others")]
+    public EnemyMovement enemymovement;
+
+    [Header("Sound Effects")]
+    public GameObject Ching;
     void Awake()
     {
         instance = this;
@@ -70,8 +78,16 @@ public class EnemySwordAttack : MonoBehaviour
 
         float playerdistance = Vector3.Distance(player.position, transform.position);
         if ((playerdistance <= minDistance) && canAttack)
-        {
+        {  
             callAttack();
+        }
+        if (playerdistance <= 2.25f)
+        {
+            enemymovement.agent.speed = 0f;
+        }
+        else if ((attacking == false) && (playerdistance > 2.25f))
+        {
+            enemymovement.agent.speed = 2.5f;
         }
     }
 
@@ -97,18 +113,21 @@ public class EnemySwordAttack : MonoBehaviour
     {
         canAttack = false;
         attacking = true;
-
+        Telegraph.SetActive(true);
+        enemymovement.agent.speed = 1f;
+        yield return new WaitForSeconds(0.5f);
+        Telegraph.SetActive(false);
         // Play SFX or animation if you have them
         //if (audioSource && swingSound)
         //    audioSource.PlayOneShot(swingSound);
-
+        
         if (animator) animator.SetTrigger("Attack");
-
+        
         // Enable sword hitbox for a short time
         swordHitbox.enabled = true;
-
+        
         yield return new WaitForSeconds(attackDuration);
-
+        enemymovement.agent.speed = 2.5f;
         swordHitbox.enabled = false;
         attacking = false;
     }
@@ -148,6 +167,10 @@ public class EnemySwordAttack : MonoBehaviour
                         // Apply damage + knockback
                         playerH.TakeDamage(attackDamage);
                     }
+                    if (playerBlocking){
+                        
+                        StartCoroutine(FreezeFrames());
+                    }
                 }
             }
         }
@@ -161,5 +184,17 @@ public class EnemySwordAttack : MonoBehaviour
     void OnDisable()
     {
         controls.GamePlay.Disable();
+    }
+   public IEnumerator FreezeFrames()
+    {
+        Time.timeScale = 0f;
+        float pauseEndTime = Time.realtimeSinceStartup + 0.3f;
+        Ching.SetActive(true);
+        while (Time.realtimeSinceStartup < pauseEndTime)
+        {
+            yield return null; 
+        }
+        Ching.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

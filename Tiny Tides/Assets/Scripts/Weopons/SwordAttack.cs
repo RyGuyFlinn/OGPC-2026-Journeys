@@ -132,7 +132,7 @@ public class SwordAttack : MonoBehaviour
             {
                 // Check if the object has an enemy health component
                 EnemyHealth enemy = other.GetComponent<EnemyHealth>();
-                EnemySwordAttack enemysword = other.GetComponent<EnemySwordAttack>();
+                EnemySwordAttack enemysword = other.GetComponentInChildren<EnemySwordAttack>();
                 if (enemy != null)
                 {
                     // Calculate knockback direction

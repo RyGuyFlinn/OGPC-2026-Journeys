@@ -42,9 +42,12 @@ public class EnemyHealth : MonoBehaviour
     {
         isKnocked = true;
         rb.velocity = Vector2.zero;
+        rb.mass = 1f;
         rb.AddForce(force, ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(0.2f); // short knockback duration
+        rb.mass = 999f;
+        rb.velocity = Vector2.zero;
         isKnocked = false;
     }
 
