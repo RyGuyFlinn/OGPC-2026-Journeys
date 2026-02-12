@@ -8,6 +8,9 @@ public abstract class ItemClass : ScriptableObject
     public Sprite itemIcon;
     public int maxStack = 1;
 
+    public bool isHoldable = false;
+    public GameObject holdingObject;
+
     public abstract ItemClass GetItem();
     public abstract ToolClass GetTool();
     public abstract MiscClass GetMisc();
