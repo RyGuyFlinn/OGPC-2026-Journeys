@@ -36,6 +36,8 @@ public class SwordAttack : MonoBehaviour
     private int Combo;
     PlayerControls controls;
 
+    //Just for testing
+    public GameObject Ching;
     void Awake()
     {
         instance = this;
@@ -146,6 +148,7 @@ public class SwordAttack : MonoBehaviour
                     }
                     else {
                         Debug.Log("Blocked!");
+                        StartCoroutine(SpecialFunctions.FreezeFrames(Ching));
                         enemysword.blocking = false;
                     }
                 }

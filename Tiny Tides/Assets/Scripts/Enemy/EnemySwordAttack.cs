@@ -17,6 +17,7 @@ public class EnemySwordAttack : MonoBehaviour
     public float blockTime = 1.0f;
     public float blockDelay = 0.5f;
     public float blockReduction = 0.5f;
+    public float blockPercentage;
 
     [Header("References")]
     public Collider2D swordHitbox;
@@ -37,7 +38,7 @@ public class EnemySwordAttack : MonoBehaviour
     public float minDistance;
     public float AttackCooldown;
 
-    public float blockPercentage = 0.5f;
+    
 
     [Header("BlockingConditions")]
 
@@ -169,7 +170,7 @@ public class EnemySwordAttack : MonoBehaviour
                     }
                     if (playerBlocking){
                         
-                        StartCoroutine(FreezeFrames());
+                        StartCoroutine(SpecialFunctions.FreezeFrames(Ching));
                     }
                 }
             }
@@ -185,16 +186,5 @@ public class EnemySwordAttack : MonoBehaviour
     {
         controls.GamePlay.Disable();
     }
-   public IEnumerator FreezeFrames()
-    {
-        Time.timeScale = 0f;
-        float pauseEndTime = Time.realtimeSinceStartup + 0.3f;
-        Ching.SetActive(true);
-        while (Time.realtimeSinceStartup < pauseEndTime)
-        {
-            yield return null; 
-        }
-        Ching.SetActive(false);
-        Time.timeScale = 1f;
-    }
+   
 }

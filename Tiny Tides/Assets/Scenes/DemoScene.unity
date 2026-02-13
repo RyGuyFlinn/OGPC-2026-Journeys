@@ -591,13 +591,13 @@ MonoBehaviour:
   blockTime: 1
   blockDelay: 0.5
   blockReduction: 0.5
+  blockPercentage: 0.1
   swordHitbox: {fileID: 101996024}
   animator: {fileID: 101996026}
   blocking: 0
   player: {fileID: 780799702}
   minDistance: 3
   AttackCooldown: 2
-  blockPercentage: 0.1
   Telegraph: {fileID: 1225093125}
   enemymovement: {fileID: 188493818}
   Ching: {fileID: 1463786600}
@@ -30268,8 +30268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0}
-  controllerCursorSpeed: 900
   enemy: {fileID: 1306138375}
+  rotationSpeed: 90
 --- !u!1001 &1317564848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30794,6 +30794,7 @@ MonoBehaviour:
   animator: {fileID: 1379026071}
   attacking: 0
   blocking: 0
+  Ching: {fileID: 1463786600}
 --- !u!95 &1379026071
 Animator:
   serializedVersion: 5
@@ -32285,7 +32286,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1018779193}
@@ -32330,7 +32331,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.5, y: 1, z: 0}
   m_MaxChunkCount: 16
