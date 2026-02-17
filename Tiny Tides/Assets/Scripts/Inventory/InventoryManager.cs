@@ -27,6 +27,8 @@ public class InventoryManager : MonoBehaviour
 
     private bool isOpen = false;
 
+    private GameObject spawnedObject = null;
+
     public void Start()
     {
         slots = new GameObject[slotHolder.transform.childCount];
@@ -84,17 +86,22 @@ public class InventoryManager : MonoBehaviour
     }
 
     #region Showing Player Items
-
     private void ShowItems()
     {
         // Take the weopon in the main weopon slot and spawn its prefab in the scene.
         // works but need to add a method to make it so only one of the items spawn, as it doesnt stop spawning them.
-        if (items[15].GetItem() != null)
+        if (items[15].GetItem() != null && spawnedObject == null)
         {
             GameObject holdingObject = items[15].GetItem().holdingObject;
             GameObject player = GameObject.Find("Player");
 
-            Instantiate(holdingObject, player.transform.position, Quaternion.identity);
+            spawnedObject = Instantiate(holdingObject, player.transform.position, Quaternion.identity);
+        }
+
+        if (items[15].GetItem() == null && spawnedObject != null)
+        {
+            Destroy(spawnedObject.gameObject);
+            spawnedObject = null;
         }
     }
 

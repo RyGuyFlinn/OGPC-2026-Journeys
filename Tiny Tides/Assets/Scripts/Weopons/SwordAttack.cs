@@ -45,6 +45,8 @@ public class SwordAttack : MonoBehaviour
 
         controls.GamePlay.Attack.performed += ctx => callAttack();
         controls.GamePlay.Block.performed += ctx => callBlock();
+
+        playermovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
     }
 
     void Update()
