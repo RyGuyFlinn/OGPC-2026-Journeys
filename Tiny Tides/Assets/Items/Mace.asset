@@ -15,4 +15,6 @@ MonoBehaviour:
   itemName: Mace
   itemIcon: {fileID: -653216850, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
+  isHoldable: 1
+  holdingObject: {fileID: 481282701839261525, guid: cc6f1258d0e9f85498b31b7f41087612, type: 3}
   toolType: 0

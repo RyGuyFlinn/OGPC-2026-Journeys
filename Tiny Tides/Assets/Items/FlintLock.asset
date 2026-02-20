@@ -15,4 +15,6 @@ MonoBehaviour:
   itemName: FlintLock
   itemIcon: {fileID: 1501834784, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
+  isHoldable: 1
+  holdingObject: {fileID: 161160998589957237, guid: b6682e9c7d9aece4f927d4443ed32093, type: 3}
   toolType: 0
