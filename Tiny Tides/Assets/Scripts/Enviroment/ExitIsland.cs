@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ExitIsland : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject playerBoat;
+
     private bool PlayerInRange = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Player stay in island area");
             PlayerInRange = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            PlayerInRange = false;
         }
     }
 
@@ -23,13 +32,9 @@ public class ExitIsland : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 Debug.Log("Player exiting island");
-                LoadSceneByName();
+                player.SetActive(false);
+                playerBoat.SetActive(true);
             }
         }
-    }
-
-    public void LoadSceneByName()
-    {
-        SceneManager.LoadScene("WorldGeneration");
     }
 }

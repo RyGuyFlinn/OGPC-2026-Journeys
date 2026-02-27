@@ -1,19 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EnterIsland : MonoBehaviour
 {
-    public string sceneName = "";
+    public GameObject islandPort;
+    public GameObject player;
+    public GameObject playerBoat;
 
     private bool PlayerInRange = false;
+
+    void Start()
+    {
+        player = GameObject.Find("Player");
+        playerBoat = GameObject.Find("PlayerBoat");
+        islandPort = GameObject.Find("RedMainIsland").transform.GetChild(1).gameObject;
+
+        player.SetActive(false);
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "PlayerBoat")
         {
-            Debug.Log("Player stay in island area");
             PlayerInRange = true;
         }
     }
@@ -26,19 +35,11 @@ public class EnterIsland : MonoBehaviour
             {
                 Debug.Log("Player enter island");
 
-                WorldGeneration worldGen = GameObject.Find("WorldGeneration").GetComponent<WorldGeneration>();
-                int islandIndex = worldGen.islands.IndexOf(transform.parent.parent.gameObject);
+                //player.SetActive(true);
+                playerBoat.SetActive(false);
 
-                PlayerManager.islandIndex = islandIndex;
-                Debug.Log(PlayerManager.islandIndex);
-                
-                LoadSceneByName();
+                player.transform.position = islandPort.transform.position;
             }
         }
-    }
-
-    public void LoadSceneByName()
-    {
-        SceneManager.LoadScene(sceneName);
     }
 }

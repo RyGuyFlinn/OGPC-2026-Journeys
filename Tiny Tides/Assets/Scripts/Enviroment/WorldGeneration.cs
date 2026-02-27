@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class WorldGeneration : MonoBehaviour
 {
+    public static WorldGeneration Instance { get; private set; }
+
     public GameObject OpenOcean;
 
     [Header("Biomes")]
@@ -57,8 +59,6 @@ public class WorldGeneration : MonoBehaviour
 
         //Spawn 3 Biomes randomly on the map
         SpawnBiomes();
-
-        SpawnPlayer();
     }
 
     void Update()
@@ -67,30 +67,7 @@ public class WorldGeneration : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-    }
-
-    void SpawnPlayer()
-    {
-        int index = PlayerManager.islandIndex;
-
-        if (index < 0 || index >= islands.Count)
-        {
-            Debug.LogWarning("Invalid island index, spawning at default");
-            return;
-        }
-        /*
-        Transform spawnPoint = new Vector2(0, 0);
-       
-
-        if (index != 0) //Player is not on ocean or is not there first time spawning in
-        {
-            spawnPoint = islands[index].GetComponent<Island>().playerSpawnLocation.transform;
-        }
-
-        playerBoat.transform.position = spawnPoint.position;
-        */
-    }
-    
+    }    
 
     private void SpawnBiomes()
     {

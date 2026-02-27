@@ -52,7 +52,7 @@ public class InventoryManager : MonoBehaviour
         Add(itemToAdd, 1);
         Remove(itemToRemove);
 
-        // turnOff();
+        turnOff();
     }
     
     private void Update()
