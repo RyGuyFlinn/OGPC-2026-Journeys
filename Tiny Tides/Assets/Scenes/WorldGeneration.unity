@@ -278,11 +278,6 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 3
   m_CellSwizzle: 0
---- !u!1 &505122751 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5535344598320702440, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
-  m_PrefabInstance: {fileID: 60581905}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &669340424
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +368,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1147346497}
+  m_Father: {fileID: 6281562661322989086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1026210789
 GameObject:
@@ -420,8 +415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efdfc70e41ae1b44fb468f1d9ea3bb74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerBoat: {fileID: 0}
+  player: {fileID: 5663001217887020436}
+  playerBoat: {fileID: 5535344598380186617}
 --- !u!58 &1026210792
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -457,11 +452,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 6
---- !u!4 &1147346497 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
-  m_PrefabInstance: {fileID: 60581905}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1459144068
 GameObject:
   m_ObjectHideFlags: 0
@@ -88313,7 +88303,8 @@ MonoBehaviour:
   BrownIslands:
   - {fileID: 7748383640779667617, guid: 343aa3e1081450f45893c856e8f37780, type: 3}
   islands: []
-  playerBoat: {fileID: 505122751}
+  playerBoat: {fileID: 5535344598380186617}
+  player: {fileID: 5663001217887020436}
 --- !u!4 &1510410894
 Transform:
   m_ObjectHideFlags: 0
@@ -114193,6 +114184,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+--- !u!1 &5535344598380186617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5535344598320702440, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+  m_PrefabInstance: {fileID: 60581905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5663001217887020436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5663001219300222689, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+  m_PrefabInstance: {fileID: 1950139253}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6281562661322989086 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+  m_PrefabInstance: {fileID: 60581905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

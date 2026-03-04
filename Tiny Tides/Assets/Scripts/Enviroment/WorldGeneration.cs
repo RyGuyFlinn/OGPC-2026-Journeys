@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class WorldGeneration : MonoBehaviour
 {
-    public static WorldGeneration Instance { get; private set; }
+    public static WorldGeneration Instance;
 
     public GameObject OpenOcean;
 
@@ -48,6 +48,12 @@ public class WorldGeneration : MonoBehaviour
 
     [Header("Player")]
     public GameObject playerBoat;
+    public GameObject player;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {

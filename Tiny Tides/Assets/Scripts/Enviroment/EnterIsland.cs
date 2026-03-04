@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class EnterIsland : MonoBehaviour
 {
-    public GameObject islandPort;
-    public GameObject player;
-    public GameObject playerBoat;
+    WorldGeneration manager = WorldGeneration.Instance;
+
+    private  GameObject islandPort;
+    private GameObject player;
+    private GameObject playerBoat;
 
     private bool PlayerInRange = false;
 
     void Start()
     {
-        player = GameObject.Find("Player");
-        playerBoat = GameObject.Find("PlayerBoat");
+        player = manager.player;
+        playerBoat = manager.playerBoat;
         islandPort = GameObject.Find("RedMainIsland").transform.GetChild(1).gameObject;
 
         player.SetActive(false);
@@ -35,7 +37,7 @@ public class EnterIsland : MonoBehaviour
             {
                 Debug.Log("Player enter island");
 
-                //player.SetActive(true);
+                player.SetActive(true);
                 playerBoat.SetActive(false);
 
                 player.transform.position = islandPort.transform.position;
