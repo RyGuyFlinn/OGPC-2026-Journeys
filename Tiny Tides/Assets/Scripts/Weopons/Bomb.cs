@@ -16,14 +16,18 @@ public class Bomb : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
 
-        Explode();
-    }
-
-    void Explode()
-    {
-
         sparks.SetActive(true);
         smoke.SetActive(true);
-        //Destroy(gameObject);
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<CircleCollider2D>().enabled = true;
+
+        yield return new WaitForSeconds(1.8f);
+
+        Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
     }
 }
