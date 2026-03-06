@@ -130,9 +130,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1037466295683052116, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037466295683052116, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: acceleration
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5535344598320702440, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
       propertyPath: m_Name
       value: PlayerShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535344598320702440, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6281562661299680783, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -114165,6 +114177,14 @@ PrefabInstance:
     - target: {fileID: 2730039825277154085, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373148784327270873, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 689
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373148784327270873, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4180515459210228287, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
       propertyPath: m_AnchorMax.y

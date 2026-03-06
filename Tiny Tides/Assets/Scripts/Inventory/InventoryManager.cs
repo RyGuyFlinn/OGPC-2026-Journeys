@@ -128,11 +128,14 @@ public class InventoryManager : MonoBehaviour
                 Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(mousePos);
                 worldMousePos.z = 0f;
 
-                Vector2 direction = (Vector2)worldMousePos - (Vector2)transform.position;
+                Vector2 direction = (Vector2)worldMousePos - (Vector2)player.transform.position;
                 
                 GameObject bomb = Instantiate(bombPrefab, player.transform.position, transform.rotation);
-
-                bomb.GetComponent<Rigidbody2D>().AddForce(direction, ForceMode2D.Impulse);
+                
+//ForceMode2D.Impulse
+                float dir = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                bomb.transform.rotation = Quaternion.AngleAxis(dir - 90f, Vector3.forward);
+                bomb.GetComponent<Rigidbody2D>().AddForce(bomb.transform.up * 300);
             }
         }
     }

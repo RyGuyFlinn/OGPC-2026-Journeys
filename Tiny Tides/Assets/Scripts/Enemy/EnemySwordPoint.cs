@@ -8,7 +8,7 @@ public class EnemySwordPoint : MonoBehaviour
     public Vector2 offset;
     public GameObject enemy;
     private GameObject player;
-    public float rotationSpeed = 10f;
+    public float rotationSpeed = 1f;
     void Start()
     {
         player = GameObject.Find("Player");
