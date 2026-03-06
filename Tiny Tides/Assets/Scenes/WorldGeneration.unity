@@ -114114,6 +114114,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1131905941180624694, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+      propertyPath: bombPrefab
+      value: 
+      objectReference: {fileID: 7833385705845326942, guid: f2ebee20301681f40b45bd5d1f370805, type: 3}
+    - target: {fileID: 1131905941180624694, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+      propertyPath: bombLaunchForce
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1724775385860615781, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

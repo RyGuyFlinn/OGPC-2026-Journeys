@@ -97,7 +97,7 @@ public class WorldGeneration : MonoBehaviour
             Biome.transform.localScale = BiomeSize;
 
             BaseAngle += Mathf.PI * 2 / 3;
-
+            
             //Spawn in the main islands into the designated biomes
             if (Biome.CompareTag("RedBiome")) {
                 float biomeRadius = RandomBiomeSize * 0.5f;
@@ -117,7 +117,7 @@ public class WorldGeneration : MonoBehaviour
                     worldPos = centerPosition + fromOriginToObject; 
                 }
 
-                GameObject island = Instantiate(MainRedIsland, worldPos, Quaternion.identity);
+                GameObject island = Instantiate(MainRedIsland, worldPos, GetIslandRotation(worldPos));
 
                 island.transform.parent = Biome.transform;
 
@@ -143,7 +143,7 @@ public class WorldGeneration : MonoBehaviour
                     worldPos = centerPosition + fromOriginToObject;
                 }
 
-                GameObject island = Instantiate(MainPurpleIsland, worldPos, Quaternion.identity);
+                GameObject island = Instantiate(MainPurpleIsland, worldPos, GetIslandRotation(worldPos));
 
                 island.transform.parent = Biome.transform;
 
@@ -169,7 +169,7 @@ public class WorldGeneration : MonoBehaviour
                     worldPos = centerPosition + fromOriginToObject;
                 }
 
-                GameObject island = Instantiate(MainGreenIsland, worldPos, Quaternion.identity);
+                GameObject island = Instantiate(MainGreenIsland, worldPos, GetIslandRotation(worldPos));
 
                 island.transform.parent = Biome.transform;
 
@@ -195,7 +195,7 @@ public class WorldGeneration : MonoBehaviour
                     worldPos = centerPosition + fromOriginToObject;
                 }
 
-                GameObject island = Instantiate(MainOrangeIsland, worldPos, Quaternion.identity);
+                GameObject island = Instantiate(MainOrangeIsland, worldPos, GetIslandRotation(worldPos));
 
                 island.transform.parent = Biome.transform;
 
@@ -221,7 +221,7 @@ public class WorldGeneration : MonoBehaviour
                     worldPos = centerPosition + fromOriginToObject;
                 }
 
-                GameObject island = Instantiate(MainBrownIsland, worldPos, Quaternion.identity);
+                GameObject island = Instantiate(MainBrownIsland, worldPos, GetIslandRotation(worldPos));
 
                 island.transform.parent = Biome.transform;
 
@@ -243,7 +243,7 @@ public class WorldGeneration : MonoBehaviour
 
             Vector2 centerPosition = transform.localPosition;
             Vector2 worldPos;
-
+            
             int attempts = 0;
             do
             {
@@ -313,5 +313,25 @@ public class WorldGeneration : MonoBehaviour
                 islands.Add(island);
             }
         }
+    }
+
+    Quaternion GetIslandRotation(Vector2 SpawnPos)
+    {
+        //Get the direction vector from the spawn point to the center (0,0)
+        Vector2 direction = (Vector2)Vector3.zero - SpawnPos;
+
+        //Calculate the angle in degrees
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        //Subtract 90 degrees if your sprite's "front" is the top (Y-axis) 
+        float offset = -90f; 
+
+        //Add your random variation (e.g., +/- 10 degrees)
+        float variation = Random.Range(-10f, 10f);
+
+        //Create the final rotation on the Z axis
+        Quaternion finalRotation = Quaternion.Euler(0, 0, angle + variation);
+
+        return finalRotation;
     }
 }

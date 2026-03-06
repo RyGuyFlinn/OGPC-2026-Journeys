@@ -16,6 +16,10 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject inventoryPanel;
 
+    [Header("Abilities")]
+    public float bombLaunchForce = 10f;
+    public GameObject bombPrefab;
+
     private SlotClass[] items;
 
     private GameObject[] slots;
@@ -58,6 +62,8 @@ public class InventoryManager : MonoBehaviour
     private void Update()
     {
         ShowItems();
+
+        AbilitiesManager();
 
         if (!isOpen)
         {
@@ -106,6 +112,28 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(spawnedObject.gameObject);
             spawnedObject = null;
+        }
+    }
+
+    private void AbilitiesManager()
+    {
+        GameObject player = GameObject.Find("Player");
+
+        if (items[16].GetItem() != null && items[16].GetItem().itemName == "Bomb")
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Vector3 mousePos = Input.mousePosition;
+        
+                Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(mousePos);
+                worldMousePos.z = 0f;
+
+                Vector2 direction = (Vector2)worldMousePos - (Vector2)transform.position;
+                
+                GameObject bomb = Instantiate(bombPrefab, player.transform.position, transform.rotation);
+
+                bomb.GetComponent<Rigidbody2D>().AddForce(direction, ForceMode2D.Impulse);
+            }
         }
     }
 

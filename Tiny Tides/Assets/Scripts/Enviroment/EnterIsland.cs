@@ -29,6 +29,14 @@ public class EnterIsland : MonoBehaviour
         }
     }
 
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "PlayerBoat")
+        {
+            PlayerInRange = false;
+        }
+    }
+
     void Update()
     {
         if (PlayerInRange)
