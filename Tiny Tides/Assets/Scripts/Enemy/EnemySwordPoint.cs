@@ -7,12 +7,14 @@ public class EnemySwordPoint : MonoBehaviour
 {
     public Vector2 offset;
     public GameObject enemy;
-    private GameObject player;
+    public GameObject player;
     public float rotationSpeed = 1f;
+    public bool IsClub = false;
+    private EnemyClub Enemyclub;
     void Start()
     {
-        player = GameObject.Find("Player");
-
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (IsClub) Enemyclub = GetComponentInChildren<EnemyClub>();
     }
 
     void Update()
@@ -22,15 +24,21 @@ public class EnemySwordPoint : MonoBehaviour
 
     Vector3 dir = player.transform.position - transform.position;
     float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-    
-  
-    Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-  
-    transform.rotation = Quaternion.RotateTowards(
-        transform.rotation, 
-        targetRotation, 
-        rotationSpeed * Time.deltaTime
-    );
+        if (IsClub == true && Enemyclub.Charge)
+        {
+            return;
+        }
+        else
+        {   Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+
+            transform.rotation = Quaternion.RotateTowards(
+                transform.rotation,
+                targetRotation,
+                rotationSpeed * Time.deltaTime
+            );
+      
+        }
     }
 }

@@ -5,16 +5,16 @@ using UnityEngine;
 public class SpecialFunctions : MonoBehaviour
 {
     
-    public static IEnumerator FreezeFrames(GameObject TestSound)
+    public static IEnumerator FreezeFrames(GameObject TestSound = null)
     {
         Time.timeScale = 0f;
         float pauseEndTime = Time.realtimeSinceStartup + 0.3f;
-        TestSound.SetActive(true);
+       if (TestSound != null) TestSound.SetActive(true);
         while (Time.realtimeSinceStartup < pauseEndTime)
         {
             yield return null; 
         }
-        TestSound.SetActive(false);
+        if (TestSound != null) TestSound.SetActive(false);
         Time.timeScale = 1f;
     }
 }

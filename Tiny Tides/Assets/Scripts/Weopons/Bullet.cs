@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public int attackDamage = 1;
     public float speed = 5;
     public float knockback = 5f;
-
+    public bool IsEnemy = false;
     public Rigidbody2D bullet;
 
     // Update is called once per frame
@@ -28,12 +28,25 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
+        if (IsEnemy == false)
         {
-            EnemyHealth enemy = other.gameObject.GetComponent<EnemyHealth>();
-            Vector2 direction = (other.transform.position - transform.position).normalized;
+            if (other.tag == "Enemy")
+            {
+                EnemyHealth enemy = other.gameObject.GetComponent<EnemyHealth>();
+                Vector2 direction = (other.transform.position - transform.position).normalized;
 
-            enemy.TakeDamage(attackDamage, direction * knockback);
+                enemy.TakeDamage(attackDamage, direction * knockback);
+            }
+        }
+        if (IsEnemy == true) 
+        {
+            if (other.tag == "Player")
+            {
+                PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
+                Vector2 direction = (other.transform.position - transform.position).normalized;
+
+                player.TakeDamage(attackDamage);
+            }
         }
 
         Destroy(gameObject);

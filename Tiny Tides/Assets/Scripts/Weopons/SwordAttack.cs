@@ -37,7 +37,7 @@ public class SwordAttack : MonoBehaviour
     PlayerControls controls;
 
     //Just for testing
-    public GameObject Ching;
+    //public GameObject Ching;
     void Awake()
     {
         instance = this;
@@ -150,7 +150,7 @@ public class SwordAttack : MonoBehaviour
                     }
                     else {
                         Debug.Log("Blocked!");
-                        StartCoroutine(SpecialFunctions.FreezeFrames(Ching));
+                        StartCoroutine(SpecialFunctions.FreezeFrames());
                         enemysword.blocking = false;
                     }
                 }

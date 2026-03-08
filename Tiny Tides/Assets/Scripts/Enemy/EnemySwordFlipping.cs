@@ -6,21 +6,23 @@ public class EnemySwordFlipping : MonoBehaviour
 {
     private Transform player;
     private bool facingRight = false;
-
+    private Transform enemy;
     void Start()
     {
         player = GameObject.Find("Player").transform;
+        enemy = transform.parent.parent;
+    
     }
 
     void Update()
     {
         if (!player) return;
 
-        if (player.position.x > transform.position.x && facingRight)
+        if (enemy.position.x < transform.position.x && facingRight)
         {
             Flip();
         }
-        else if (player.position.x < transform.position.x && !facingRight)
+        else if (enemy.position.x > transform.position.x && !facingRight)
         {
             Flip();
         }
