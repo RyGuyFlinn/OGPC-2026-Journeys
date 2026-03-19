@@ -6,6 +6,8 @@ public class EnterIsland : MonoBehaviour
 {
     WorldGeneration manager = WorldGeneration.Instance;
 
+    public int islandIndex = 1;
+
     private  GameObject islandPort;
     private GameObject player;
     private GameObject playerBoat;
@@ -16,7 +18,7 @@ public class EnterIsland : MonoBehaviour
     {
         player = manager.player;
         playerBoat = manager.playerBoat;
-        islandPort = GameObject.Find("RedMainIsland").transform.GetChild(1).gameObject;
+        islandPort = GameObject.Find("Islands").transform.GetChild(islandIndex).gameObject;
 
         player.SetActive(false);
     }
