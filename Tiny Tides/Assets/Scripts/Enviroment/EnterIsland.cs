@@ -49,6 +49,7 @@ public class EnterIsland : MonoBehaviour
 
                 player.SetActive(true);
                 playerBoat.SetActive(false);
+                PlayerManager.IsOnIsland = true;
 
                 player.transform.position = islandPort.transform.position;
             }

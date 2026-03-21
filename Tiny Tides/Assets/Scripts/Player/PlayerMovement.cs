@@ -8,7 +8,11 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
-
+    public bool DashAbility = false;
+    private bool IsDashing = false;
+    private float TimeDashing = 0f;
+    private bool CanDash = true;
+    private Vector2 LastInput;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,10 +25,36 @@ public class PlayerMovement : MonoBehaviour
 
         //Normalize input to prevent faster diagonal movement
         moveInput.Normalize();
+        if (Input.GetKeyDown(KeyCode.Space) && DashAbility == true && !IsDashing && CanDash)
+        {
+            IsDashing = true;
+            LastInput = moveInput;
+            TimeDashing = 0f;
+        }
+        if (IsDashing)
+        {
+            if (TimeDashing < 0.2f)
+            {
+                rb.velocity = LastInput * speed * 3;
+                TimeDashing += Time.deltaTime;
+            }
+            else
+            {
+                IsDashing = false;
+                StartCoroutine(DashCooldown());
+            }
+        }
     }
 
     void FixedUpdate()
     {
-        rb.velocity = moveInput * speed;
+        if (!IsDashing) rb.velocity = moveInput * speed;
     }
+    private IEnumerator DashCooldown()
+    {
+        CanDash = false;
+        yield return new WaitForSeconds(0.5f);
+        CanDash = true;
+    }
+    
 }

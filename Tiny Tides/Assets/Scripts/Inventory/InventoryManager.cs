@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using TMPro.Examples;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -24,8 +25,8 @@ public class InventoryManager : MonoBehaviour
 
     private GameObject[] slots;
 
-    private SlotClass movingSlot;
-    private SlotClass originalSlot;
+    public SlotClass movingSlot;
+    public SlotClass originalSlot;
     private SlotClass tempSlot;
     bool isMovingItem;
 
@@ -61,9 +62,13 @@ public class InventoryManager : MonoBehaviour
     
     private void Update()
     {
-        ShowItems();
-
-        AbilitiesManager();
+        
+        if (PlayerManager.IsOnIsland)
+        {
+            ShowItems();
+            AbilitiesManager();
+            UpgradesManager();
+        }
 
         if (!isOpen)
         {
@@ -139,6 +144,32 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
+    private void UpgradesManager()
+    {
+        GameObject player = GameObject.Find("Player");
+        
+        if (items[17].GetItem() != null && items[17].GetItem().IsUpgrade == true)
+        {
+            if (items[17].GetItem().itemName == "Dash Upgrade")
+            {
+                player.GetComponent<PlayerMovement>().DashAbility = true;
+            }
+            else player.GetComponent<PlayerMovement>().DashAbility = false;
+            if (items[17].GetItem().itemName == "Health Upgrade")
+            {
+                player.GetComponent<PlayerHealth>().HasExtraHealth = true;
+                
+            }
+            else player.GetComponent<PlayerHealth>().HasExtraHealth = false;
+
+        }
+        else
+            {
+                player.GetComponent<PlayerMovement>().DashAbility = false;
+                player.GetComponent<PlayerHealth>().HasExtraHealth = false;
+            
+            }
+        }
 
     #endregion
 

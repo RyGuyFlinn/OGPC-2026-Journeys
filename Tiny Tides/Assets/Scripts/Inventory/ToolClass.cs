@@ -12,7 +12,8 @@ public class ToolClass : ItemClass
         weopon,
         pickaxe,
         hammer,
-        axe
+        axe,
+        upgrade
     }
 
     public override ItemClass GetItem() { return this; }

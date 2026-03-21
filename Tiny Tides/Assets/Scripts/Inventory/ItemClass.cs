@@ -5,12 +5,14 @@ public abstract class ItemClass : ScriptableObject
 {
     [Header("Item")]
     public string itemName;
+    public string Description;
+    public string Stats;
     public Sprite itemIcon;
     public int maxStack = 1;
 
     public bool isHoldable = false;
     public GameObject holdingObject;
-
+    public bool IsUpgrade = false;
     public abstract ItemClass GetItem();
     public abstract ToolClass GetTool();
     public abstract MiscClass GetMisc();

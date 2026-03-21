@@ -34,6 +34,7 @@ public class ExitIsland : MonoBehaviour
                 Debug.Log("Player exiting island");
                 player.SetActive(false);
                 playerBoat.SetActive(true);
+                PlayerManager.IsOnIsland = false;
             }
         }
     }
