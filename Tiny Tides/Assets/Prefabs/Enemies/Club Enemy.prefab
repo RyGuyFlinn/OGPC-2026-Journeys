@@ -202,6 +202,7 @@ MonoBehaviour:
   pants: {fileID: 3080157183392955158}
   saturation: 0.7
   brightness: 0.7
+  EnemyDifficulty: 2
 --- !u!114 &2973843883382919712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,7 +602,7 @@ GameObject:
   - component: {fileID: 4172421599015662700}
   - component: {fileID: 4584278615315821377}
   - component: {fileID: 3742143733986663523}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Club
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -791,7 +792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 658995699606808027}
   - component: {fileID: 2726217384516199211}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ClubArt
   m_TagString: Untagged
   m_Icon: {fileID: 0}

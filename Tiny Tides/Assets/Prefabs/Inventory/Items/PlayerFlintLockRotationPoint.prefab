@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1994815458860648018}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9155718708447121211}
   - component: {fileID: 8493337300803730138}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FlintLockArt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 1934619559896517518}
   - component: {fileID: 3442574135705011924}
   - component: {fileID: 6977983228225307618}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FlintLock
   m_TagString: Untagged
   m_Icon: {fileID: 0}

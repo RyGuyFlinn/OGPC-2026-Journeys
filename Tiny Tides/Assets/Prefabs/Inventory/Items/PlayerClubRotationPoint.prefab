@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 5278984441683163220}
   - component: {fileID: 4223091185157845537}
   - component: {fileID: 411965967324873767}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Club
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 94192070055517442}
   - component: {fileID: 8579079880252648083}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ClubArt
   m_TagString: Untagged
   m_Icon: {fileID: 0}

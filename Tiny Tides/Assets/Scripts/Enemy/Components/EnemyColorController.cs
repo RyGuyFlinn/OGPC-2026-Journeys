@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyColorController : MonoBehaviour
+public class EnemyCustomization : MonoBehaviour
 {
     public SpriteRenderer shirt;
     public SpriteRenderer pants;
-
+    
     [Range(0f, 1f)] public float saturation = 0.7f;
     [Range(0f, 1f)] public float brightness = 0.7f;
-
+    [Header("How Hard The Enemy Is")]
+    public int EnemyDifficulty = 1;
     float shirtHue;
     float pantsHue;
 

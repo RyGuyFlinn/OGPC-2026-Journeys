@@ -202,6 +202,7 @@ MonoBehaviour:
   pants: {fileID: 5424546896321421623}
   saturation: 0.7
   brightness: 0.7
+  EnemyDifficulty: 3
 --- !u!114 &6193712840271550659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,7 +434,7 @@ GameObject:
   - component: {fileID: 4286633057325906027}
   - component: {fileID: 5135312967658699370}
   - component: {fileID: 5557339519407362865}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FlintLock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,7 +623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 272744164737383820}
   - component: {fileID: 1669359765350795301}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FlintLockArt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,6 +746,7 @@ MonoBehaviour:
   enemy: {fileID: 278359756824666995}
   player: {fileID: 0}
   rotationSpeed: 90
+  IsClub: 0
 --- !u!1 &4644470923439043436
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1964156352082819046}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

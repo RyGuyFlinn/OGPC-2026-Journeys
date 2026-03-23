@@ -102,7 +102,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1536
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -137,6 +137,7 @@ MonoBehaviour:
   attackDamage: 1
   speed: 15
   knockback: 5
+  IsEnemy: 0
   bullet: {fileID: 5110373973848422144}
 --- !u!50 &5110373973848422144
 Rigidbody2D:

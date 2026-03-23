@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5044955346019366902}
   - component: {fileID: 4475485770740206149}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SwordArt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5226069165169487661}
   - component: {fileID: 3250415286653192092}
   - component: {fileID: 6371265227776205040}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerSwordRotationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 8383543258795312412}
   - component: {fileID: 9091304358610384073}
   - component: {fileID: 293156117089475130}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,6 @@ MonoBehaviour:
   animator: {fileID: 8383543258795312412}
   attacking: 0
   blocking: 0
-  Ching: {fileID: 0}
 --- !u!95 &8383543258795312412
 Animator:
   serializedVersion: 5
