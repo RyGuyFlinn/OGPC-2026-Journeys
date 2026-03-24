@@ -82,7 +82,7 @@ public class WorldGeneration : MonoBehaviour
         {
             //Get Random Biome Position On circumfrance of the World
             biomeAngle = (BaseAngle + Mathf.Deg2Rad * Random.Range(-25, 25)) % (2 * Mathf.PI);
-            SpawnPos = new Vector2(Mathf.Cos(biomeAngle), Mathf.Sin(biomeAngle)) * 50;
+            SpawnPos = new Vector2(Mathf.Cos(biomeAngle), Mathf.Sin(biomeAngle)) * 100;
 
             //Spawn in a random biome at the random position
             int RandomBiomeIndex = Random.Range(0, Biomes.Count);
@@ -101,7 +101,7 @@ public class WorldGeneration : MonoBehaviour
             //Spawn in the main islands into the designated biomes
             if (Biome.CompareTag("RedBiome")) {
                 float biomeRadius = RandomBiomeSize * 0.5f;
-                float worldRadius = 45;
+                float worldRadius = 90;
 
                 Vector2 centerPosition = transform.localPosition;
 
@@ -127,7 +127,7 @@ public class WorldGeneration : MonoBehaviour
             if (Biome.CompareTag("PurpleBiome"))
             {
                 float biomeRadius = RandomBiomeSize * 0.5f;
-                float worldRadius = 45;
+                float worldRadius = 90;
 
                 Vector2 centerPosition = transform.localPosition;
 
@@ -153,7 +153,7 @@ public class WorldGeneration : MonoBehaviour
             if (Biome.CompareTag("GreenBiome"))
             {
                 float biomeRadius = RandomBiomeSize * 0.5f;
-                float worldRadius = 45;
+                float worldRadius = 90;
 
                 Vector2 centerPosition = transform.localPosition;
 
@@ -179,7 +179,7 @@ public class WorldGeneration : MonoBehaviour
             if (Biome.CompareTag("OrangeBiome"))
             {
                 float biomeRadius = RandomBiomeSize * 0.5f;
-                float worldRadius = 45;
+                float worldRadius = 90;
 
                 Vector2 centerPosition = transform.localPosition;
 
@@ -205,7 +205,7 @@ public class WorldGeneration : MonoBehaviour
             if (Biome.CompareTag("BrownBiome"))
             {
                 float biomeRadius = RandomBiomeSize * 0.5f;
-                float worldRadius = 45;
+                float worldRadius = 90;
 
                 Vector2 centerPosition = transform.localPosition;
 
@@ -239,7 +239,7 @@ public class WorldGeneration : MonoBehaviour
         for (int i = 0; i < Random.Range(MinIslandCount, MaxIslandCount); i++)
         {
             float biomeRadius = RandomBiomeSize * 0.5f;
-            float worldRadius = 45f;
+            float worldRadius = 90f;
 
             Vector2 centerPosition = transform.localPosition;
             Vector2 worldPos;
