@@ -91,13 +91,14 @@ public class BoatMovement : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(0f, 0.05f));
 
+      //      GameObject explosion = Instantiate(explosionPrefab, cannon.position, Quaternion.Euler(cannon.rotation.x, cannon.rotation.y, cannon.rotation.z));
             GameObject explosion = Instantiate(explosionPrefab, cannon.position, cannon.rotation);
 
             GameObject ball = Instantiate(cannonballPrefab, cannon.position, cannon.rotation);
             Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
             ballRb.velocity = cannon.right * cannonballSpeed;
 
-            FireSFX();
+            if (audioSource != null && fireSFX != null) FireSFX();
 
             yield return new WaitForSeconds(0.1f);
         }

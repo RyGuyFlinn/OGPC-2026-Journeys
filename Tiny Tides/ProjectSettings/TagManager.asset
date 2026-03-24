@@ -11,6 +11,8 @@ TagManager:
   - OrangeBiome
   - BrownBiome
   - PlayerBoat
+  - CannonBall
+  - EnemyCannonBall
   layers:
   - Default
   - TransparentFX

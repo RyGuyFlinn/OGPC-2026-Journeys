@@ -20,14 +20,22 @@ public class EnemyBoatHealth : MonoBehaviour
     {
         if (health <= 0)
         {
-            FireSFX();
+            if (audioSource != null && fireSFX != null) FireSFX();
             Destroy(gameObject);
         }
+
     }
 
     void FireSFX()
     {
         audioSource.pitch = 1f + Random.Range(-0.3f, 0.3f);
         audioSource.PlayOneShot(fireSFX);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("CannonBall"))
+        {
+            health -= 10;
+        }
     }
 }

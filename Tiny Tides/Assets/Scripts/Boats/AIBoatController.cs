@@ -68,6 +68,7 @@ public class AIBoatMovement : MonoBehaviour
 
     void PickRandomTarget()
     {
+        /*
         Collider2D[] boats = Physics2D.OverlapCircleAll(transform.position, 100f, boatLayer);
         if (boats.Length == 0) return;
 
@@ -79,6 +80,8 @@ public class AIBoatMovement : MonoBehaviour
         if (otherBoats.Count == 0) return;
 
         currentTarget = otherBoats[Random.Range(0, otherBoats.Count)].transform;
+        */
+        currentTarget = GameObject.FindWithTag("PlayerBoat").transform;
     }
 
     void Update()
@@ -268,7 +271,7 @@ public class AIBoatMovement : MonoBehaviour
             Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
             ballRb.velocity = cannon.right * cannonballSpeed;
 
-            FireSFX();
+            if (audioSource != null && fireSFX != null) FireSFX();
 
             yield return new WaitForSeconds(0.1f);
         }
