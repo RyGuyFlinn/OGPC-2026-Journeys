@@ -12,6 +12,6 @@ public class explosion : MonoBehaviour
     private IEnumerator Delay()
     {
         yield return new WaitForSeconds(0.45f);
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

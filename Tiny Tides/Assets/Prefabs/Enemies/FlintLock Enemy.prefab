@@ -231,6 +231,10 @@ MonoBehaviour:
   target: {fileID: 0}
   agent: {fileID: 0}
   rb2: {fileID: 2518356037735215852}
+  IsChasing: 0
+  Obstacles:
+    serializedVersion: 2
+    m_Bits: 144
 --- !u!195 &6193801705111714024
 NavMeshAgent:
   m_ObjectHideFlags: 0

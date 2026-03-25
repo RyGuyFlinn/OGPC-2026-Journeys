@@ -9,7 +9,7 @@ public class EnemyBoatHealth : MonoBehaviour
 
     [Header("Audio Settings")]
     public AudioSource audioSource;
-    public AudioClip fireSFX;
+    public AudioClip DeathSFX;
 
     void Start()
     {
@@ -20,17 +20,13 @@ public class EnemyBoatHealth : MonoBehaviour
     {
         if (health <= 0)
         {
-            if (audioSource != null && fireSFX != null) FireSFX();
+            SoundFXManager.Instance.PlaySoundFXClip(DeathSFX, transform, 1f, 1f);
             Destroy(gameObject);
         }
 
     }
 
-    void FireSFX()
-    {
-        audioSource.pitch = 1f + Random.Range(-0.3f, 0.3f);
-        audioSource.PlayOneShot(fireSFX);
-    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("CannonBall"))

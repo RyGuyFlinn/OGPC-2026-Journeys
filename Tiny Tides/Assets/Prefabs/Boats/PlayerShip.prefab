@@ -247,7 +247,7 @@ MonoBehaviour:
   cannonballSpeed: 7
   fireCooldown: 0.5
   audioSource: {fileID: 0}
-  fireSFX: {fileID: 0}
+  fireSFX: {fileID: 8300000, guid: 6677df89588f30c45b38cc971cb8ed56, type: 3}
 --- !u!50 &6798415910567704385
 Rigidbody2D:
   serializedVersion: 4

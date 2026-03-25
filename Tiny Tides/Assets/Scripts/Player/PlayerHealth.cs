@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public bool HasExtraHealth = false;
     public GameObject ExtraHealth;
     private bool lockhealthgain = false;
+    public AudioClip hurtsound;
     void Start()
     {
         currentHealth = maxHealth;
@@ -42,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        SoundFXManager.Instance.PlaySoundFXClip(hurtsound, transform, 1f, 1f);
         Debug.Log("Health: " + currentHealth.ToString());
         if (currentHealth <= 0)
         {

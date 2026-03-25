@@ -49,10 +49,7 @@ public class FlintLockAttack : MonoBehaviour
         attacking = true;
 
         // Play SFX or animation if you have them
-        if (audioSource && shootSound)
-            audioSource.pitch = 1f + Random.Range(-0.3f, 0.3f);
-            audioSource.PlayOneShot(shootSound);
-            audioSource.pitch = 1f;
+        SoundFXManager.Instance.PlaySoundFXClip(shootSound, transform, 1f, 1f);
 
         if (animator) animator.SetTrigger("Shoot");
         

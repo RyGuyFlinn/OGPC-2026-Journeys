@@ -231,7 +231,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4082162405098814204, guid: 41838909f81d3d84a894e74e6b4c4441, type: 3}
   muzzle: {fileID: 97933398099468463}
   audioSource: {fileID: 6977983228225307618}
-  shootSound: {fileID: 8300000, guid: c1e38162432df2348962d0b40f6fbfc0, type: 3}
+  shootSound: {fileID: 8300000, guid: d7e15b0aabd41a042bacaa0231fa3f6f, type: 3}
   attacking: 0
   blocking: 0
 --- !u!95 &1934619559896517518

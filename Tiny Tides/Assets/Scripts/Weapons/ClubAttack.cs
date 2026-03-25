@@ -31,7 +31,7 @@ public class ClubAttack : MonoBehaviour
 
     PlayerControls controls;
 
-    public GameObject Ching;
+   // public GameObject Ching;
 
     void Awake()
     {
@@ -105,7 +105,7 @@ public class ClubAttack : MonoBehaviour
                     }
                     else {
                         Debug.Log("Blocked!");
-                        StartCoroutine(SpecialFunctions.FreezeFrames(Ching));
+                       // StartCoroutine(SpecialFunctions.FreezeFrames(Ching));
                         enemysword.blocking = false;
                     }
                 }

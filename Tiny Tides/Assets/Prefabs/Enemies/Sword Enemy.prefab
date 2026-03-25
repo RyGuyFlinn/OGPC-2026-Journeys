@@ -315,6 +315,10 @@ MonoBehaviour:
   target: {fileID: 0}
   agent: {fileID: 0}
   rb2: {fileID: 3404402496543269572}
+  IsChasing: 0
+  Obstacles:
+    serializedVersion: 2
+    m_Bits: 144
 --- !u!195 &6771022169127689040
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -898,6 +902,7 @@ MonoBehaviour:
   blockPercentage: 0.1
   swordHitbox: {fileID: 2944777602587560797}
   animator: {fileID: 8832101201933538754}
+  blockSound: {fileID: 8300000, guid: a504d4e28c8d24a4bb19f3a4eccbf8cb, type: 3}
   blocking: 0
   player: {fileID: 0}
   minDistance: 3

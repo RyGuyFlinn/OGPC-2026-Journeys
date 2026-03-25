@@ -22,7 +22,8 @@ public class SwordAttack : MonoBehaviour
     public Collider2D swordHitbox;
     public Animator animator;
     //public AudioSource audioSource;
-    //public AudioClip swingSound;
+    public AudioClip swingSound;
+    public AudioClip swordBlock;
     //public AudioClip blockSound;
 
     public bool attacking = false;
@@ -96,7 +97,7 @@ public class SwordAttack : MonoBehaviour
         //    audioSource.PlayOneShot(swingSound);
 
         if (animator) animator.SetTrigger("Attack");
-        
+        SoundFXManager.Instance.PlaySoundFXClip(swingSound, transform, 1f, 2f);
         // Enable sword hitbox for a short time
         swordHitbox.enabled = true;
         Debug.Log("Damage");
@@ -150,7 +151,7 @@ public class SwordAttack : MonoBehaviour
                     }
                     else {
                         Debug.Log("Blocked!");
-                        StartCoroutine(SpecialFunctions.FreezeFrames());
+                        StartCoroutine(SpecialFunctions.FreezeFrames(swordBlock, transform));
                         enemysword.blocking = false;
                     }
                 }

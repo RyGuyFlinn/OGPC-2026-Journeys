@@ -7,8 +7,11 @@ public class EnemySpawnPoint : MonoBehaviour
     public Transform EnemySpawnLocation;
     public GameObject[] Enemies;
     public float Radius;
+    public float TriggerZoneArea = 2;
     [Header("Between 5-10 is probably good")]
     public int Difficulty = 5;
+    private bool Active = true;
+    private BoxCollider2D boxcollider;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +22,27 @@ public class EnemySpawnPoint : MonoBehaviour
     void Update()
     {
         
+        if (PlayerManager.IsOnIsland == false)
+        {
+            Active = true;
+        }
+    }
+    private void OnValidate()
+    {
+        if (boxcollider == null)
+            boxcollider = GetComponent<BoxCollider2D>();
+
+        if (boxcollider != null)
+        {
+            boxcollider.size = new Vector2(16f * TriggerZoneArea, 9f * TriggerZoneArea);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && Active == true)
         {
             Debug.Log("Player Collided");
+            Active = false;
             SpawnEnemies();
         }
     }

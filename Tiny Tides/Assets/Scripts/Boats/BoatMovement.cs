@@ -98,7 +98,8 @@ public class BoatMovement : MonoBehaviour
             Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
             ballRb.velocity = cannon.right * cannonballSpeed;
 
-            if (audioSource != null && fireSFX != null) FireSFX();
+            SoundFXManager.Instance.PlaySoundFXClip(fireSFX, transform, 1f, 1f);
+            //if (audioSource != null && fireSFX != null) FireSFX();
 
             yield return new WaitForSeconds(0.1f);
         }
@@ -109,10 +110,11 @@ public class BoatMovement : MonoBehaviour
         else
             lastFireTimeLeft = Time.time;
     }
-
+    /*
     void FireSFX()
     {
         audioSource.pitch = 1f + Random.Range(-.7f, -.3f);
         audioSource.PlayOneShot(fireSFX);
     }
+    */
 }

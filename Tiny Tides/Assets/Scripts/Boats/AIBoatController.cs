@@ -271,7 +271,7 @@ public class AIBoatMovement : MonoBehaviour
             Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
             ballRb.velocity = cannon.right * cannonballSpeed;
 
-            if (audioSource != null && fireSFX != null) FireSFX();
+            SoundFXManager.Instance.PlaySoundFXClip(fireSFX, transform, 2f, 1f);
 
             yield return new WaitForSeconds(0.1f);
         }

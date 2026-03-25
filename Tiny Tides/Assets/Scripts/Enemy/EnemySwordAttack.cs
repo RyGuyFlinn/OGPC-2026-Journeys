@@ -24,7 +24,7 @@ public class EnemySwordAttack : MonoBehaviour
     public Animator animator;
     //public AudioSource audioSource;
     //public AudioClip swingSound;
-    //public AudioClip blockSound;
+    public AudioClip blockSound;
 
     private bool attacking = false;
     private bool playerAttacking = false;
@@ -174,7 +174,7 @@ public class EnemySwordAttack : MonoBehaviour
                     }
                     if (playerBlocking){
                         
-                        StartCoroutine(SpecialFunctions.FreezeFrames());
+                        StartCoroutine(SpecialFunctions.FreezeFrames(blockSound, transform));
                     }
                 }
             }

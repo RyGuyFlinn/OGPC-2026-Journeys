@@ -69,10 +69,14 @@ public class WorldGeneration : MonoBehaviour
 
     void Update()
     {
+        /*
+         * Don't want the demo people accidently pressing this :)
+         *
         if (Input.GetKeyDown(KeyCode.E))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        */
     }    
 
     private void SpawnBiomes()

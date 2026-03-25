@@ -287,7 +287,7 @@ MonoBehaviour:
   wanderRadius: 3
   wanderSpeed: 2
   audioSource: {fileID: 0}
-  fireSFX: {fileID: 0}
+  fireSFX: {fileID: 8300000, guid: c1d256922ccc67542ab6ca473b43f955, type: 3}
   avoidanceRadius: 2
   avoidanceStrength: 3
   currentState: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
   MaxHealth: 100
   health: 0
   audioSource: {fileID: 0}
-  fireSFX: {fileID: 0}
+  DeathSFX: {fileID: 8300000, guid: 6fa45329cfb97a4429525e086ea6bc5b, type: 3}
 --- !u!1 &7080764135472281878
 GameObject:
   m_ObjectHideFlags: 0

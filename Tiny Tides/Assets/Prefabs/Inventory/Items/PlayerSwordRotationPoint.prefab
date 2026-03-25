@@ -203,6 +203,8 @@ MonoBehaviour:
   blockReduction: 0.5
   swordHitbox: {fileID: 293156117089475130}
   animator: {fileID: 8383543258795312412}
+  swingSound: {fileID: 8300000, guid: 0e5af9b138c3850428a36a64be09af62, type: 3}
+  swordBlock: {fileID: 8300000, guid: a504d4e28c8d24a4bb19f3a4eccbf8cb, type: 3}
   attacking: 0
   blocking: 0
 --- !u!95 &8383543258795312412

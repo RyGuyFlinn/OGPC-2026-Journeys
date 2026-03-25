@@ -2377,6 +2377,7 @@ MonoBehaviour:
   NoHealth: {fileID: -1618043796, guid: e9416f5f0135d0b40b8f5e6fc2f3e49a, type: 3}
   HasExtraHealth: 0
   ExtraHealth: {fileID: 2304270072525566234}
+  hurtsound: {fileID: 8300000, guid: 9d67af56e11606a40a20e700e6838dbb, type: 3}
 --- !u!1 &6019855972049128845
 GameObject:
   m_ObjectHideFlags: 0
