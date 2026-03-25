@@ -22505,6 +22505,7 @@ MonoBehaviour:
   - {fileID: 6796945382322338947, guid: 36af3b3f7f27e5841aa8f5be23a571d4, type: 3}
   - {fileID: 6796945382322338947, guid: 3e72fb1ca3eb80345a9513948a02787c, type: 3}
   - {fileID: 6796945382322338947, guid: 5da5dbfa05d920f488d42bc24fb95d9b, type: 3}
+  - {fileID: 6796945382322338947, guid: 7c7af56ac59e6744db1ae0ff341e3c7d, type: 3}
   RedIslands:
   - {fileID: 6796945382322338947, guid: eb51f3a4463f82f4c87262f0b0dbd162, type: 3}
   OrangeIslands:
