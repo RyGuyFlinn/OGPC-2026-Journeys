@@ -22,7 +22,8 @@ public class EnterIsland : MonoBehaviour
         islandPort = GameObject.Find("Islands").transform.GetChild(islandIndex).gameObject;
 
         buttonPrompt.SetActive(false);
-        player.SetActive(false);
+        playerBoat.SetActive(false);
+        PlayerManager.IsOnIsland = true;
     }
 
     void OnTriggerEnter2D(Collider2D other)

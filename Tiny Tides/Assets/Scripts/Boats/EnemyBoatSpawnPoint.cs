@@ -9,6 +9,7 @@ public class EnemyBoatSpawnPoint : MonoBehaviour
     public float Radius;
     [Header("Between 1-3 is probably good")]
     public int Difficulty = 2;
+    private bool active = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +23,11 @@ public class EnemyBoatSpawnPoint : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerBoat"))
+        if (collision.CompareTag("PlayerBoat") && active)
         {
             Debug.Log("Player Collided");
             SpawnEnemies();
+            active = false;
         }
     }
     void OnDrawGizmosSelected()
