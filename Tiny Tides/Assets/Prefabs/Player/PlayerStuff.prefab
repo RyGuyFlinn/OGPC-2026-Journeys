@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7852287316462602743
 RectTransform:
   m_ObjectHideFlags: 0
@@ -639,7 +639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &790974435647713371
 RectTransform:
   m_ObjectHideFlags: 0
@@ -654,10 +654,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 7182125377858025665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 510, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4309899591644273498
 CanvasRenderer:
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 467822677032577688}
   - component: {fileID: 8875292376688030185}
   m_Layer: 5
-  m_Name: Health 1 (2)
+  m_Name: Skull (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1454,7 +1454,7 @@ RectTransform:
   m_Father: {fileID: 4473821248966274637}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1859,7 +1859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1100710470120524168
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1966,7 +1966,7 @@ RectTransform:
   m_Father: {fileID: 8208535404230757139}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2250,7 +2250,7 @@ Transform:
   m_GameObject: {fileID: 5663001219300222689}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 689, y: 11, z: -4.6786566}
+  m_LocalPosition: {x: 729.87, y: 4.91, z: -4.6786566}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2698,7 +2698,7 @@ GameObject:
   - component: {fileID: 3930319720992356928}
   - component: {fileID: 938221639020551603}
   m_Layer: 5
-  m_Name: Health 1 (3)
+  m_Name: Skull (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2847,7 +2847,7 @@ RectTransform:
   m_Father: {fileID: 8211363152911641244}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2901,7 +2901,7 @@ GameObject:
   - component: {fileID: 6566687005170272673}
   - component: {fileID: 24358962273399259}
   m_Layer: 5
-  m_Name: Health 1 (1)
+  m_Name: Skull (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3311,7 +3311,7 @@ GameObject:
   - component: {fileID: 7182125377858025665}
   - component: {fileID: 7276055861833162744}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PlayerHealthDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3338,7 +3338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -629, y: 478}
+  m_AnchoredPosition: {x: -626, y: 448}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7276055861833162744
@@ -3785,7 +3785,7 @@ GameObject:
   - component: {fileID: 8137611514407184557}
   - component: {fileID: 6309443025499869637}
   m_Layer: 5
-  m_Name: Health 1
+  m_Name: Skull (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3861,7 +3861,7 @@ GameObject:
   - component: {fileID: 2569325739421977558}
   - component: {fileID: 6669065481152312757}
   m_Layer: 5
-  m_Name: Weopons
+  m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3986,7 +3986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4804777737462082310
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4345,7 +4345,7 @@ RectTransform:
   m_Father: {fileID: 614825084601932583}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

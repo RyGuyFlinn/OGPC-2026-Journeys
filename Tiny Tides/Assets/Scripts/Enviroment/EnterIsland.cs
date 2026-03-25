@@ -11,6 +11,7 @@ public class EnterIsland : MonoBehaviour
     private  GameObject islandPort;
     private GameObject player;
     private GameObject playerBoat;
+    public GameObject buttonPrompt;
 
     private bool PlayerInRange = false;
 
@@ -20,6 +21,7 @@ public class EnterIsland : MonoBehaviour
         playerBoat = manager.playerBoat;
         islandPort = GameObject.Find("Islands").transform.GetChild(islandIndex).gameObject;
 
+        buttonPrompt.SetActive(false);
         player.SetActive(false);
     }
 
@@ -28,6 +30,7 @@ public class EnterIsland : MonoBehaviour
         if (other.tag == "PlayerBoat")
         {
             PlayerInRange = true;
+            buttonPrompt.SetActive(true);
         }
     }
 
@@ -36,6 +39,7 @@ public class EnterIsland : MonoBehaviour
         if (other.tag == "PlayerBoat")
         {
             PlayerInRange = false;
+            buttonPrompt.SetActive(false);
         }
     }
 
