@@ -62,7 +62,7 @@ public class InventoryManager : MonoBehaviour
     
     private void Update()
     {
-        
+
         if (PlayerManager.IsOnIsland)
         {
             ShowItems();
@@ -345,13 +345,13 @@ public class InventoryManager : MonoBehaviour
     #region Turn On/Off
     public void turnOff()
     {
-        inventoryPanel.SetActive(true);
+        inventoryPanel.SetActive(false);
         isOpen = false;
     }
 
     public void turnOn()
     {
-        inventoryPanel.SetActive(false);
+        inventoryPanel.SetActive(true);
         isOpen = true;
     }
     #endregion Turn On/Off

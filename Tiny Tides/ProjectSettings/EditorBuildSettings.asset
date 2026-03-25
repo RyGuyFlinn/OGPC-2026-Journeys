@@ -6,24 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/DemoScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMenu.unity
+    guid: cb0485af28e13d744b2f78b1e3b8eaf6
   - enabled: 1
     path: Assets/Scenes/WorldGeneration.unity
     guid: 52a63afe8b6234c4f8dbb896cea25879
   - enabled: 1
-    path: Assets/Prefabs/Enviroment/Islands/Red/RedMainIslandScene.unity
-    guid: 0bac815495f51ca47986f8c12fb9f340
-  - enabled: 1
-    path: Assets/Prefabs/Enviroment/Islands/Purple/PurpleMainIslandScene.unity
-    guid: 0b81a12feecfbe044817db847af7c7de
-  - enabled: 1
-    path: Assets/Prefabs/Enviroment/Islands/Orange/OrangeMainIslandScene.unity
-    guid: fd747c423e2caa546bdadcf20b231643
-  - enabled: 1
-    path: Assets/Prefabs/Enviroment/Islands/Green/GreenMainIslandScene.unity
-    guid: ee775faf013ccb24c9bcef9a97de7413
-  - enabled: 1
-    path: Assets/Prefabs/Enviroment/Islands/Brown/BrownMainIslandScene.unity
-    guid: 450b6c4cd0dbe194c9d11d73761258eb
+    path: Assets/Scenes/DemoScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
