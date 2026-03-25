@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e7dc4daaadd04aa429c59fcfad7845bd
+guid: 1dd5886e6c211924ba021da961a7a440
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 4
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Islands (1)_0
+      name: Enemy Hats_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
-        width: 64
-        height: 64
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2294fba6b293074680c6aa2383b96e8
-      internalID: 1137424025
+      spriteID: e33d28285593ae048839d8cefa2377df
+      internalID: -1676932484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Islands (1)_1
+      name: Enemy Hats_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
-        height: 64
+        x: 16
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70077da15b2546d4b86ab6c1b41ce597
-      internalID: -1069207118
+      spriteID: 68b15920ae7e20342adfefa333902773
+      internalID: 295410381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Islands (1)_2
+      name: Enemy Hats_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
-        height: 64
+        x: 32
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10a49e6d4b406284f8028b6b2b9c7124
-      internalID: -610637744
+      spriteID: 5e863c5a19cb2534da143d932ba95cbb
+      internalID: 34723979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Islands (1)_3
+      name: Enemy Hats_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 64
+        x: 48
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,125 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fab1184c0c933e42a2972b5462996f5
-      internalID: -611296575
+      spriteID: c563a48593ff83541a1ddcfa44c32826
+      internalID: 356470708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Islands (1)_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 44cc1b4105dfaa448a3fc362313e77cf
-      internalID: 1051094879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Islands (1)_5
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70ca51b8449624a44a75e92c73d3a8a4
-      internalID: 347027068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Islands (1)_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e95ec98b82e2e7f4eb42e75130419e76
-      internalID: -1166347573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Islands (1)_7
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8635a92b4ec777b4c9847788c6108789
-      internalID: -1713385780
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Islands (1)_8
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b80a7d762b5a9f4186300f57d4161d2
-      internalID: 482870737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Islands (1)_9
+      name: Enemy Hats_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcf2544e41b103640972de00a762b00e
-      internalID: 1934900741
+      spriteID: 094d7bb97d000fe45b2471fe2b3bf24c
+      internalID: -1139920732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Islands (1)_10
+      name: Enemy Hats_5
       rect:
         serializedVersion: 2
-        x: 64
+        x: 16
         y: 0
-        width: 64
-        height: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,8 +216,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5198b60fc795d247ac060007c9cf6d3
-      internalID: 1878875714
+      spriteID: a8c93136f642de749b061795c45d115c
+      internalID: 999263932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Hats_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c3590505ce1c74588e2989bcabd37a
+      internalID: -207827320
       vertices: []
       indices: 
       edges: []
@@ -338,17 +254,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Islands (1)_0: 1137424025
-      Islands (1)_1: -1069207118
-      Islands (1)_10: 1878875714
-      Islands (1)_2: -610637744
-      Islands (1)_3: -611296575
-      Islands (1)_4: 1051094879
-      Islands (1)_5: 347027068
-      Islands (1)_6: -1166347573
-      Islands (1)_7: -1713385780
-      Islands (1)_8: 482870737
-      Islands (1)_9: 1934900741
+      Enemy Hats_0: -1676932484
+      Enemy Hats_1: 295410381
+      Enemy Hats_2: 34723979
+      Enemy Hats_3: 356470708
+      Enemy Hats_4: -1139920732
+      Enemy Hats_5: 999263932
+      Enemy Hats_6: -207827320
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

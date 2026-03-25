@@ -38,12 +38,14 @@ public class WorldGeneration : MonoBehaviour
     public LayerMask IslandLayer;
 
     [Space]
+    public GameObject[] BasicIslands;
     public GameObject[] RedIslands;
     public GameObject[] OrangeIslands;
     public GameObject[] GreenIslands;
     public GameObject[] PurpleIslands;
     public GameObject[] BrownIslands;
 
+    [Space]
     public List<GameObject> islands;
 
     [Header("Player")]
@@ -112,7 +114,7 @@ public class WorldGeneration : MonoBehaviour
                 Vector2 localOffset = Random.insideUnitCircle * biomeRadius;
                 Vector2 worldPos = (Vector2)Biome.transform.position + localOffset;
 
-                float distance = Vector3.Distance(worldPos, centerPosition); //distance from ~green object~ to *black circle*
+                float distance = Vector3.Distance(worldPos, centerPosition); //distance from potential island to the center of the map
 
                 if (distance > worldRadius) //If the distance is less than the radius, it is already within the circle.
                 {

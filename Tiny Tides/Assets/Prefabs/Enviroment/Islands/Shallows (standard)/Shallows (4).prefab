@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d6abd1e1c59ad4f9ca87d4dbeefec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  islandIndex: 1
+  islandIndex: 4
   buttonPrompt: {fileID: 887398388860008461}
 --- !u!1 &6796945382322338947
 GameObject:
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 9203282291609154283}
   - component: {fileID: -538488689662456372}
   m_Layer: 8
-  m_Name: Shallows (1)
+  m_Name: Shallows (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -243,7 +243,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 727868691, guid: 94b1a4f9d4cfa3740bd02c9037e5b813, type: 3}
+  m_Sprite: {fileID: 1124333189, guid: 94b1a4f9d4cfa3740bd02c9037e5b813, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -314,7 +314,7 @@ Transform:
   m_GameObject: {fileID: 7317876083868664594}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: -10.39, y: -1.77, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
