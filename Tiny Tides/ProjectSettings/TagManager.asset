@@ -13,6 +13,7 @@ TagManager:
   - PlayerBoat
   - CannonBall
   - EnemyCannonBall
+  - NoBulletCollisions
   layers:
   - Default
   - TransparentFX

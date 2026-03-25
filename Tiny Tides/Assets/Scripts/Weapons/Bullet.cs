@@ -49,6 +49,9 @@ public class Bullet : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        if (other.tag != "NoBulletCollisions")
+        {
+            Destroy(gameObject);
+        }
     }
 }
