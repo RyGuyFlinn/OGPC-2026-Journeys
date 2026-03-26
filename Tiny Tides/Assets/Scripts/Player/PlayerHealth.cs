@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -54,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         Debug.Log("Player Die");
+        SceneManager.LoadScene("YouDied");
     }
     public void UpdateHealthDisplay()
     {
