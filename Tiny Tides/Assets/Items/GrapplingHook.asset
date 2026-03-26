@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: GrapplingHook
   m_EditorClassIdentifier: 
   itemName: Grappling Hook
+  Description: 
+  Stats: 
   itemIcon: {fileID: 504245810, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
+  isHoldable: 0
+  holdingObject: {fileID: 0}
+  IsUpgrade: 0
+  GroundObject: {fileID: 156197224432346581, guid: fcc40d88bd4dd934e94b193f14113393, type: 3}
   toolType: 0

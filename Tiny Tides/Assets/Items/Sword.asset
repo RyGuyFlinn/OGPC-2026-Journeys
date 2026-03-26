@@ -20,4 +20,5 @@ MonoBehaviour:
   isHoldable: 1
   holdingObject: {fileID: 1863929597107932868, guid: 60672aab7479cd34fa4ced485e6d6d4f, type: 3}
   IsUpgrade: 0
+  GroundObject: {fileID: 897228731422170303, guid: 2f48ef207676dfa4586baec0c923db6b, type: 3}
   toolType: 0

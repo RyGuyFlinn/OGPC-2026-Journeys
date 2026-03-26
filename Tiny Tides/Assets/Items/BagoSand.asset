@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: BagoSand
   m_EditorClassIdentifier: 
   itemName: Bag o Sand
+  Description: 
+  Stats: 
   itemIcon: {fileID: -104619447, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
+  isHoldable: 0
+  holdingObject: {fileID: 0}
+  IsUpgrade: 0
+  GroundObject: {fileID: 3666456115412096686, guid: c3f1fb795c531f040b8b9f0316708b6c, type: 3}
   toolType: 0

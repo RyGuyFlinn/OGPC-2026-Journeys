@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: HandHook
   m_EditorClassIdentifier: 
   itemName: Hand Hook
+  Description: 
+  Stats: 
   itemIcon: {fileID: -680067271, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
+  isHoldable: 0
+  holdingObject: {fileID: 0}
+  IsUpgrade: 0
+  GroundObject: {fileID: 8526720076576523849, guid: f46e077567179c440960dfa0bc87caab, type: 3}
   toolType: 0

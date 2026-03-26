@@ -13,6 +13,8 @@ public abstract class ItemClass : ScriptableObject
     public bool isHoldable = false;
     public GameObject holdingObject;
     public bool IsUpgrade = false;
+    public GameObject GroundObject;
+
     public abstract ItemClass GetItem();
     public abstract ToolClass GetTool();
     public abstract MiscClass GetMisc();

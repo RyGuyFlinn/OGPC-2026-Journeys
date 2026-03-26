@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Coconut
   m_EditorClassIdentifier: 
   itemName: Coconut
+  Description: 
+  Stats: 
   itemIcon: {fileID: 1039971368, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
+  isHoldable: 0
+  holdingObject: {fileID: 0}
+  IsUpgrade: 0
+  GroundObject: {fileID: 4916084659589653156, guid: c3ca3ad68307b4d4fb5972461cc28add, type: 3}
   toolType: 0

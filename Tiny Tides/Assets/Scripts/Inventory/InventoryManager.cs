@@ -26,6 +26,7 @@ public class InventoryManager : MonoBehaviour
     private GameObject[] slots;
 
     public SlotClass movingSlot;
+    public SlotClass lastSelectedItem;
     public SlotClass originalSlot;
     private SlotClass tempSlot;
     bool isMovingItem;
@@ -57,7 +58,7 @@ public class InventoryManager : MonoBehaviour
         Add(itemToAdd, 1);
         Remove(itemToRemove);
 
-        turnOff();
+        turnOn();
     }
     
     private void Update()
@@ -256,6 +257,16 @@ public class InventoryManager : MonoBehaviour
         return true;
     }
 
+    public void DropItem()
+    {
+        GameObject ObjectToSpawn = lastSelectedItem.GetItem().GroundObject;
+        GameObject player = GameObject.Find("Player");
+
+        Instantiate(ObjectToSpawn, player.transform.position, ObjectToSpawn.transform.rotation);
+
+        Remove(lastSelectedItem.GetItem());
+    }
+
     public SlotClass Contains(ItemClass item)
     {
         for (int i = 0; i < items.Length; i++)
@@ -276,6 +287,7 @@ public class InventoryManager : MonoBehaviour
             return false;
 
         movingSlot = new SlotClass(originalSlot);
+        lastSelectedItem = new SlotClass(movingSlot);
         originalSlot.Clear();
         isMovingItem = true;
 
@@ -345,13 +357,13 @@ public class InventoryManager : MonoBehaviour
     #region Turn On/Off
     public void turnOff()
     {
-        inventoryPanel.SetActive(false);
+        inventoryPanel.SetActive(true);
         isOpen = false;
     }
 
     public void turnOn()
     {
-        inventoryPanel.SetActive(true);
+        inventoryPanel.SetActive(false);
         isOpen = true;
     }
     #endregion Turn On/Off

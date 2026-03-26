@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Spear
   m_EditorClassIdentifier: 
   itemName: Spear
+  Description: 
+  Stats: 
   itemIcon: {fileID: -2092137156, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
+  isHoldable: 0
+  holdingObject: {fileID: 0}
+  IsUpgrade: 0
+  GroundObject: {fileID: 3187401578969636077, guid: c0b29acd7f3a8d34f98c954210ecc4e9, type: 3}
   toolType: 0

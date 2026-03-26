@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Banana
   m_EditorClassIdentifier: 
   itemName: Banana
+  Description: 
+  Stats: 
   itemIcon: {fileID: -1397465899, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
+  isHoldable: 0
+  holdingObject: {fileID: 0}
+  IsUpgrade: 0
+  GroundObject: {fileID: 332691514003979502, guid: 553fda18bd55eef4195439ac3e7dc34c, type: 3}
   toolType: 0

@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: SlingShot
   m_EditorClassIdentifier: 
   itemName: Sling Shot
+  Description: 
+  Stats: 
   itemIcon: {fileID: -106264886, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
+  isHoldable: 0
+  holdingObject: {fileID: 0}
+  IsUpgrade: 0
+  GroundObject: {fileID: 79495998783307284, guid: 3946bc8682f2cb04cb95bc319ac28ad5, type: 3}
   toolType: 0
