@@ -11,6 +11,9 @@ public class PlayerColorController : MonoBehaviour
     public SpriteRenderer shirt;
     public SpriteRenderer pants;
 
+    public Image inventoryShirt;
+    public Image inventoryPants;
+
     [Range(0f, 1f)] public float saturation = 1f;
     [Range(0f, 1f)] public float brightness = 1f;
 
@@ -36,5 +39,8 @@ public class PlayerColorController : MonoBehaviour
 
         shirt.color = Color.HSVToRGB(shirtHue, saturation, brightness);
         pants.color = Color.HSVToRGB(pantsHue, saturation, brightness);
+
+        inventoryShirt.color = Color.HSVToRGB(shirtHue, saturation, brightness);
+        inventoryPants.color = Color.HSVToRGB(pantsHue, saturation, brightness);
     }
 }

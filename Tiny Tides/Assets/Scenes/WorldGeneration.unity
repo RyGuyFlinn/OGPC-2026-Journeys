@@ -25962,6 +25962,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 6
+--- !u!114 &1368890515 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2727005071117076723, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+  m_PrefabInstance: {fileID: 1950139253}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1444161177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2377724385207095990, guid: cf5c3d4a19b412944bd4ac8c739c0e2a, type: 3}
@@ -27125,6 +27136,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2377724385207095990, guid: 918d293090d60d445b49005469bf535c, type: 3}
   m_PrefabInstance: {fileID: 1460810602}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1490347767 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4660052022690458786, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+  m_PrefabInstance: {fileID: 1950139253}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1509997324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151792,6 +151814,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2844690817733312101, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+      propertyPath: inventoryPants
+      value: 
+      objectReference: {fileID: 1368890515}
+    - target: {fileID: 2844690817733312101, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+      propertyPath: inventoryShirt
+      value: 
+      objectReference: {fileID: 1490347767}
     - target: {fileID: 4774793375603050390, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
       propertyPath: m_Name
       value: PlayerStuff
@@ -151818,6 +151848,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6113715843287660366, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623457381662709283, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7931785200186422992, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
