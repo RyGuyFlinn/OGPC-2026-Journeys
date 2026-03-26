@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     public bool HasExtraHealth = false;
     public GameObject ExtraHealth;
     private bool lockhealthgain = false;
+    public bool hasShieldEquipped = false;
     public AudioClip hurtsound;
     void Start()
     {

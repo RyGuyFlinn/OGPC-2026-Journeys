@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92c1d641ca2ecf4cbd16b70d8236a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDelay: 0.2
+  attackDelay: 1.5
   attackDamage: 1
   animator: {fileID: 1934619559896517518}
   bulletPrefab: {fileID: 4082162405098814204, guid: 41838909f81d3d84a894e74e6b4c4441, type: 3}

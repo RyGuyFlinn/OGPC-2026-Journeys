@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Sheild
   m_EditorClassIdentifier: 
   itemName: Sheild
-  Description: 
-  Stats: 
+  Description: Hold to deflect enemy's bullets
+  Stats: Hold Q to use
   itemIcon: {fileID: -599254230, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
   isHoldable: 0

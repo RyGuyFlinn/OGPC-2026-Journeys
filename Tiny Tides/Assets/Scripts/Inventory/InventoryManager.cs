@@ -21,6 +21,14 @@ public class InventoryManager : MonoBehaviour
     public float bombLaunchForce = 10f;
     public GameObject bombPrefab;
 
+    public GameObject shieldPrefab;
+    public float shieldCooldownTime;
+    public float shieldUseTime;
+    private GameObject spawnedShield = null;
+    private float shieldCooldown = 0;
+    private bool shieldAvalible = true;
+
+    [Space]
     public GameObject hands;
     
     private SlotClass[] items;
@@ -56,9 +64,6 @@ public class InventoryManager : MonoBehaviour
             slots[i] = slotHolder.transform.GetChild(i).gameObject;
 
         RefreshUI();
-
-        Add(itemToAdd, 1);
-        Remove(itemToRemove);
 
         turnOn();
     }
@@ -130,23 +135,58 @@ public class InventoryManager : MonoBehaviour
     {
         GameObject player = GameObject.Find("Player");
 
-        if (items[16].GetItem() != null && items[16].GetItem().itemName == "Bomb")
+        if (items[16].GetItem() != null)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (items[16].GetItem().itemName == "Bomb")
             {
-                Vector3 mousePos = Input.mousePosition;
-        
-                Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(mousePos);
-                worldMousePos.z = 0f;
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    Vector3 mousePos = Input.mousePosition;
 
-                Vector2 direction = (Vector2)worldMousePos - (Vector2)player.transform.position;
-                
-                GameObject bomb = Instantiate(bombPrefab, player.transform.position, transform.rotation);
-                
-//ForceMode2D.Impulse
-                float dir = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                bomb.transform.rotation = Quaternion.AngleAxis(dir - 90f, Vector3.forward);
-                bomb.GetComponent<Rigidbody2D>().AddForce(bomb.transform.up * 300);
+                    Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(mousePos);
+                    worldMousePos.z = 0f;
+
+                    Vector2 direction = (Vector2)worldMousePos - (Vector2)player.transform.position;
+
+                    GameObject bomb = Instantiate(bombPrefab, player.transform.position, transform.rotation);
+
+                    //ForceMode2D.Impulse
+                    float dir = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    bomb.transform.rotation = Quaternion.AngleAxis(dir - 90f, Vector3.forward);
+                    bomb.GetComponent<Rigidbody2D>().AddForce(bomb.transform.up * 300);
+                }
+            }
+            if (items[16].GetItem().itemName == "Shield")
+            {
+                if (Input.GetKey(KeyCode.Q) && shieldAvalible)
+                {
+                    if (spawnedShield == null)
+                    {
+                        spawnedShield = Instantiate(shieldPrefab, player.transform.position, Quaternion.identity);
+                    }
+                    player.GetComponent<PlayerHealth>().hasShieldEquipped = true;
+                    shieldCooldown += 1;
+                    if (shieldCooldown > shieldUseTime)
+                    {
+                        shieldAvalible = false;
+                        shieldCooldown = shieldCooldownTime;
+                    }
+                }
+                else
+                {
+                    spawnedShield = null;
+                    player.GetComponent<PlayerHealth>().hasShieldEquipped = false;
+                }
+
+                if (!shieldAvalible)
+                {
+                    shieldCooldown -= 1;
+                    if (shieldCooldown <= 0)
+                    {
+                        shieldAvalible = true;
+                        shieldCooldown = 0;
+                    }
+                }
             }
         }
     }
@@ -264,12 +304,16 @@ public class InventoryManager : MonoBehaviour
 
     public void DropItem()
     {
-        GameObject ObjectToSpawn = lastSelectedItem.GetItem().GroundObject;
-        GameObject player = GameObject.Find("Player");
+        if (lastSelectedItem != null)
+        {
+            GameObject ObjectToSpawn = lastSelectedItem.GetItem().GroundObject;
+            GameObject player = GameObject.Find("Player");
 
-        Instantiate(ObjectToSpawn, player.transform.position, ObjectToSpawn.transform.rotation);
+            Instantiate(ObjectToSpawn, player.transform.position, ObjectToSpawn.transform.rotation);
 
-        Remove(lastSelectedItem.GetItem());
+            Remove(lastSelectedItem.GetItem());
+            lastSelectedItem = null;
+        }
     }
 
     public SlotClass Contains(ItemClass item)

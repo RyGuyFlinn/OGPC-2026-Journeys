@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -45,7 +46,10 @@ public class Bullet : MonoBehaviour
                 PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
                 Vector2 direction = (other.transform.position - transform.position).normalized;
 
-                player.TakeDamage(attackDamage);
+                if (!player.hasShieldEquipped)
+                {
+                    player.TakeDamage(attackDamage);
+                }
             }
         }
 
