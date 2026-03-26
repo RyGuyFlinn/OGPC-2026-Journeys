@@ -15,6 +15,8 @@ public class WorldGenSimple : MonoBehaviour
     [Space]
     public GameObject[] islands;
     public GameObject spawnIsland;
+    public GameObject mapIsland;
+    public GameObject minimap;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +48,12 @@ public class WorldGenSimple : MonoBehaviour
                 //check if the final position is within the world border, if so, instantiate a random island at it
                 if (spawnPos.magnitude < worldRadius - edgeBuffer && spawnPos.magnitude > centerBuffer)
                 {
-                    Instantiate(islands[Random.Range(0, islands.Length)], spawnPos, Quaternion.identity);
+                    //spawn island on map
+                    GameObject minimapIsland = Instantiate(mapIsland, minimap.transform.position, Quaternion.identity);
+                    minimapIsland.transform.SetParent(minimap.transform);
+
+                    //spawn island in world
+                    GameObject island = Instantiate(islands[Random.Range(0, islands.Length)], spawnPos, Quaternion.identity);
                 }
             }
         }

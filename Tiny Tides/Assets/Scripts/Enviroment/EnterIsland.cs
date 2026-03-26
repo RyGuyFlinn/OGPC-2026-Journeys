@@ -13,6 +13,7 @@ public class EnterIsland : MonoBehaviour
     private GameObject minimap;
     private GameObject playerBoat;
     public GameObject buttonPrompt;
+    public GameObject mapIsland;
 
     private bool PlayerInRange = false;
 
