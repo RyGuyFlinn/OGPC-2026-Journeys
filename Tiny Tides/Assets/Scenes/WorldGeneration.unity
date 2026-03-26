@@ -23932,6 +23932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5663001217887020436}
+  minimap: {fileID: 1496981886}
   playerBoat: {fileID: 5535344598380186617}
   buttonPrompt: {fileID: 907836559}
 --- !u!58 &167865672
@@ -25045,6 +25046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5663001217887020436}
+  minimap: {fileID: 1496981886}
   playerBoat: {fileID: 5535344598380186617}
   buttonPrompt: {fileID: 729380302}
 --- !u!58 &959411796
@@ -25194,6 +25196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5663001217887020436}
+  minimap: {fileID: 1496981886}
   playerBoat: {fileID: 5535344598380186617}
   buttonPrompt: {fileID: 2081387337}
 --- !u!58 &976207378
@@ -25368,6 +25371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5663001217887020436}
+  minimap: {fileID: 1496981886}
   playerBoat: {fileID: 5535344598380186617}
   buttonPrompt: {fileID: 702847670}
 --- !u!58 &1026210792
@@ -25933,6 +25937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5663001217887020436}
+  minimap: {fileID: 1496981886}
   playerBoat: {fileID: 5535344598380186617}
   buttonPrompt: {fileID: 756188237}
 --- !u!58 &1358820119
@@ -25970,17 +25975,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 6
---- !u!114 &1368890515 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2727005071117076723, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
-  m_PrefabInstance: {fileID: 1950139253}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1444161177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2377724385207095990, guid: cf5c3d4a19b412944bd4ac8c739c0e2a, type: 3}
@@ -27144,17 +27138,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2377724385207095990, guid: 918d293090d60d445b49005469bf535c, type: 3}
   m_PrefabInstance: {fileID: 1460810602}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1490347767 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4660052022690458786, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+--- !u!1 &1496981886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8994298667924666424, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
   m_PrefabInstance: {fileID: 1950139253}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1509997324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27282,6 +27270,7 @@ MonoBehaviour:
   islands: []
   playerBoat: {fileID: 5535344598380186617}
   player: {fileID: 5663001217887020436}
+  minimap: {fileID: 1496981886}
 --- !u!4 &1510410894
 Transform:
   m_ObjectHideFlags: 0
@@ -151822,14 +151811,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2844690817733312101, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
-      propertyPath: inventoryPants
-      value: 
-      objectReference: {fileID: 1368890515}
-    - target: {fileID: 2844690817733312101, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
-      propertyPath: inventoryShirt
-      value: 
-      objectReference: {fileID: 1490347767}
     - target: {fileID: 4774793375603050390, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
       propertyPath: m_Name
       value: PlayerStuff
@@ -151858,26 +151839,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7623457381662709283, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+    - target: {fileID: 8994298667924666424, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7931785200186422992, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
-      propertyPath: m_Size.x
-      value: 0.6348877
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931785200186422992, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
-      propertyPath: m_Size.y
-      value: 1.4349861
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931785200186422992, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.006164551
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931785200186422992, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.18890572
-      objectReference: {fileID: 0}
+    - target: {fileID: 9067752677780924662, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+      propertyPath: ship
+      value: 
+      objectReference: {fileID: 5535344598380186617}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

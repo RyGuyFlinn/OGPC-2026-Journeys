@@ -15,7 +15,7 @@ public class HealthPickup : MonoBehaviour
         {
             collision.GetComponent<PlayerHealth>().currentHealth += health;
 
-            SoundFXManager.Instance.PlaySoundFXClip(audio, transform, 8, 1, false);
+            SoundFXManager.Instance.PlaySoundFXClip(audio, transform, 20, 1, false);
 
             Destroy(gameObject);
         }

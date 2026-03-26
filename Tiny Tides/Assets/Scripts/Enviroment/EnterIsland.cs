@@ -10,6 +10,7 @@ public class EnterIsland : MonoBehaviour
 
     private  GameObject islandPort;
     private GameObject player;
+    private GameObject minimap;
     private GameObject playerBoat;
     public GameObject buttonPrompt;
 
@@ -18,6 +19,7 @@ public class EnterIsland : MonoBehaviour
     void Start()
     {
         player = manager.player;
+        minimap = manager.minimap;
         playerBoat = manager.playerBoat;
         islandPort = GameObject.Find("Islands").transform.GetChild(islandIndex).gameObject;
 
@@ -55,6 +57,7 @@ public class EnterIsland : MonoBehaviour
                 player.SetActive(true);
                 playerBoat.SetActive(false);
                 PlayerManager.IsOnIsland = true;
+                minimap.SetActive(false);
 
                 player.transform.position = islandPort.transform.position;
             }

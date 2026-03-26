@@ -51,6 +51,7 @@ public class WorldGeneration : MonoBehaviour
     [Header("Player")]
     public GameObject playerBoat;
     public GameObject player;
+    public GameObject minimap;
 
     void Awake()
     {

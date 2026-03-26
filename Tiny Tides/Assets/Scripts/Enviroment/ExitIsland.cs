@@ -5,6 +5,7 @@ using UnityEngine;
 public class ExitIsland : MonoBehaviour
 {
     public GameObject player;
+    public GameObject minimap;
     public GameObject playerBoat;
     public GameObject buttonPrompt;
 
@@ -38,6 +39,7 @@ public class ExitIsland : MonoBehaviour
                 player.SetActive(false);
                 playerBoat.SetActive(true);
                 PlayerManager.IsOnIsland = false;
+                minimap.SetActive(true);
             }
         }
     }
