@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FlintLock
   m_EditorClassIdentifier: 
   itemName: FlintLock
-  Description: 
-  Stats: 
+  Description: hit enemies form a distance
+  Stats: LEFT CLICK to use, equip in first slot
   itemIcon: {fileID: 1501834784, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
   isHoldable: 1

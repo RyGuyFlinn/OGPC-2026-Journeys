@@ -24,6 +24,9 @@ public class PlayerColorController : MonoBehaviour
 
         shirtsSlider.minValue = 0;
         pantsSlider.minValue = 0;
+
+        shirtsSlider.value = Random.Range(0f, 1f);
+        pantsSlider.value = Random.Range(0f, 1f);
     }
 
     void Update()

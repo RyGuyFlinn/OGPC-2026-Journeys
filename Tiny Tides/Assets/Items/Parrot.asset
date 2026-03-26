@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Parrot
   m_EditorClassIdentifier: 
   itemName: Parrot
-  Description: 
-  Stats: 
+  Description: Send out a homing parrot to harrass enemies
+  Stats: Press (Q/E) to use
   itemIcon: {fileID: -302102599, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
   isHoldable: 0

@@ -6,6 +6,7 @@ public class ExitIsland : MonoBehaviour
 {
     public GameObject player;
     public GameObject playerBoat;
+    public GameObject buttonPrompt;
 
     private bool PlayerInRange = false;
 
@@ -27,6 +28,8 @@ public class ExitIsland : MonoBehaviour
 
     void Update()
     {
+        buttonPrompt.SetActive(PlayerInRange);
+
         if (PlayerInRange)
         {
             if (Input.GetKeyDown(KeyCode.R))

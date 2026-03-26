@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   itemName: Sword
-  Description: 
-  Stats: 
+  Description: Attack and defend at a close range
+  Stats: LEFT CLICK to use, RIGHT CLICK to block, equip in first slot
   itemIcon: {fileID: 21300000, guid: aa607c9aeeec4bd4b9deb473d211fd0c, type: 3}
   maxStack: 1
   isHoldable: 1

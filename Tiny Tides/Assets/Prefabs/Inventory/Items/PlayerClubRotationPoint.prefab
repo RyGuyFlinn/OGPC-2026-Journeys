@@ -120,7 +120,6 @@ MonoBehaviour:
   swordHitbox: {fileID: 411965967324873767}
   animator: {fileID: 5278984441683163220}
   attacking: 0
-  Ching: {fileID: 0}
 --- !u!95 &5278984441683163220
 Animator:
   serializedVersion: 5
@@ -276,7 +275,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -653216850, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
+  m_Sprite: {fileID: 1460546855, guid: 4ad2b2e45befd16478609da1c489b06a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

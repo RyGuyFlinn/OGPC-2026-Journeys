@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77dd95da099798c4c8bc72dd61d0f10b, type: 3}
-  m_Name: Mace
+  m_Name: Club
   m_EditorClassIdentifier: 
-  itemName: Mace
-  Description: 
-  Stats: 
+  itemName: Club
+  Description: Hit with more damage, but lose the ability to block
+  Stats: LEFT CLICK to use, equip in first slot
   itemIcon: {fileID: -653216850, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
   isHoldable: 1

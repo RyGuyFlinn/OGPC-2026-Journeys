@@ -6,6 +6,12 @@ using UnityEditor;
 
 public class MainMenu : MonoBehaviour
 {
+    public TreasureData treasureData;
+    void Start()
+    {
+        treasureData.SetTreasure(0);
+    }
+
     public void OnPlayButtonPressed()
     {
         SceneManager.LoadScene("WorldGeneration");

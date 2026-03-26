@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 120433059596473113}
   - component: {fileID: 627008136522138458}
   m_Layer: 0
-  m_Name: MaceGround
+  m_Name: ClubGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

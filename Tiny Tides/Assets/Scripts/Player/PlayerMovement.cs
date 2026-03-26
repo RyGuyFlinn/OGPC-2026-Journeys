@@ -9,9 +9,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
     public bool DashAbility = false;
-    private bool IsDashing = false;
-    private float TimeDashing = 0f;
-    private bool CanDash = true;
+    public bool IsDashing = false;
+    public float TimeDashing = 0f;
+    public bool CanDash = true;
     private Vector2 LastInput;
     void Start()
     {

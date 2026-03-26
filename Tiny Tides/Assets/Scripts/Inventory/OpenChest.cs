@@ -9,8 +9,10 @@ public class OpenChest : MonoBehaviour
     private bool open = false;
     public Sprite closedChest;
     public Sprite openChest;
+    public new AudioClip unlockAudio;
     public GameObject[] lootTable;
     public int lootNum;
+    private float itemOffset = 2;
 
     [Space]
     public GameObject textPrompt;
@@ -55,11 +57,24 @@ public class OpenChest : MonoBehaviour
     {
         if (playerInRange && !enemyDetector.enemyInRange)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && !open)
             {
                 Debug.Log("Chest open");
 
+                SoundFXManager.Instance.PlaySoundFXClip(unlockAudio, transform, 1, 1, false);
                 open = true;
+
+                //when the chest is opened, spawn in random items nearby
+                for (int i = 0; i < lootNum; i++)
+                {
+                    Vector3 randOffset = new Vector3(
+                        Random.Range(-itemOffset, itemOffset), 
+                        Random.Range(-itemOffset, itemOffset), 
+                        0);
+
+                    Instantiate(lootTable[Random.Range(0, lootTable.Length)], 
+                        transform.position + randOffset, Quaternion.identity);
+                }
             }
         }
 
@@ -80,6 +95,12 @@ public class OpenChest : MonoBehaviour
         else
         {
             textRenderer.sprite = unlockedText;
+        }
+
+        //when teh player leaves the island, reset all chests
+        if (PlayerManager.IsOnIsland == false)
+        {
+            open = false;
         }
     }
 }

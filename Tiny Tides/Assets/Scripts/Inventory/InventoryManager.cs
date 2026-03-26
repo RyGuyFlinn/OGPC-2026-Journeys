@@ -21,6 +21,8 @@ public class InventoryManager : MonoBehaviour
     public float bombLaunchForce = 10f;
     public GameObject bombPrefab;
 
+    public GameObject hands;
+    
     private SlotClass[] items;
 
     private GameObject[] slots;
@@ -119,6 +121,9 @@ public class InventoryManager : MonoBehaviour
             Destroy(spawnedObject.gameObject);
             spawnedObject = null;
         }
+
+        //if holding no weapon, the player has two hands free
+        hands.SetActive(items[15].GetItem() == null);
     }
 
     private void AbilitiesManager()
