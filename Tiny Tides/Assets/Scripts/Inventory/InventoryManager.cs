@@ -203,7 +203,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public bool Add(ItemClass item, int quantity)
+    public bool Add(ItemClass item, int quantity = 1)
     {
         //items.Add(item);
         //check if inventory contains item
