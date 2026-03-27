@@ -48,12 +48,16 @@ public class WorldGenSimple : MonoBehaviour
                 //check if the final position is within the world border, if so, instantiate a random island at it
                 if (spawnPos.magnitude < worldRadius - edgeBuffer && spawnPos.magnitude > centerBuffer)
                 {
-                    //spawn island on map
-                    GameObject minimapIsland = Instantiate(mapIsland, minimap.transform.position, Quaternion.identity);
+                    //spawn island on map and set a random sprite for it
+                    Vector2 offset = (spawnPos / worldRadius) * minimap.GetComponent<MinimapManager>().mapRadius;
+                    Vector2 mapPos = new Vector2(minimap.transform.position.x, minimap.transform.position.y) + offset;
+                    GameObject minimapIsland = Instantiate(mapIsland, mapPos, Quaternion.identity);
                     minimapIsland.transform.SetParent(minimap.transform);
+                    minimapIsland.GetComponent<MapIsland>().SetRandomSprite();
 
-                    //spawn island in world
+                    //spawn island in world and link it to its corresponding map icon
                     GameObject island = Instantiate(islands[Random.Range(0, islands.Length)], spawnPos, Quaternion.identity);
+                    island.transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland = minimapIsland;
                 }
             }
         }

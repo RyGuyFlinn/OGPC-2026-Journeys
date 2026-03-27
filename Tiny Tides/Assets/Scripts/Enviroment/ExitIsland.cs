@@ -8,6 +8,8 @@ public class ExitIsland : MonoBehaviour
     public GameObject minimap;
     public GameObject playerBoat;
     public GameObject buttonPrompt;
+    public GameObject[] chests;
+    public GameObject[] enemies;
 
     private bool PlayerInRange = false;
 
@@ -42,5 +44,10 @@ public class ExitIsland : MonoBehaviour
                 minimap.SetActive(true);
             }
         }
+    }
+
+    public void ResetIsland()
+    {
+        //reset chests and enemy spawners
     }
 }

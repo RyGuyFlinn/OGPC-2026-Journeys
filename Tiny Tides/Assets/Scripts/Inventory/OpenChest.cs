@@ -7,6 +7,7 @@ public class OpenChest : MonoBehaviour
 {
     public GameObject chest;
     private bool open = false;
+    public bool doNotReset = false;
     public Sprite closedChest;
     public Sprite openChest;
     public new AudioClip unlockAudio;
@@ -97,8 +98,8 @@ public class OpenChest : MonoBehaviour
             textRenderer.sprite = unlockedText;
         }
 
-        //when teh player leaves the island, reset all chests
-        if (PlayerManager.IsOnIsland == false)
+        //when the player leaves the island, reset all chests, unless doNotReset is true
+        if (PlayerManager.IsOnIsland == false && !doNotReset)
         {
             open = false;
         }
