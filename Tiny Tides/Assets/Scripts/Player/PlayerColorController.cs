@@ -9,7 +9,8 @@ public class PlayerColorController : MonoBehaviour
     public Slider pantsSlider;
 
     public SpriteRenderer shirt;
-    public SpriteRenderer pants;
+    public SpriteRenderer leftLeg;
+    public SpriteRenderer rightLeg;
 
     public Image inventoryShirt;
     public Image inventoryPants;
@@ -38,7 +39,8 @@ public class PlayerColorController : MonoBehaviour
         pantsHue = pantsSlider.value;
 
         shirt.color = Color.HSVToRGB(shirtHue, saturation, brightness);
-        pants.color = Color.HSVToRGB(pantsHue, saturation, brightness);
+        leftLeg.color = Color.HSVToRGB(pantsHue, saturation, brightness);
+        rightLeg.color = Color.HSVToRGB(pantsHue, saturation, brightness);
 
         inventoryShirt.color = Color.HSVToRGB(shirtHue, saturation, brightness);
         inventoryPants.color = Color.HSVToRGB(pantsHue, saturation, brightness);
