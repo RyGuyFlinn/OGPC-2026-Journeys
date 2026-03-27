@@ -23963,6 +23963,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf5c3d4a19b412944bd4ac8c739c0e2a, type: 3}
+--- !u!1 &232529311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5768633748022527100, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
+  m_PrefabInstance: {fileID: 1950139253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &261822814 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2377724385207095990, guid: 918d293090d60d445b49005469bf535c, type: 3}
@@ -27250,8 +27255,8 @@ MonoBehaviour:
   - {fileID: 6796945382322338947, guid: 5da5dbfa05d920f488d42bc24fb95d9b, type: 3}
   - {fileID: 6796945382322338947, guid: 7c7af56ac59e6744db1ae0ff341e3c7d, type: 3}
   spawnIsland: {fileID: 6796945382322338947, guid: 08ec3d2084f6f864193f29c243c3d3a2, type: 3}
-  mapIsland: {fileID: 0}
-  minimap: {fileID: 0}
+  mapIsland: {fileID: 5369739889985182986, guid: 33e9659c75f01dd479bd26e914aaee2f, type: 3}
+  minimap: {fileID: 232529311}
 --- !u!1001 &1539555857
 PrefabInstance:
   m_ObjectHideFlags: 0
