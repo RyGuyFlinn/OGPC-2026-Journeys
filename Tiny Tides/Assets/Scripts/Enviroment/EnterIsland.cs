@@ -60,6 +60,23 @@ public class EnterIsland : MonoBehaviour
                 PlayerManager.IsOnIsland = true;
                 minimap.SetActive(false);
 
+                //if this island is unvisited, reset all chests and enemies linked to it's port
+                if (!mapIsland.GetComponent<MapIsland>().visited)
+                {
+                    //Reset chests
+                    for (int i = 0; i < islandPort.GetComponent<ExitIsland>().chests.Length; i++)
+                    {
+                        islandPort.GetComponent<ExitIsland>().chests[i].transform.GetChild(1).GetComponent<OpenChest>().ResetChest();
+                    }
+
+                    //Reset enemy spawners
+                    for (int i = 0; i < islandPort.GetComponent<ExitIsland>().enemies.Length; i++)
+                    {
+                        islandPort.GetComponent<ExitIsland>().enemies[i].GetComponent<EnemySpawnPoint>().ResetSpawnPoint();
+                    }
+                }
+                mapIsland.GetComponent<MapIsland>().SetVisited();
+
                 player.transform.position = islandPort.transform.position;
             }
         }

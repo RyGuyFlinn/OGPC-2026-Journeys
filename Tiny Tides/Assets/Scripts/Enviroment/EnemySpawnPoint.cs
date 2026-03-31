@@ -21,12 +21,18 @@ public class EnemySpawnPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (PlayerManager.IsOnIsland == false)
-        {
-            Active = true;
-        }
+        //reset (become active again) whenever the player is off the island
+        //if (PlayerManager.IsOnIsland == false)
+        //{
+        //    ResetSpawnPoint();
+        //}
     }
+
+    public void ResetSpawnPoint()
+    {
+        Active = true;
+    }
+
     private void OnValidate()
     {
         if (boxcollider == null)

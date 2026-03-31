@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class WorldGenSimple : MonoBehaviour
 {
@@ -50,9 +51,10 @@ public class WorldGenSimple : MonoBehaviour
                 {
                     //spawn island on map and set a random sprite for it
                     Vector2 offset = (spawnPos / worldRadius) * minimap.GetComponent<MinimapManager>().mapRadius;
-                    Vector2 mapPos = new Vector2(minimap.transform.position.x, minimap.transform.position.y) + offset;
+                    Vector2 mapPos = new Vector2(minimap.transform.GetChild(0).transform.position.x, minimap.transform.GetChild(0).transform.position.y) + offset;
                     GameObject minimapIsland = Instantiate(mapIsland, mapPos, Quaternion.identity);
-                    minimapIsland.transform.SetParent(minimap.transform);
+                    Debug.Log("spawned island on map");
+                    minimapIsland.transform.SetParent(minimap.transform.GetChild(0));
                     minimapIsland.GetComponent<MapIsland>().SetRandomSprite();
 
                     //spawn island in world and link it to its corresponding map icon

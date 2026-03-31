@@ -11,7 +11,7 @@ public class MapIsland : MonoBehaviour
     public Sprite[] visitedSprites;
     private Image image;
 
-    private void Start()
+    void Awake()
     {
         image = GetComponent<Image>();
     }

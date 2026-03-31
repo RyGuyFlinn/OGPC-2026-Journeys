@@ -371,6 +371,11 @@ Transform:
   - {fileID: 1444161177}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &101923640 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3357192938978990410, guid: 918d293090d60d445b49005469bf535c, type: 3}
+  m_PrefabInstance: {fileID: 1676068045}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &115770112 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 42809461555283250, guid: a7a8947343a714b408e8ccf2c7cbbb65, type: 3}
@@ -23894,6 +23899,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &138260401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3918292176969141121, guid: a7a8947343a714b408e8ccf2c7cbbb65, type: 3}
+  m_PrefabInstance: {fileID: 1624881985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &167865669
 GameObject:
   m_ObjectHideFlags: 0
@@ -23929,8 +23939,8 @@ Transform:
   - {fileID: 1892493030}
   - {fileID: 1460810603}
   - {fileID: 1539992395}
-  - {fileID: 1864423385}
   - {fileID: 1074024525}
+  - {fileID: 1864423385}
   m_Father: {fileID: 451632688}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &167865671
@@ -23949,8 +23959,12 @@ MonoBehaviour:
   minimap: {fileID: 1496981886}
   playerBoat: {fileID: 5535344598380186617}
   buttonPrompt: {fileID: 907836559}
-  chests: []
-  enemies: []
+  chests:
+  - {fileID: 1280377130}
+  - {fileID: 1436983143}
+  enemies:
+  - {fileID: 1162029253}
+  - {fileID: 1132654708}
 --- !u!58 &167865672
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -24047,15 +24061,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf5c3d4a19b412944bd4ac8c739c0e2a, type: 3}
---- !u!1 &232529311 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5768633748022527100, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
-  m_PrefabInstance: {fileID: 1950139253}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &261822814 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2377724385207095990, guid: 918d293090d60d445b49005469bf535c, type: 3}
   m_PrefabInstance: {fileID: 1829906914}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &262855282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3918292176969141121, guid: 1789ab349d9db834ebbac3ad74879610, type: 3}
+  m_PrefabInstance: {fileID: 1194036420}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &352846130
 GameObject:
@@ -24218,6 +24232,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 918d293090d60d445b49005469bf535c, type: 3}
+--- !u!1 &400333153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3357192938978990410, guid: 918d293090d60d445b49005469bf535c, type: 3}
+  m_PrefabInstance: {fileID: 366510500}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &449260547
 GameObject:
   m_ObjectHideFlags: 0
@@ -24931,6 +24950,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2377724385207095990, guid: cf5c3d4a19b412944bd4ac8c739c0e2a, type: 3}
   m_PrefabInstance: {fileID: 558481377}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &834682712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3918292176969141121, guid: 1789ab349d9db834ebbac3ad74879610, type: 3}
+  m_PrefabInstance: {fileID: 1509997324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &895233512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3918292176969141121, guid: 1789ab349d9db834ebbac3ad74879610, type: 3}
+  m_PrefabInstance: {fileID: 634334721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &907836559
 GameObject:
   m_ObjectHideFlags: 0
@@ -25222,8 +25251,11 @@ MonoBehaviour:
   minimap: {fileID: 1496981886}
   playerBoat: {fileID: 5535344598380186617}
   buttonPrompt: {fileID: 2081387337}
-  chests: []
-  enemies: []
+  chests:
+  - {fileID: 834682712}
+  - {fileID: 1529709074}
+  enemies:
+  - {fileID: 2008151986}
 --- !u!58 &976207378
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -25399,8 +25431,13 @@ MonoBehaviour:
   minimap: {fileID: 1496981886}
   playerBoat: {fileID: 5535344598380186617}
   buttonPrompt: {fileID: 702847670}
-  chests: []
-  enemies: []
+  chests:
+  - {fileID: 262855282}
+  - {fileID: 895233512}
+  - {fileID: 138260401}
+  enemies:
+  - {fileID: 2046452424}
+  - {fileID: 400333153}
 --- !u!58 &1026210792
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -25764,6 +25801,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1132654708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3357192938978990410, guid: 918d293090d60d445b49005469bf535c, type: 3}
+  m_PrefabInstance: {fileID: 1539992394}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1162029253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3357192938978990410, guid: 918d293090d60d445b49005469bf535c, type: 3}
+  m_PrefabInstance: {fileID: 1460810602}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1177924938 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2377724385207095990, guid: 918d293090d60d445b49005469bf535c, type: 3}
@@ -25830,6 +25877,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 42809461555283250, guid: 1789ab349d9db834ebbac3ad74879610, type: 3}
   m_PrefabInstance: {fileID: 1194036420}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1280377130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3918292176969141121, guid: 1789ab349d9db834ebbac3ad74879610, type: 3}
+  m_PrefabInstance: {fileID: 1074024524}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1315958389
 GameObject:
@@ -25911,6 +25963,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &1339812276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3918292176969141121, guid: 1789ab349d9db834ebbac3ad74879610, type: 3}
+  m_PrefabInstance: {fileID: 1539555857}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1358820116
 GameObject:
   m_ObjectHideFlags: 0
@@ -25967,8 +26024,13 @@ MonoBehaviour:
   minimap: {fileID: 1496981886}
   playerBoat: {fileID: 5535344598380186617}
   buttonPrompt: {fileID: 756188237}
-  chests: []
-  enemies: []
+  chests:
+  - {fileID: 1339812276}
+  - {fileID: 1988662824}
+  - {fileID: 2051856959}
+  enemies:
+  - {fileID: 101923640}
+  - {fileID: 1811377408}
 --- !u!58 &1358820119
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -26008,6 +26070,11 @@ CircleCollider2D:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7885088240659911000, guid: c8bca82d50e33fa41b81e35a8a3237dc, type: 3}
   m_PrefabInstance: {fileID: 1950139253}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1436983143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3918292176969141121, guid: a7a8947343a714b408e8ccf2c7cbbb65, type: 3}
+  m_PrefabInstance: {fileID: 1864423384}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1444161177 stripped
 Transform:
@@ -27345,7 +27412,12 @@ MonoBehaviour:
   - {fileID: 6796945382322338947, guid: 7c7af56ac59e6744db1ae0ff341e3c7d, type: 3}
   spawnIsland: {fileID: 6796945382322338947, guid: 08ec3d2084f6f864193f29c243c3d3a2, type: 3}
   mapIsland: {fileID: 5369739889985182986, guid: 33e9659c75f01dd479bd26e914aaee2f, type: 3}
-  minimap: {fileID: 232529311}
+  minimap: {fileID: 1496981886}
+--- !u!1 &1529709074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3918292176969141121, guid: a7a8947343a714b408e8ccf2c7cbbb65, type: 3}
+  m_PrefabInstance: {fileID: 1893986630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1539555857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151447,6 +151519,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1811377408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3357192938978990410, guid: 918d293090d60d445b49005469bf535c, type: 3}
+  m_PrefabInstance: {fileID: 1077369775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1829906914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153871,6 +153948,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1988662824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3918292176969141121, guid: 1789ab349d9db834ebbac3ad74879610, type: 3}
+  m_PrefabInstance: {fileID: 1103742954}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1999307792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153932,6 +154014,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 42809461555283250, guid: a7a8947343a714b408e8ccf2c7cbbb65, type: 3}
   m_PrefabInstance: {fileID: 1999307792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2008151986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3357192938978990410, guid: 918d293090d60d445b49005469bf535c, type: 3}
+  m_PrefabInstance: {fileID: 693782297}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2042615027
 GameObject:
@@ -154017,6 +154104,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2046452424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3357192938978990410, guid: 918d293090d60d445b49005469bf535c, type: 3}
+  m_PrefabInstance: {fileID: 1829906914}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2051856959 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3918292176969141121, guid: a7a8947343a714b408e8ccf2c7cbbb65, type: 3}
+  m_PrefabInstance: {fileID: 1999307792}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2052997131
 GameObject:
   m_ObjectHideFlags: 0
@@ -647384,7 +647481,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chest: {fileID: 3918292176987184753}
-  doNotReset: 1
   closedChest: {fileID: -113332050, guid: 05c27bff3b29a2c4183968ae1c3c3bb4, type: 3}
   openChest: {fileID: -229174748, guid: 05c27bff3b29a2c4183968ae1c3c3bb4, type: 3}
   unlockAudio: {fileID: 8300000, guid: 79be21ce5880314498dfdba6bd994b1a, type: 3}
@@ -647417,7 +647513,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chest: {fileID: 3918292176598209537}
-  doNotReset: 1
   closedChest: {fileID: -113332050, guid: 05c27bff3b29a2c4183968ae1c3c3bb4, type: 3}
   openChest: {fileID: -229174748, guid: 05c27bff3b29a2c4183968ae1c3c3bb4, type: 3}
   unlockAudio: {fileID: 8300000, guid: 79be21ce5880314498dfdba6bd994b1a, type: 3}

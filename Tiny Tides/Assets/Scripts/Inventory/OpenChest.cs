@@ -7,7 +7,6 @@ public class OpenChest : MonoBehaviour
 {
     public GameObject chest;
     private bool open = false;
-    public bool doNotReset = false;
     public Sprite closedChest;
     public Sprite openChest;
     public new AudioClip unlockAudio;
@@ -53,6 +52,11 @@ public class OpenChest : MonoBehaviour
         }
     }
 
+    public void ResetChest()
+    {
+        open = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -79,6 +83,7 @@ public class OpenChest : MonoBehaviour
             }
         }
 
+        //set the chests sprite to open or closed
         if (open)
         {
             spriteRenderer.sprite = openChest;
@@ -89,6 +94,7 @@ public class OpenChest : MonoBehaviour
             spriteRenderer.sprite = closedChest;
         }
 
+        //set the text sprite to indicate whether the chest is locked or unlocked
         if (enemyDetector.enemyInRange)
         {
             textRenderer.sprite = lockedText;
@@ -98,10 +104,10 @@ public class OpenChest : MonoBehaviour
             textRenderer.sprite = unlockedText;
         }
 
-        //when the player leaves the island, reset all chests, unless doNotReset is true
-        if (PlayerManager.IsOnIsland == false && !doNotReset)
-        {
-            open = false;
-        }
+        //when the player leaves the island, reset all chests
+        //if (PlayerManager.IsOnIsland == false)
+        //{
+        //    ResetChest();
+        //}
     }
 }
