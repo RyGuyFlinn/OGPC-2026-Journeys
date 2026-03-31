@@ -65,6 +65,9 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth == 9) ExtraHealth.GetComponent<Image>().sprite = HalfHealth;
         if (currentHealth == 8) ExtraHealth.GetComponent<Image>().sprite = NoHealth;
         
+        //clamp current health at the max
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        
             foreach (GameObject healthicon in Health)
             {
                 if (currentHealth >= count)

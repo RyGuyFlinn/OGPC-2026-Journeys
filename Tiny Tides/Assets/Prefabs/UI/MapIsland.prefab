@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 5369739889985182986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,6 +96,12 @@ MonoBehaviour:
   - {fileID: 1294053346, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
   - {fileID: -1414463893, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
   - {fileID: -811158236, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
+  rockySprites:
+  - {fileID: -79429062, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
+  - {fileID: 755048113, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
+  - {fileID: -1732693100, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
+  - {fileID: -565204593, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
+  - {fileID: -80914850, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
   visitedSprites:
   - {fileID: 906928099, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
   - {fileID: -846274087, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}

@@ -30,6 +30,7 @@ public class EnemySpawnPoint : MonoBehaviour
 
     public void ResetSpawnPoint()
     {
+        Debug.Log("Spawn Point Reset");
         Active = true;
     }
 

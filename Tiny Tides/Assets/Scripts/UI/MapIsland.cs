@@ -8,6 +8,7 @@ public class MapIsland : MonoBehaviour
     public int spriteNum = 0;
     public bool visited = false;
     public Sprite[] islandSprites;
+    public Sprite[] rockySprites;
     public Sprite[] visitedSprites;
     private Image image;
 
@@ -16,10 +17,17 @@ public class MapIsland : MonoBehaviour
         image = GetComponent<Image>();
     }
 
-    public void SetRandomSprite()
+    public void SetRandomSprite(int biomeNum)
     {
         spriteNum = Random.Range(0, islandSprites.Length);
-        image.sprite = islandSprites[spriteNum];
+        if (biomeNum == 0)
+        {
+            image.sprite = rockySprites[spriteNum];
+        }
+        else
+        {
+            image.sprite = islandSprites[spriteNum];
+        }
         visited = false;
     }
 
