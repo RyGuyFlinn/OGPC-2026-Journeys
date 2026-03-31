@@ -1033,7 +1033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerY: 540
-  amplitude: 25
+  amplitude: 34
   hoverTime: 500
 --- !u!1 &1599489265
 GameObject:
