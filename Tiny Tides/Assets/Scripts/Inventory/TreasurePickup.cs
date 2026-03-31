@@ -30,7 +30,8 @@ public class TreasurePickup : MonoBehaviour
             }
             else
             {
-                Vector3 newPos = Vector3.Normalize(player.transform.position - transform.position) * (speed / ((distance - 1) * (25 / attractionRadius)) + 1);
+                float magnitude = (Time.deltaTime * speed * (attractionRadius - distance)) / (attractionRadius - 1);
+                Vector3 newPos = Vector3.Normalize(player.transform.position - transform.position) * magnitude;
             }
         }
     }
