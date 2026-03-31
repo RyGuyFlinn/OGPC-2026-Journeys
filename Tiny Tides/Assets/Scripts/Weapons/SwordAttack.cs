@@ -54,11 +54,11 @@ public class SwordAttack : MonoBehaviour
     {
         PlayerCPS += Time.deltaTime;
         if (Combo >= 3){
-            playermovement.speed = 1f;
+            //playermovement.speed = 1f;
             attackDelay = 0f;
         }
         if (PlayerCPS > 0.35f){
-            playermovement.speed = 5f;
+            //playermovement.speed = 5f;
             attackDelay = 0.1f;
         }
         try {
