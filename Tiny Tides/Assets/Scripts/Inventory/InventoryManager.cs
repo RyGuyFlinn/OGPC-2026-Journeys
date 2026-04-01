@@ -119,6 +119,7 @@ public class InventoryManager : MonoBehaviour
             GameObject player = GameObject.Find("Player");
 
             spawnedObject = Instantiate(holdingObject, player.transform.position, Quaternion.identity);
+            spawnedObject.transform.parent = transform.parent;
         }
 
         if (items[15].GetItem() == null && spawnedObject != null)
