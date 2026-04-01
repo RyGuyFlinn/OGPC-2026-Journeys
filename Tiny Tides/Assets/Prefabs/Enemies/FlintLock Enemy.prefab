@@ -202,7 +202,7 @@ MonoBehaviour:
   pants: {fileID: 5424546896321421623}
   saturation: 0.7
   brightness: 0.7
-  EnemyDifficulty: 3
+  EnemyDifficulty: 2
 --- !u!114 &6193712840271550659
 MonoBehaviour:
   m_ObjectHideFlags: 0

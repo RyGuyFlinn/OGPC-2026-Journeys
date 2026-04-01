@@ -77,7 +77,7 @@ public class EnterIsland : MonoBehaviour
                 }
                 mapIsland.GetComponent<MapIsland>().SetVisited();
 
-                player.transform.position = islandPort.transform.position;
+                player.transform.GetChild(0).position = islandPort.transform.position;
             }
         }
     }

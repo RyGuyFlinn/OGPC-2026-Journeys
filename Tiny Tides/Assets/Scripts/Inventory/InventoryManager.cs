@@ -407,12 +407,14 @@ public class InventoryManager : MonoBehaviour
     #region Turn On/Off
     public void turnOff()
     {
+        Time.timeScale = 0f;
         inventoryPanel.SetActive(true);
         isOpen = false;
     }
 
     public void turnOn()
     {
+        Time.timeScale = 1.0f;
         inventoryPanel.SetActive(false);
         isOpen = true;
     }
