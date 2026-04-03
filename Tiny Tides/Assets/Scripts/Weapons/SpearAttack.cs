@@ -22,7 +22,7 @@ public class SpearAttack : MonoBehaviour
     public Collider2D swordHitbox;
     public Animator animator;
     //public AudioSource audioSource;
-    //public AudioClip swingSound;
+    public AudioClip StabSound;
     //public AudioClip blockSound;
 
     public bool attacking = false;
@@ -71,6 +71,7 @@ public class SpearAttack : MonoBehaviour
         
         // Enable sword hitbox for a short time
         swordHitbox.enabled = true;
+        SoundFXManager.Instance.PlaySoundFXClip(StabSound, transform, 1f, 1f);
         Debug.Log("Damage");
         yield return new WaitForSeconds(attackDuration);
 
