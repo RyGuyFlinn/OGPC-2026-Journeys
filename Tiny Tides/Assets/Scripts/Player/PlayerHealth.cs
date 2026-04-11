@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     private bool lockhealthgain = false;
     public bool hasShieldEquipped = false;
     public AudioClip hurtsound;
+    private bool CanTakeDamage = true;
     void Start()
     {
         currentHealth = maxHealth;
@@ -44,15 +45,25 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        SoundFXManager.Instance.PlaySoundFXClip(hurtsound, transform, 1f, 1f);
-        Debug.Log("Health: " + currentHealth.ToString());
+        if (CanTakeDamage)
+        {
+            currentHealth -= damage;
+            SoundFXManager.Instance.PlaySoundFXClip(hurtsound, transform, 1f, 1f);
+            Debug.Log("Health: " + currentHealth.ToString());
+            StartCoroutine(InvincibilityFrames());
+        }
+
         if (currentHealth <= 0)
         {
             Die();
         }
     }
-
+    IEnumerator InvincibilityFrames()
+    {
+        CanTakeDamage = false;
+        yield return new WaitForSeconds(1f);
+        CanTakeDamage = true;
+    }
     public void Die()
     {
         Debug.Log("Player Die");

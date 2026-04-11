@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treasureData: {fileID: 11400000, guid: b97118af67e95eb4f9eddc7b39139916, type: 2}
   value: 1
-  speed: 0.001
-  attractionRadius: 10
+  speed: 2
+  attractionRadius: 5
   playerRadius: 1
   audio: {fileID: 8300000, guid: c0d587ffe30f57b4f9faeed3aefa1a44, type: 3}

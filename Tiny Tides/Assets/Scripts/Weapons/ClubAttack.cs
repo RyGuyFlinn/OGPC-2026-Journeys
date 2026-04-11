@@ -116,6 +116,8 @@ public class ClubAttack : MonoBehaviour
     void OnEnable()
     {
         controls.GamePlay.Enable();
+        canAttack = true;
+        attacking = false;
     }
 
     void OnDisable()

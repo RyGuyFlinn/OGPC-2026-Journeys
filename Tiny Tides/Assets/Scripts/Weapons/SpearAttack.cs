@@ -57,7 +57,7 @@ public class SpearAttack : MonoBehaviour
     {
         if (canAttack) StartCoroutine(Attack());
     }
-
+ 
     IEnumerator Attack()
     {
         canAttack = false;
@@ -117,6 +117,9 @@ public class SpearAttack : MonoBehaviour
     void OnEnable()
     {
         controls.GamePlay.Enable();
+        canAttack = true;
+        attacking = false;
+     
     }
 
     void OnDisable()

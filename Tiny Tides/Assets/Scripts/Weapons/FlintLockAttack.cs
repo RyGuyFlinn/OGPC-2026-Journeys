@@ -51,7 +51,7 @@ public class FlintLockAttack : MonoBehaviour
         // Play SFX or animation if you have them
         SoundFXManager.Instance.PlaySoundFXClip(shootSound, transform, 1f, 1f);
 
-        if (animator) animator.SetTrigger("Shoot");
+        if (animator) animator.SetTrigger("Attack");
         
         Debug.Log("Shoot");
 
@@ -67,6 +67,8 @@ public class FlintLockAttack : MonoBehaviour
     void OnEnable()
     {
         controls.GamePlay.Enable();
+        canAttack = true;
+        attacking = false;
     }
 
     void OnDisable()

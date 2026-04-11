@@ -3025,7 +3025,8 @@ MonoBehaviour:
   shirtsSlider: {fileID: 4895157264607179238}
   pantsSlider: {fileID: 750549675619835185}
   shirt: {fileID: 2782334032705315397}
-  pants: {fileID: 7252984810221823892}
+  leftLeg: {fileID: 0}
+  rightLeg: {fileID: 0}
   inventoryShirt: {fileID: 4660052022690458786}
   inventoryPants: {fileID: 2727005071117076723}
   saturation: 0.663
@@ -4721,6 +4722,10 @@ MonoBehaviour:
   originalSlot:
     item: {fileID: 0}
     quantity: 0
+  Basic: {fileID: 21300000, guid: ba7e9e7e16ab8444da72958f125b3ed7, type: 3}
+  Sword: {fileID: -1709620795, guid: c13611d67c520bc42bfb269ca1de7546, type: 3}
+  Bomb: {fileID: -931487632, guid: c13611d67c520bc42bfb269ca1de7546, type: 3}
+  Upgrade: {fileID: -924207540, guid: c13611d67c520bc42bfb269ca1de7546, type: 3}
 --- !u!1 &7623457381662709283
 GameObject:
   m_ObjectHideFlags: 0
@@ -5812,7 +5817,7 @@ PrefabInstance:
     - target: {fileID: 3121346062257884033, guid: ccc6630d95b628f419fb4eb5e46b3af9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ba7e9e7e16ab8444da72958f125b3ed7, type: 3}
+      objectReference: {fileID: -1709620795, guid: c13611d67c520bc42bfb269ca1de7546, type: 3}
     - target: {fileID: 3121346062257884033, guid: ccc6630d95b628f419fb4eb5e46b3af9, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -6190,7 +6195,7 @@ PrefabInstance:
     - target: {fileID: 3121346062257884033, guid: ccc6630d95b628f419fb4eb5e46b3af9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ba7e9e7e16ab8444da72958f125b3ed7, type: 3}
+      objectReference: {fileID: -924207540, guid: c13611d67c520bc42bfb269ca1de7546, type: 3}
     - target: {fileID: 3121346062257884033, guid: ccc6630d95b628f419fb4eb5e46b3af9, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -6820,7 +6825,7 @@ PrefabInstance:
     - target: {fileID: 3121346062257884033, guid: ccc6630d95b628f419fb4eb5e46b3af9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ba7e9e7e16ab8444da72958f125b3ed7, type: 3}
+      objectReference: {fileID: -931487632, guid: c13611d67c520bc42bfb269ca1de7546, type: 3}
     - target: {fileID: 3121346062257884033, guid: ccc6630d95b628f419fb4eb5e46b3af9, type: 3}
       propertyPath: m_Color.a
       value: 1

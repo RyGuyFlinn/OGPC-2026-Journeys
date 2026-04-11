@@ -45,6 +45,11 @@ public class InventoryManager : MonoBehaviour
 
     private GameObject spawnedObject = null;
 
+    [Header("Sprites")]
+    public Sprite Basic;
+    public Sprite Sword;
+    public Sprite Bomb;
+    public Sprite Upgrade;
     public void Start()
     {
         slots = new GameObject[slotHolder.transform.childCount];
@@ -76,6 +81,7 @@ public class InventoryManager : MonoBehaviour
             ShowItems();
             AbilitiesManager();
             UpgradesManager();
+            UpdateSlotsSprites();
         }
 
         if (!isOpen)
@@ -103,7 +109,26 @@ public class InventoryManager : MonoBehaviour
                 turnOn();
         }
     }
+    private void UpdateSlotsSprites()
+    {
+        if (items[15].GetItem() != null)
+        {
+            slots[15].GetComponent<Image>().sprite = Basic;
+        }
+        else slots[15].GetComponent<Image>().sprite = Sword;
 
+        if (items[16].GetItem() != null)
+        {
+            slots[16].GetComponent<Image>().sprite = Basic;
+        }
+        else slots[16].GetComponent<Image>().sprite = Bomb;
+
+        if (items[17].GetItem() != null)
+        {
+            slots[17].GetComponent<Image>().sprite = Basic;
+        }
+        else slots[17].GetComponent<Image>().sprite = Upgrade;
+    }
     #region Showing Player Items
     private void ShowItems()
     {

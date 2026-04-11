@@ -117,12 +117,13 @@ public class SwordAttack : MonoBehaviour
         if (!blocking)
         {
             blocking = true;
-
+            canAttack = false;
             if (animator) animator.SetBool("Blocking", true);
 
             yield return new WaitForSeconds(blockTime); // active blocking phase
 
             blocking = false;
+            canAttack= true;
             if (animator) animator.SetBool("Blocking", false);
 
             yield return new WaitForSeconds(blockDelay); // cooldown phase
@@ -162,6 +163,8 @@ public class SwordAttack : MonoBehaviour
     void OnEnable()
     {
         controls.GamePlay.Enable();
+        canAttack = true;
+        attacking = false;
     }
 
     void OnDisable()

@@ -108,9 +108,14 @@ public class EnemyFlintLock : MonoBehaviour
         if (animator) animator.SetTrigger("Shoot");
         */
         Debug.Log("Shoot");
-
-        GameObject bullet = Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation);
-
+        float Randomaim = Random.Range(-20f, 21f);
+        Quaternion offset = Quaternion.Euler(0, 0, Randomaim);
+        GameObject bullet = Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation * offset);
+        /*
+         * 
+        GameObject bullet = Instantiate(bulletPrefab, muzzle.transform.position, Quaternion.Euler(muzzle.transform.rotation.x, muzzle.transform.rotation.y, muzzle.transform.rotation.z + Randomaim));
+        Debug.Log(Randomaim);
+         */
         attacking = false;
 
         // Wait for cooldown before allowing next attack

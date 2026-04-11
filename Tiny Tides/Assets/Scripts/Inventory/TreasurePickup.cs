@@ -24,7 +24,7 @@ public class TreasurePickup : MonoBehaviour
 
         if (distance <= attractionRadius)
         {
-            if (distance < 1f)
+            if (distance < 0.5f)
             {
                 transform.position = player.transform.position;
             }
@@ -32,6 +32,7 @@ public class TreasurePickup : MonoBehaviour
             {
                 float magnitude = (Time.deltaTime * speed * (attractionRadius - distance)) / (attractionRadius - 1);
                 Vector3 newPos = Vector3.Normalize(player.transform.position - transform.position) * magnitude;
+                transform.position += newPos;
             }
         }
     }
