@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     public bool hasShieldEquipped = false;
     public AudioClip hurtsound;
     private bool CanTakeDamage = true;
+    public bool BejewledSkullAbility = false;
     void Start()
     {
         currentHealth = maxHealth;
@@ -53,9 +54,14 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(InvincibilityFrames());
         }
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && BejewledSkullAbility == false)
         {
             Die();
+        }
+        else if (currentHealth <= 0 && BejewledSkullAbility == true)
+        {
+            currentHealth += 4;
+            InventoryManager.LoseBejeweledSkull = true;
         }
     }
     IEnumerator InvincibilityFrames()

@@ -50,6 +50,8 @@ public class InventoryManager : MonoBehaviour
     public Sprite Sword;
     public Sprite Bomb;
     public Sprite Upgrade;
+    [Header("Upgrades")]
+    public static bool LoseBejeweledSkull = false;
     public void Start()
     {
         slots = new GameObject[slotHolder.transform.childCount];
@@ -233,14 +235,27 @@ public class InventoryManager : MonoBehaviour
                 
             }
             else player.GetComponent<PlayerHealth>().HasExtraHealth = false;
+            if (items[17].GetItem().itemName == "Bejeweled Skull")
+            {
+                player.GetComponent<PlayerHealth>().BejewledSkullAbility = true;
+                if (LoseBejeweledSkull == true)
+                {
+                    Remove(items[17].GetItem());
+                    lastSelectedItem = null;
+                    LoseBejeweledSkull = false;
+                }
+
+            }
+            else player.GetComponent<PlayerHealth>().BejewledSkullAbility = false;
 
         }
         else
             {
                 player.GetComponent<PlayerMovement>().DashAbility = false;
                 player.GetComponent<PlayerHealth>().HasExtraHealth = false;
-            
-            }
+                player.GetComponent<PlayerHealth>().BejewledSkullAbility = false;
+
+        }
         }
 
     #endregion
