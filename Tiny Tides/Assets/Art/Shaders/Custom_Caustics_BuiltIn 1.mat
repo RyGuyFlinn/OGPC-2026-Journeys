@@ -32,7 +32,7 @@ Material:
     - _CellDensityA: 4
     - _CellDensityB: 5
     - _DistortionStrength: 0.02
-    - _Transparency: 0.302
+    - _Transparency: 0.354
     m_Colors:
     - _CausticColor: {r: 0.5298594, g: 0.7381186, b: 0.764151, a: 1}
     - _StretchDirection: {r: -0.05, g: 0, b: -0.02, a: 0}
