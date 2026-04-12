@@ -42,7 +42,7 @@ public class InventoryManager : MonoBehaviour
     bool isMovingItem;
 
     private bool isOpen = false;
-
+    public bool CanOpen = true;
     private GameObject spawnedObject = null;
 
     [Header("Sprites")]
@@ -101,7 +101,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && CanOpen)
         {
             if (isOpen)
                 turnOff();

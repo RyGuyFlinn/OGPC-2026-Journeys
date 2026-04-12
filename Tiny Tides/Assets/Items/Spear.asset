@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Spear
   m_EditorClassIdentifier: 
   itemName: Spear
-  Description: 
-  Stats: 
+  Description: Keep those pirates far away this long spear
+  Stats: Left Click to attack + Lots of reach
   itemIcon: {fileID: -2092137156, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
   isHoldable: 0
