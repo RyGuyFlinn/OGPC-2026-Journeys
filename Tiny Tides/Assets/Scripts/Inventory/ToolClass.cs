@@ -13,7 +13,8 @@ public class ToolClass : ItemClass
         pickaxe,
         hammer,
         axe,
-        upgrade
+        upgrade,
+        ability
     }
 
     public override ItemClass GetItem() { return this; }

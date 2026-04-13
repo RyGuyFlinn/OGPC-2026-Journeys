@@ -134,19 +134,28 @@ public class InventoryManager : MonoBehaviour
     #region Showing Player Items
     private void ShowItems()
     {
-        // Take the weopon in the main weopon slot and spawn its prefab in the scene.
-        if (items[15].GetItem() != null && (spawnedObject == null || items[15].GetItem().itemName != spawnedObject.GetComponent<HoldingItem>().name))
+        ItemClass item;
+        if (items[15].GetItem() != null)
         {
-            if (spawnedObject != null)
+            item = items[15].GetItem();
+
+            // Take the weopon in the main weopon slot and spawn its prefab in the scene.
+            if ((spawnedObject == null || items[15].GetItem().itemName != spawnedObject.GetComponent<HoldingItem>().name) && item.GetTool().toolType == ToolClass.ToolType.weopon)
             {
-                Destroy(spawnedObject.gameObject);
+
+                Debug.Log(item.GetTool().toolType);
+                if (spawnedObject != null)
+                {
+                    Destroy(spawnedObject.gameObject);
+                }
+
+                GameObject holdingObject = items[15].GetItem().holdingObject;
+                GameObject player = GameObject.Find("Player");
+
+                spawnedObject = Instantiate(holdingObject, player.transform.position, Quaternion.identity);
+                spawnedObject.transform.parent = transform.parent;
             }
-
-            GameObject holdingObject = items[15].GetItem().holdingObject;
-            GameObject player = GameObject.Find("Player");
-
-            spawnedObject = Instantiate(holdingObject, player.transform.position, Quaternion.identity);
-            spawnedObject.transform.parent = transform.parent;
+           
         }
 
         if (items[15].GetItem() == null && spawnedObject != null)
@@ -216,47 +225,67 @@ public class InventoryManager : MonoBehaviour
                     }
                 }
             }
+            if (items[16].GetItem().itemName == "Dash Ability")
+            {
+                player.GetComponent<PlayerMovement>().DashAbility = true;
+            }
+            else player.GetComponent<PlayerMovement>().DashAbility = false;
+        }
+        else
+        {
+            player.GetComponent<PlayerMovement>().DashAbility = false;
         }
     }
     private void UpgradesManager()
     {
         GameObject player = GameObject.Find("Player");
-        
-        if (items[17].GetItem() != null && items[17].GetItem().IsUpgrade == true)
+        ItemClass item;
+        if (items[17].GetItem() != null)
         {
-            if (items[17].GetItem().itemName == "Dash Upgrade")
+            item = items[17].GetItem();
+            if (item.GetTool().toolType == ToolClass.ToolType.upgrade)
             {
-                player.GetComponent<PlayerMovement>().DashAbility = true;
-            }
-            else player.GetComponent<PlayerMovement>().DashAbility = false;
-            if (items[17].GetItem().itemName == "Health Upgrade")
-            {
-                player.GetComponent<PlayerHealth>().HasExtraHealth = true;
-                
-            }
-            else player.GetComponent<PlayerHealth>().HasExtraHealth = false;
-            if (items[17].GetItem().itemName == "Bejeweled Skull")
-            {
-                player.GetComponent<PlayerHealth>().BejewledSkullAbility = true;
-                if (LoseBejeweledSkull == true)
+
+
+                if (items[17].GetItem().itemName == "Silver Skull")
                 {
-                    Remove(items[17].GetItem());
-                    lastSelectedItem = null;
-                    LoseBejeweledSkull = false;
+                    player.GetComponent<PlayerHealth>().HasExtraHealth = true;
+
                 }
+                else player.GetComponent<PlayerHealth>().HasExtraHealth = false;
+                if (items[17].GetItem().itemName == "Bejeweled Skull")
+                {
+                    player.GetComponent<PlayerHealth>().BejewledSkullAbility = true;
+                    if (LoseBejeweledSkull == true)
+                    {
+                        items[17].Clear();
+                        RefreshUI();
+                        lastSelectedItem = null;
+                        LoseBejeweledSkull = false;
+                    }
+
+                }
+                else player.GetComponent<PlayerHealth>().BejewledSkullAbility = false;
+                if (items[17].GetItem().itemName == "Gold Skull")
+                {
+                    player.GetComponent<PlayerHealth>().GoldSkullAbility = true;
+
+                }
+                else player.GetComponent<PlayerHealth>().GoldSkullAbility = false;
 
             }
-            else player.GetComponent<PlayerHealth>().BejewledSkullAbility = false;
-
+            
         }
         else
-            {
-                player.GetComponent<PlayerMovement>().DashAbility = false;
-                player.GetComponent<PlayerHealth>().HasExtraHealth = false;
-                player.GetComponent<PlayerHealth>().BejewledSkullAbility = false;
+        {
+
+            player.GetComponent<PlayerHealth>().HasExtraHealth = false;
+            player.GetComponent<PlayerHealth>().BejewledSkullAbility = false;
+            player.GetComponent<PlayerHealth>().GoldSkullAbility = false;
 
         }
-        }
+        
+    }
 
     #endregion
 
@@ -380,7 +409,7 @@ public class InventoryManager : MonoBehaviour
         lastSelectedItem = new SlotClass(movingSlot);
         originalSlot.Clear();
         isMovingItem = true;
-
+      
         RefreshUI();
 
         return true;
@@ -410,17 +439,57 @@ public class InventoryManager : MonoBehaviour
                 }
                 else //Swap Item
                 {
-                    tempSlot = new SlotClass(originalSlot); //a == b
-                    originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity()); // b = c
-                    movingSlot.AddItem(tempSlot.GetItem(), tempSlot.GetQuantity()); //c == a
+                    ItemClass item;
+                    item = movingSlot.GetItem();
 
-                    RefreshUI();
-                    return true;
+                    if (GetClosestSlotPos() == slots[17].transform.position && item.GetTool().toolType != ToolClass.ToolType.upgrade)
+                    {
+                        Add(movingSlot.GetItem(), movingSlot.GetQuantity());
+                        movingSlot.Clear();
+                    }
+                    else if (GetClosestSlotPos() == slots[16].transform.position && item.GetTool().toolType != ToolClass.ToolType.ability)
+                    {
+                        Add(movingSlot.GetItem(), movingSlot.GetQuantity());
+                        movingSlot.Clear();
+                    }
+                    else if (GetClosestSlotPos() == slots[15].transform.position && item.GetTool().toolType != ToolClass.ToolType.weopon)
+                    {
+                        Add(movingSlot.GetItem(), movingSlot.GetQuantity());
+                        movingSlot.Clear();
+                    }
+                    else
+                    {
+                        tempSlot = new SlotClass(originalSlot); //a == b
+                        originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity()); // b = c
+                        movingSlot.AddItem(tempSlot.GetItem(), tempSlot.GetQuantity()); //c == a
+
+                        RefreshUI();
+                        return true;
+                    }
+                    
                 }
             }
             else /// place Item
             {
-                originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity());
+                ItemClass item;
+                item = movingSlot.GetItem();
+                
+                if (GetClosestSlotPos() == slots[17].transform.position && item.GetTool().toolType != ToolClass.ToolType.upgrade)
+                {
+                    Add(movingSlot.GetItem(), movingSlot.GetQuantity());
+                }
+                else if (GetClosestSlotPos() == slots[16].transform.position && item.GetTool().toolType != ToolClass.ToolType.ability)
+                {
+                    Add(movingSlot.GetItem(), movingSlot.GetQuantity());
+                }
+                else if (GetClosestSlotPos() == slots[15].transform.position && item.GetTool().toolType != ToolClass.ToolType.weopon)
+                {
+                    Add(movingSlot.GetItem(), movingSlot.GetQuantity());
+                }
+                else
+                {
+                    originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity());
+                }
                 movingSlot.Clear();
             }
         }
@@ -432,15 +501,28 @@ public class InventoryManager : MonoBehaviour
 
     private SlotClass GetClosestSlot()
     {
+        
         for (int i = 0; i < slots.Length; i++)
         {
-            if (Vector2.Distance(slots[i].transform.position, Input.mousePosition) <= 32)
+            if (Vector2.Distance(slots[i].transform.position, Input.mousePosition) <= 100)
             {
                 return items[i];
             }
         }
 
         return null;
+    }
+    private Vector3 GetClosestSlotPos()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (Vector2.Distance(slots[i].transform.position, Input.mousePosition) <= 100)
+            {
+                return slots[i].transform.position;
+            }
+        }
+
+        return new Vector3(6700, 6700, 6700);
     }
     #endregion Moving Stuff
 

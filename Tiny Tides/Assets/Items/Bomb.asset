@@ -21,4 +21,4 @@ MonoBehaviour:
   holdingObject: {fileID: 0}
   IsUpgrade: 0
   GroundObject: {fileID: 1198379974918098641, guid: 073f582833e88b94a83c30ff68623e18, type: 3}
-  toolType: 0
+  toolType: 5

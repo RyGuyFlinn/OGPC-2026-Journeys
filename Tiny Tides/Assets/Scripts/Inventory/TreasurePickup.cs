@@ -42,7 +42,7 @@ public class TreasurePickup : MonoBehaviour
         //when collides with player, increase player's treasure score then delete this gameobject
         if (collision.tag == "Player")
         {
-            treasureData.ChangeTreasure(value);
+            TreasureData.ChangeTreasure(value);
 
             SoundFXManager.Instance.PlaySoundFXClip(audio, transform, 2, 1, true);
 

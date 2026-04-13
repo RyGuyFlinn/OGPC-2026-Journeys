@@ -21,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     public AudioClip hurtsound;
     private bool CanTakeDamage = true;
     public bool BejewledSkullAbility = false;
+    public bool GoldSkullAbility = false;
     void Start()
     {
         currentHealth = maxHealth;
@@ -46,12 +47,31 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        bool PayForSafety = false;
         if (CanTakeDamage)
         {
-            currentHealth -= damage;
-            SoundFXManager.Instance.PlaySoundFXClip(hurtsound, transform, 1f, 1f);
-            Debug.Log("Health: " + currentHealth.ToString());
-            StartCoroutine(InvincibilityFrames());
+            if (GoldSkullAbility == true)
+            {
+                int RandomChance = Random.Range(0, 4);
+                
+                if (RandomChance == 0 && TreasureData.treasure > 0)
+                {
+                    TreasureData.ChangeTreasure(-1);
+                    PayForSafety = true;
+                }
+                else
+                {
+                    Debug.Log("Can't pay for free save");
+                }
+            }
+            if (PayForSafety == false)
+            {
+                currentHealth -= damage;
+                SoundFXManager.Instance.PlaySoundFXClip(hurtsound, transform, 1f, 1f);
+                Debug.Log("Health: " + currentHealth.ToString());
+            }
+                StartCoroutine(InvincibilityFrames());
+            
         }
 
         if (currentHealth <= 0 && BejewledSkullAbility == false)

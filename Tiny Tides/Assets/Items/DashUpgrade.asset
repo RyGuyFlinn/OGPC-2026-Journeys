@@ -12,13 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77dd95da099798c4c8bc72dd61d0f10b, type: 3}
   m_Name: DashUpgrade
   m_EditorClassIdentifier: 
-  itemName: Dash Upgrade
+  itemName: Dash Ability
   Description: Allows you to dash to quickly escape enemies
   Stats: Press SPACE to use, equip in third Slot
   itemIcon: {fileID: 21300000, guid: ef34f0e001f0a254bbebdc08eb890d4f, type: 3}
   maxStack: 1
   isHoldable: 0
   holdingObject: {fileID: 0}
-  IsUpgrade: 1
   GroundObject: {fileID: 1590474634331666826, guid: 11d1cb54d7017bb4795bb7378534b477, type: 3}
-  toolType: 4
+  toolType: 5

@@ -11,8 +11,7 @@ public abstract class ItemClass : ScriptableObject
     public int maxStack = 1;
 
     public bool isHoldable = false;
-    public GameObject holdingObject;
-    public bool IsUpgrade = false;
+    public GameObject holdingObject;  
     public GameObject GroundObject;
 
     public abstract ItemClass GetItem();
