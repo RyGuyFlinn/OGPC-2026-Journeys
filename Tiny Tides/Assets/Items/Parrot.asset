@@ -19,6 +19,5 @@ MonoBehaviour:
   maxStack: 1
   isHoldable: 0
   holdingObject: {fileID: 0}
-  IsUpgrade: 0
   GroundObject: {fileID: 6075006638596852733, guid: 5009ca8f740d8604d98c13694aa2639c, type: 3}
-  toolType: 0
+  toolType: 5

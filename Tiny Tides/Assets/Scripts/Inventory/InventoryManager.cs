@@ -20,7 +20,11 @@ public class InventoryManager : MonoBehaviour
     [Header("Abilities")]
     public float bombLaunchForce = 10f;
     public GameObject bombPrefab;
-
+    public GameObject parrotPrefab;
+    private bool ParrotOnCooldown = false;
+    private bool ParrotSpawned = false;
+    private GameObject ParrotObject;
+    private bool ParrotSpawnLock = false;
     public GameObject shieldPrefab;
     public float shieldCooldownTime;
     public float shieldUseTime;
@@ -52,6 +56,11 @@ public class InventoryManager : MonoBehaviour
     public Sprite Upgrade;
     [Header("Upgrades")]
     public static bool LoseBejeweledSkull = false;
+
+    void OnEnable()
+    {
+        ParrotOnCooldown = false;
+    }
     public void Start()
     {
         slots = new GameObject[slotHolder.transform.childCount];
@@ -230,11 +239,38 @@ public class InventoryManager : MonoBehaviour
                 player.GetComponent<PlayerMovement>().DashAbility = true;
             }
             else player.GetComponent<PlayerMovement>().DashAbility = false;
+            if (items[16].GetItem().itemName == "Parrot")
+            {
+                if (Input.GetKeyDown(KeyCode.Q) && ParrotSpawnLock == false && ParrotOnCooldown == false)
+                {
+                     GameObject parrot = Instantiate(parrotPrefab, player.transform.position, transform.rotation);
+                    ParrotObject = parrot;
+                    ParrotSpawned = true;
+                    
+                }
+            }
         }
         else
         {
             player.GetComponent<PlayerMovement>().DashAbility = false;
+            
         }
+        if (ParrotObject != null) ParrotSpawnLock = true;
+        else
+        {
+            ParrotSpawnLock = false;
+            if (ParrotSpawned)
+            { 
+                StartCoroutine(ParrotCooldown());
+                ParrotSpawned = false;
+            }
+        }
+    }
+    IEnumerator ParrotCooldown()
+    {
+        ParrotOnCooldown = true;
+        yield return new WaitForSeconds(5f);
+        ParrotOnCooldown = false;
     }
     private void UpgradesManager()
     {

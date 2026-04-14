@@ -3243,6 +3243,8 @@ MonoBehaviour:
   ExtraHealth: {fileID: 2304270072525566234}
   hasShieldEquipped: 0
   hurtsound: {fileID: 8300000, guid: 9d67af56e11606a40a20e700e6838dbb, type: 3}
+  BejewledSkullAbility: 0
+  GoldSkullAbility: 0
 --- !u!114 &2029465756565539178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4894,6 +4896,7 @@ MonoBehaviour:
   inventoryPanel: {fileID: 7623457381662709283}
   bombLaunchForce: 5
   bombPrefab: {fileID: 7833385705845326942, guid: f2ebee20301681f40b45bd5d1f370805, type: 3}
+  parrotPrefab: {fileID: 2108560681825373726, guid: f5bddd5014a136b4c8eb0d323d165386, type: 3}
   shieldPrefab: {fileID: 0}
   shieldCooldownTime: 0
   shieldUseTime: 0
@@ -4907,6 +4910,7 @@ MonoBehaviour:
   originalSlot:
     item: {fileID: 0}
     quantity: 0
+  CanOpen: 1
   Basic: {fileID: 21300000, guid: ba7e9e7e16ab8444da72958f125b3ed7, type: 3}
   Sword: {fileID: -1709620795, guid: c13611d67c520bc42bfb269ca1de7546, type: 3}
   Bomb: {fileID: -931487632, guid: c13611d67c520bc42bfb269ca1de7546, type: 3}

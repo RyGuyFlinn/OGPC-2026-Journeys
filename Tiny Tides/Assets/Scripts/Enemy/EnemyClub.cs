@@ -78,7 +78,11 @@ public class EnemyClub : MonoBehaviour
         float playerdistance = Vector3.Distance(player.position, transform.position);
         if ((playerdistance <= minDistance))
         {
-            if (canAttack) callAttack();
+            if (canAttack)
+            {
+                callAttack();
+                StartCoroutine(Dashtime());
+            }
             
      
         }
@@ -96,7 +100,13 @@ public class EnemyClub : MonoBehaviour
             }
         
     }
-
+    IEnumerator Dashtime()
+    {
+        yield return new WaitForSeconds(5f);
+        Charge = false;
+        if (canAttack == false) StartCoroutine(FinishAttack());
+       
+    }
     private void callAttack()
     {
         StartCoroutine(StartAttack());
