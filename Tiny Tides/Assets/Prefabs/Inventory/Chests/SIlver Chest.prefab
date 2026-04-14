@@ -338,8 +338,13 @@ MonoBehaviour:
   unlockAudio: {fileID: 8300000, guid: 79be21ce5880314498dfdba6bd994b1a, type: 3}
   lootTable:
   - {fileID: 4627087838738749812, guid: fb98e4e85787c9548a88b467d6c8b62e, type: 3}
+  - {fileID: 6075006638596852733, guid: 5009ca8f740d8604d98c13694aa2639c, type: 3}
+  - {fileID: 3187401578969636077, guid: c0b29acd7f3a8d34f98c954210ecc4e9, type: 3}
   - {fileID: 7616690192208975735, guid: 536cea3fff9c70f4dbe2f0b5b3c1b3b0, type: 3}
+  - {fileID: 6168247737014214685, guid: 82d012c97f0543c4bbbff53b0c031179, type: 3}
+  - {fileID: 6168247737014214685, guid: 57aa4df8faaae9c4189cc47f1b0bf27d, type: 3}
   - {fileID: 6168247737014214685, guid: 0be15c28fb01f934eaa76132a6df7598, type: 3}
+  - {fileID: 9129812343693372039, guid: 44cd7324dfcf1b14d90eab8e28865654, type: 3}
   - {fileID: 9129812343693372039, guid: 44cd7324dfcf1b14d90eab8e28865654, type: 3}
   - {fileID: 9129812343693372039, guid: 0eb477d7ffec1bd40836f5ebcc384d89, type: 3}
   - {fileID: 9129812343693372039, guid: e857763a5c8a08443bb1fa0d69ed42f3, type: 3}
@@ -350,9 +355,6 @@ MonoBehaviour:
   - {fileID: 9129812343693372039, guid: 02a73e5eb49686745b20efbc64ef5a8a, type: 3}
   - {fileID: 9129812343693372039, guid: 02a73e5eb49686745b20efbc64ef5a8a, type: 3}
   - {fileID: 9129812343693372039, guid: 2d62ce21e8bd06e469f65b45cbfe92ca, type: 3}
-  - {fileID: 6168247737014214685, guid: 82d012c97f0543c4bbbff53b0c031179, type: 3}
-  - {fileID: 3187401578969636077, guid: c0b29acd7f3a8d34f98c954210ecc4e9, type: 3}
-  - {fileID: 6168247737014214685, guid: 57aa4df8faaae9c4189cc47f1b0bf27d, type: 3}
   lootNum: 3
   textPrompt: {fileID: 2027668478716556301}
   unlockedText: {fileID: 21300000, guid: e22177065f10172429ddbbf0c7cd3c94, type: 3}
