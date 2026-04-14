@@ -567,6 +567,7 @@ public class InventoryManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         inventoryPanel.SetActive(true);
+        itemPlaceHolder.SetActive(true);
         isOpen = false;
     }
 
@@ -574,6 +575,7 @@ public class InventoryManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         inventoryPanel.SetActive(false);
+        itemPlaceHolder.SetActive(false);
         isOpen = true;
     }
     #endregion Turn On/Off
