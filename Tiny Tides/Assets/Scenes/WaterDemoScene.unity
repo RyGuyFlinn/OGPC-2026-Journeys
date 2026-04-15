@@ -69606,7 +69606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5535344598320702440, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
       propertyPath: m_Name
-      value: PlayerShip
+      value: PlayerBoat
       objectReference: {fileID: 0}
     - target: {fileID: 5535344598320702440, guid: f3c41c3fd34d6f547b5329d4f6391eb8, type: 3}
       propertyPath: m_TagString
