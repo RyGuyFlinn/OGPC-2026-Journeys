@@ -102,6 +102,12 @@ MonoBehaviour:
   - {fileID: -1732693100, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
   - {fileID: -565204593, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
   - {fileID: -80914850, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
+  glacierSprites:
+  - {fileID: -1548712759, guid: e80e010b05172bb4ab52aee633dfdd68, type: 3}
+  - {fileID: 1076430790, guid: e80e010b05172bb4ab52aee633dfdd68, type: 3}
+  - {fileID: -293020301, guid: e80e010b05172bb4ab52aee633dfdd68, type: 3}
+  - {fileID: 362175788, guid: e80e010b05172bb4ab52aee633dfdd68, type: 3}
+  - {fileID: 2121775643, guid: e80e010b05172bb4ab52aee633dfdd68, type: 3}
   visitedSprites:
   - {fileID: 906928099, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
   - {fileID: -846274087, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}

@@ -9,6 +9,7 @@ public class MapIsland : MonoBehaviour
     public bool visited = false;
     public Sprite[] islandSprites;
     public Sprite[] rockySprites;
+    public Sprite[] glacierSprites;
     public Sprite[] visitedSprites;
     private Image image;
 
@@ -23,6 +24,10 @@ public class MapIsland : MonoBehaviour
         if (biomeNum == 0)
         {
             image.sprite = rockySprites[spriteNum];
+        }
+        else if (biomeNum == 1)
+        {
+            image.sprite = glacierSprites[spriteNum];
         }
         else
         {
