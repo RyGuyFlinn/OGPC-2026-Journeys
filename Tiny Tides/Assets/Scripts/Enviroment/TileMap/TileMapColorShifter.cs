@@ -45,14 +45,16 @@ public class TileMapColorShifter : MonoBehaviour
             float normalizedZ = Mathf.InverseLerp(0f, highestZ, worldPos.z);
             float brightness;
             // Interpolate brightness between minBrightness and full (1)
-            if (worldPos.z == 0)
-            {
-                brightness = Mathf.Lerp(minBrightness, 1f, 1);
-            }
-            else
-            {
-                brightness = Mathf.Lerp(minBrightness, 1f, normalizedZ);
-            }
+            //if (worldPos.z == 0)
+            //{
+            //    brightness = Mathf.Lerp(minBrightness, 1f, 1);
+            //}
+            //else
+            //{
+            //    brightness = Mathf.Lerp(minBrightness, 1f, normalizedZ);
+            //}
+
+            brightness = Mathf.Lerp(minBrightness, 1f, normalizedZ);
 
             Color adjusted = new Color(
                 baseColor.r * brightness,
