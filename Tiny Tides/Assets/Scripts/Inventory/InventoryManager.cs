@@ -35,9 +35,9 @@ public class InventoryManager : MonoBehaviour
     [Space]
     public GameObject hands;
     
-    private SlotClass[] items;
+    public SlotClass[] items;
 
-    private GameObject[] slots;
+    public GameObject[] slots;
 
     public SlotClass movingSlot;
     public SlotClass lastSelectedItem;
@@ -48,7 +48,7 @@ public class InventoryManager : MonoBehaviour
     private bool isOpen = false;
     public bool CanOpen = true;
     private GameObject spawnedObject = null;
-
+    private int ItemQuantity = 1;
     [Header("Sprites")]
     public Sprite Basic;
     public Sprite Sword;
@@ -418,7 +418,8 @@ public class InventoryManager : MonoBehaviour
             Instantiate(ObjectToSpawn, player.transform.position, ObjectToSpawn.transform.rotation);
 
             Remove(lastSelectedItem.GetItem());
-            lastSelectedItem = null;
+            if (ItemQuantity == 1)lastSelectedItem = null;
+            else ItemQuantity--;
         }
     }
 
@@ -443,6 +444,7 @@ public class InventoryManager : MonoBehaviour
 
         movingSlot = new SlotClass(originalSlot);
         lastSelectedItem = new SlotClass(movingSlot);
+        ItemQuantity = lastSelectedItem.GetQuantity();
         originalSlot.Clear();
         isMovingItem = true;
       

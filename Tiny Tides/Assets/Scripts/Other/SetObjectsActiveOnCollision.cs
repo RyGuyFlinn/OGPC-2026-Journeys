@@ -5,13 +5,15 @@ using UnityEngine;
 public class SetObjectsActiveOnCollision : MonoBehaviour
 {
     public GameObject[] objects;
+    public bool IsColliding = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            IsColliding = true;
             foreach (GameObject obj in objects)
             {
-                obj.SetActive(true);
+                if (obj != null) obj.SetActive(true);
             }
         }
     }
@@ -19,9 +21,10 @@ public class SetObjectsActiveOnCollision : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            IsColliding = false;
             foreach (GameObject obj in objects)
             {
-                obj.SetActive(false);
+                if (obj != null) obj.SetActive(false);
             }
         }
     }

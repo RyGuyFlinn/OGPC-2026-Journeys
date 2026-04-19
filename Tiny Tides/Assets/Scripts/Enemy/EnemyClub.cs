@@ -48,6 +48,7 @@ public class EnemyClub : MonoBehaviour
     public EnemyMovement enemymovement;
     public GameObject enemy;
     public bool Charge;
+    private bool FinishingAttack = false;
     private Vector3 oldplayerpos;
     //[Header("Sound Effects")]
     // public GameObject Ching;
@@ -92,9 +93,10 @@ public class EnemyClub : MonoBehaviour
 
                 Vector2 newPosition = Vector2.MoveTowards(enemyrb.position, oldplayerpos, 5f * Time.fixedDeltaTime);
                 enemyrb.MovePosition(newPosition);
-                if (Vector3.Distance(oldplayerpos, enemyrb.position) < 1f)
+                if (Vector3.Distance(oldplayerpos, enemyrb.position) < 1f && FinishingAttack == false)
                 {
                 Charge = false;
+                FinishingAttack = true;
                 StartCoroutine(FinishAttack());
                 }
             }
@@ -103,8 +105,13 @@ public class EnemyClub : MonoBehaviour
     IEnumerator Dashtime()
     {
         yield return new WaitForSeconds(5f);
-        Charge = false;
-        if (canAttack == false) StartCoroutine(FinishAttack());
+        if (FinishingAttack == false)
+        {
+            Debug.Log("Ran");
+            Charge = false;
+            FinishingAttack = true;
+            StartCoroutine(FinishAttack());
+        }
        
     }
     private void callAttack()
@@ -129,6 +136,7 @@ public class EnemyClub : MonoBehaviour
     }
     IEnumerator FinishAttack()
     {
+        
         // Play SFX or animation if you have them
         //if (audioSource && swingSound)
         //    audioSource.PlayOneShot(swingSound);
@@ -148,6 +156,7 @@ public class EnemyClub : MonoBehaviour
         attacking = false;
         yield return new WaitForSeconds(AttackCooldown);
         canAttack = true;
+        FinishingAttack = false;
     }
 
 
