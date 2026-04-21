@@ -16,6 +16,7 @@ TagManager:
   - NoBulletCollisions
   - ChatBox
   - UI
+  - PlayerBomb
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - Weapon
   - Special
   - Enviroment
-  - 
+  - Land
   - 
   - 
   - 

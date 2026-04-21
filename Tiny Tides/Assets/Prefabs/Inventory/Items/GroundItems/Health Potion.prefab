@@ -134,4 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  speed: 2
+  attractionRadius: 5
+  playerRadius: 1
   audio: {fileID: 8300000, guid: fe73ec1dcff65a647bd2a3a70820a34f, type: 3}

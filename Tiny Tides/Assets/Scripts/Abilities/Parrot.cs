@@ -13,10 +13,12 @@ public class Parrot : MonoBehaviour
     public float speed = 5f;
     private bool CanAttack = true;
     public bool ReturnToPlayer = false;
+    private bool SpawnDelayBool = true;
     void Start()
     {
         rb= GetComponent<Rigidbody2D>();
         StartCoroutine(AttackTime());
+        StartCoroutine(SpawnDelay());
     }
 
     // Update is called once per frame
@@ -40,7 +42,7 @@ public class Parrot : MonoBehaviour
                 CanAttack = false;
             }
         }
-        if (NearestEnemy() == null)
+        if (NearestEnemy() == null && SpawnDelayBool == false)
         {
             ReturnToPlayer = true;
         }
@@ -93,5 +95,10 @@ public class Parrot : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
         ReturnToPlayer = true;
+    }
+    IEnumerator SpawnDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        SpawnDelayBool = false;
     }
 }

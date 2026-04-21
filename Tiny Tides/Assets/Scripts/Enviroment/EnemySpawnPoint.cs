@@ -65,23 +65,23 @@ public class EnemySpawnPoint : MonoBehaviour
         bool Active = true;
         while (Active)
         {
-            SingleEnemy = Random.Range(1, Enemies.Length + 1);
+            SingleEnemy = Random.Range(0, Enemies.Length);
             if (CurrentDif == Difficulty)
             {
                 Active = false;
                 return;
             }
-            if (Enemies[SingleEnemy - 1].GetComponent<EnemyCustomization>().EnemyDifficulty + CurrentDif > Difficulty)
+            if (Enemies[SingleEnemy].GetComponent<EnemyCustomization>().EnemyDifficulty + CurrentDif > Difficulty)
             {
-                while (Enemies[SingleEnemy - 1].GetComponent<EnemyCustomization>().EnemyDifficulty + CurrentDif > Difficulty)
+                while (Enemies[SingleEnemy].GetComponent<EnemyCustomization>().EnemyDifficulty + CurrentDif > Difficulty)
                 {
                     SingleEnemy++;
-                    if (SingleEnemy > Enemies.Length) SingleEnemy = 0;
+                    if (SingleEnemy > Enemies.Length - 1) SingleEnemy = 0;
                 }
             }
             
-            Instantiate(Enemies[SingleEnemy - 1], new Vector3(EnemySpawnLocation.position.x + Random.Range(-Radius, Radius), EnemySpawnLocation.position.y + Random.Range(-Radius, Radius), EnemySpawnLocation.position.z), transform.rotation);
-            CurrentDif += Enemies[SingleEnemy - 1].GetComponent<EnemyCustomization>().EnemyDifficulty;
+            Instantiate(Enemies[SingleEnemy], new Vector3(EnemySpawnLocation.position.x + Random.Range(-Radius, Radius), EnemySpawnLocation.position.y + Random.Range(-Radius, Radius), EnemySpawnLocation.position.z), transform.rotation);
+            CurrentDif += Enemies[SingleEnemy].GetComponent<EnemyCustomization>().EnemyDifficulty;
         }
     }
 }

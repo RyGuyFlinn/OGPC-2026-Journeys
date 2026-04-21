@@ -199,7 +199,7 @@ public class InventoryManager : MonoBehaviour
                     //ForceMode2D.Impulse
                     float dir = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                     bomb.transform.rotation = Quaternion.AngleAxis(dir - 90f, Vector3.forward);
-                    bomb.GetComponent<Rigidbody2D>().AddForce(bomb.transform.up * 300);
+                    bomb.GetComponent<Rigidbody2D>().AddForce(bomb.transform.up * 60f * Vector3.Distance(player.transform.position, worldMousePos));
                 }
             }
             if (items[16].GetItem().itemName == "Shield")
@@ -261,16 +261,16 @@ public class InventoryManager : MonoBehaviour
             ParrotSpawnLock = false;
             if (ParrotSpawned)
             { 
-                StartCoroutine(ParrotCooldown());
+                StartCoroutine(VariableCooldown(ParrotOnCooldown, 5f));
                 ParrotSpawned = false;
             }
         }
     }
-    IEnumerator ParrotCooldown()
+    IEnumerator VariableCooldown(bool variable, float time)
     {
-        ParrotOnCooldown = true;
-        yield return new WaitForSeconds(5f);
-        ParrotOnCooldown = false;
+        variable = true;
+        yield return new WaitForSeconds(time);
+        variable = false;
     }
     private void UpgradesManager()
     {
