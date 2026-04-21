@@ -23,6 +23,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject parrotPrefab;
     private bool ParrotOnCooldown = false;
     private bool ParrotSpawned = false;
+    private bool BombCooldown = false;
     private GameObject ParrotObject;
     private bool ParrotSpawnLock = false;
     public GameObject shieldPrefab;
@@ -86,7 +87,6 @@ public class InventoryManager : MonoBehaviour
     
     private void Update()
     {
-
         if (PlayerManager.IsOnIsland)
         {
             ShowItems();
@@ -185,7 +185,7 @@ public class InventoryManager : MonoBehaviour
         {
             if (items[16].GetItem().itemName == "Bomb")
             {
-                if (Input.GetKeyDown(KeyCode.Q))
+                if (Input.GetKeyDown(KeyCode.Q) && BombCooldown == false)
                 {
                     Vector3 mousePos = Input.mousePosition;
 
@@ -200,6 +200,7 @@ public class InventoryManager : MonoBehaviour
                     float dir = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                     bomb.transform.rotation = Quaternion.AngleAxis(dir - 90f, Vector3.forward);
                     bomb.GetComponent<Rigidbody2D>().AddForce(bomb.transform.up * 60f * Vector3.Distance(player.transform.position, worldMousePos));
+                    StartCoroutine(VariableCooldown("Bomb", 3f));
                 }
             }
             if (items[16].GetItem().itemName == "Shield")
@@ -261,16 +262,25 @@ public class InventoryManager : MonoBehaviour
             ParrotSpawnLock = false;
             if (ParrotSpawned)
             { 
-                StartCoroutine(VariableCooldown(ParrotOnCooldown, 5f));
+                StartCoroutine(VariableCooldown("Parrot", 5f));
                 ParrotSpawned = false;
             }
         }
     }
-    IEnumerator VariableCooldown(bool variable, float time)
+    IEnumerator VariableCooldown(string TypeofCooldown, float time)
     {
-        variable = true;
-        yield return new WaitForSeconds(time);
-        variable = false;
+        if (TypeofCooldown == "Parrot")
+        {
+            ParrotOnCooldown = true;
+            yield return new WaitForSeconds(time);
+            ParrotOnCooldown = false;
+        }
+        if (TypeofCooldown == "Bomb")
+        {
+            BombCooldown = true;
+            yield return new WaitForSeconds(time);
+            BombCooldown = false;
+        }
     }
     private void UpgradesManager()
     {
