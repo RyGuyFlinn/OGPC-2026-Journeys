@@ -11,6 +11,7 @@ public class MapIsland : MonoBehaviour
     public Sprite[] rockySprites;
     public Sprite[] glacierSprites;
     public Sprite[] visitedSprites;
+    public Sprite markedSprite;
     private Image image;
 
     void Awake()
@@ -33,6 +34,13 @@ public class MapIsland : MonoBehaviour
         {
             image.sprite = islandSprites[spriteNum];
         }
+        visited = false;
+    }
+
+    public void SetMarkedSprite()
+    {
+        spriteNum = Random.Range(0, islandSprites.Length);
+        image.sprite = markedSprite;
         visited = false;
     }
 

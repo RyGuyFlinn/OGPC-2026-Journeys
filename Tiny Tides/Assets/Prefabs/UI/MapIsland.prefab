@@ -114,3 +114,4 @@ MonoBehaviour:
   - {fileID: 1231152505, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
   - {fileID: 1206299595, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
   - {fileID: -1672370475, guid: 35ba0ced0cf80fb46ac7a5cef97c2d60, type: 3}
+  markedSprite: {fileID: 21300000, guid: e2a068cc4354a0e4dbca47aafcdf0fec, type: 3}

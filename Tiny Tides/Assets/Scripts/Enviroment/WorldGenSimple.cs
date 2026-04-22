@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEditor.PlayerSettings;
 
 public class WorldGenSimple : MonoBehaviour
 {
@@ -18,9 +19,18 @@ public class WorldGenSimple : MonoBehaviour
 
     [Space]
     public GameObject spawnIsland;
+
     public GameObject[] islands;
+    private List<GameObject> spawnedIslands = new List<GameObject>();
+    public GameObject mainIsland;
+
     public GameObject[] rockyIslands;
+    private List<GameObject> spawnedRockyIslands = new List<GameObject>();
+    public GameObject mainRockyIsland;
+
     public GameObject[] glacierIslands;
+    private List<GameObject> spawnedGlacierIslands = new List<GameObject>();
+    public GameObject mainGlacierIsland;
 
     [Space]
     public GameObject mapIsland;
@@ -75,6 +85,9 @@ public class WorldGenSimple : MonoBehaviour
                         GameObject island = Instantiate(islands[Random.Range(0, islands.Length)], spawnPos, Quaternion.identity);
                         island.transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland = minimapIsland;
                         island.transform.SetParent(worldIslands.transform);
+
+                        //add island to the list of islands
+                        spawnedIslands.Add(island);
                     }
                     else
                     {
@@ -91,10 +104,53 @@ public class WorldGenSimple : MonoBehaviour
                         GameObject island = Instantiate(GetIsland(biomeNum), spawnPos, Quaternion.identity);
                         island.transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland = minimapIsland;
                         island.transform.SetParent(worldIslands.transform);
+
+                        //add island to the corresponding list of islands
+                        if (biomeNum == 0)
+                        {
+                            spawnedRockyIslands.Add(island);
+                        }
+                        else if (biomeNum == 1)
+                        {
+                            spawnedGlacierIslands.Add(island);
+                        }
                     }
                 }
             }
         }
+
+        //replace 1 island in shallows with mainIsland
+        int randIsland = Random.Range(0,spawnedIslands.Count);
+        Vector3 oldPos = spawnedIslands[randIsland].transform.position;
+
+        GameObject minimapIslandX = spawnedIslands[randIsland].transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland;
+        minimapIslandX.GetComponent<MapIsland>().SetMarkedSprite();
+
+        GameObject islandX = Instantiate(mainIsland, oldPos, Quaternion.identity);
+        islandX.transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland = minimapIslandX;
+        Destroy(spawnedIslands[randIsland]);
+
+        //replace 1 island in rocky with mainRockyIsland
+        randIsland = Random.Range(0, spawnedRockyIslands.Count);
+        oldPos = spawnedRockyIslands[randIsland].transform.position;
+
+        minimapIslandX = spawnedRockyIslands[randIsland].transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland;
+        minimapIslandX.GetComponent<MapIsland>().SetMarkedSprite();
+
+        islandX = Instantiate(mainRockyIsland, oldPos, Quaternion.identity);
+        islandX.transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland = minimapIslandX;
+        Destroy(spawnedRockyIslands[randIsland]);
+
+        //replace 1 island in glacier with mainGlacierIsland
+        randIsland = Random.Range(0, spawnedGlacierIslands.Count);
+        oldPos = spawnedGlacierIslands[randIsland].transform.position;
+
+        minimapIslandX = spawnedGlacierIslands[randIsland].transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland;
+        minimapIslandX.GetComponent<MapIsland>().SetMarkedSprite();
+
+        islandX = Instantiate(mainGlacierIsland, oldPos, Quaternion.identity);
+        islandX.transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland = minimapIslandX;
+        Destroy(spawnedGlacierIslands[randIsland]);
     }
 
     public GameObject GetIsland(int biome)
