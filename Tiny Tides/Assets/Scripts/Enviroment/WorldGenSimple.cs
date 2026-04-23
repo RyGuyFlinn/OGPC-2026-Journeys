@@ -6,6 +6,7 @@ using static UnityEditor.PlayerSettings;
 
 public class WorldGenSimple : MonoBehaviour
 {
+    [Header("World Settings")]
     public float worldRadius;
     public float edgeBuffer;
     public float centerBuffer;
@@ -15,9 +16,15 @@ public class WorldGenSimple : MonoBehaviour
     public float randomScatter;
     private GameObject worldIslands;
 
+    [Space]
+
+    [Header("Ocean")]
     public GameObject OpenOcean;
 
     [Space]
+
+    [Header("Islands")]
+
     public GameObject spawnIsland;
 
     public GameObject[] islands;
