@@ -36,6 +36,8 @@ public class EnemyFlintLock : MonoBehaviour
     private int Randomdiry;
     private float randomswitch = 1f;
     private float switchtime = 2f;
+    [Header("Macaw Boss")]
+    public bool UsingFlintLock = false;
     void Awake()
     {
         instance = this;

@@ -49,6 +49,7 @@ public class EnemySwordAttack : MonoBehaviour
 
     [Header("Others")]
     public EnemyMovement enemymovement;
+    public bool SwordActive;
 
     //[Header("Sound Effects")]
    // public GameObject Ching;
@@ -82,7 +83,7 @@ public class EnemySwordAttack : MonoBehaviour
         }
 
         float playerdistance = Vector3.Distance(player.position, transform.position);
-        if ((playerdistance <= minDistance) && canAttack)
+        if ((playerdistance <= minDistance) && canAttack && SwordActive)
         {  
             callAttack();
         }

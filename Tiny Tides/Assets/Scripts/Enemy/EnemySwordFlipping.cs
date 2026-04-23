@@ -16,8 +16,9 @@ public class EnemySwordFlipping : MonoBehaviour
 
     void Update()
     {
+       
         if (!player) return;
-
+      
         if (enemy.position.x < transform.position.x && facingRight)
         {
             Flip();
@@ -30,6 +31,7 @@ public class EnemySwordFlipping : MonoBehaviour
 
     void Flip()
     {
+       
         //Flips the parents y to properly handle animation flipping
         facingRight = !facingRight;
         Vector3 scale = transform.parent.localScale;

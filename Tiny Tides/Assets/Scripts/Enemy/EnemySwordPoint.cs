@@ -11,6 +11,10 @@ public class EnemySwordPoint : MonoBehaviour
     public float rotationSpeed = 1f;
     public bool IsClub = false;
     private EnemyClub Enemyclub;
+    [Header("Macaw Boss ONLY!!!!!")]
+    public bool MacawBoss = false;
+    public bool UsingSword = false;
+    public bool UsingFlintLock = false;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -24,7 +28,8 @@ public class EnemySwordPoint : MonoBehaviour
 
     Vector3 dir = player.transform.position - transform.position;
     float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-
+        if (MacawBoss == false)
+        {
         if (IsClub == true && Enemyclub.Charge)
         {
             return;
@@ -39,6 +44,35 @@ public class EnemySwordPoint : MonoBehaviour
                 rotationSpeed * Time.deltaTime
             );
       
+        }
+        }
+        else
+        {
+            if (UsingSword == true){
+            Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+
+            transform.rotation = Quaternion.RotateTowards(
+                transform.rotation,
+                targetRotation,
+                rotationSpeed * Time.deltaTime
+            );
+            }
+            else {
+                Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+
+            transform.rotation = Quaternion.RotateTowards(
+                transform.rotation,
+                targetRotation,
+                rotationSpeed * Time.deltaTime
+                
+            );
+Vector3 scale = transform.localScale;
+        //scale.x *= -1;
+        scale.y = -1;
+            
+            }
         }
     }
 }

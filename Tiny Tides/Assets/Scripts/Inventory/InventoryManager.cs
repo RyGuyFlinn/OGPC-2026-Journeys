@@ -185,7 +185,7 @@ public class InventoryManager : MonoBehaviour
         {
             if (items[16].GetItem().itemName == "Bomb")
             {
-                if (Input.GetKeyDown(KeyCode.Q) && BombCooldown == false)
+                if (Input.GetKeyDown(KeyCode.Space) && BombCooldown == false)
                 {
                     Vector3 mousePos = Input.mousePosition;
 
@@ -205,7 +205,7 @@ public class InventoryManager : MonoBehaviour
             }
             if (items[16].GetItem().itemName == "Shield")
             {
-                if (Input.GetKey(KeyCode.Q) && shieldAvalible)
+                if (Input.GetKey(KeyCode.Space) && shieldAvalible)
                 {
                     if (spawnedShield == null)
                     {
@@ -242,7 +242,7 @@ public class InventoryManager : MonoBehaviour
             else player.GetComponent<PlayerMovement>().DashAbility = false;
             if (items[16].GetItem().itemName == "Parrot")
             {
-                if (Input.GetKeyDown(KeyCode.Q) && ParrotSpawnLock == false && ParrotOnCooldown == false)
+                if (Input.GetKeyDown(KeyCode.Space) && ParrotSpawnLock == false && ParrotOnCooldown == false)
                 {
                      GameObject parrot = Instantiate(parrotPrefab, player.transform.position, transform.rotation);
                     ParrotObject = parrot;
