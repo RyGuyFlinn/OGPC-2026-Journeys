@@ -6,6 +6,7 @@ using UnityEngine;
 public class TreasureData : ScriptableObject
 {
     public static int treasure = 99;
+    
     public int GetTreasure()
     {
         return treasure;

@@ -18,14 +18,19 @@ public class InventoryManager : MonoBehaviour
     public GameObject inventoryPanel;
 
     [Header("Abilities")]
+    [Header("Bomb")]
     public float bombLaunchForce = 10f;
     public GameObject bombPrefab;
+    private bool BombCooldown = false;
+
+    [Header("Parrot")]
     public GameObject parrotPrefab;
     private bool ParrotOnCooldown = false;
     private bool ParrotSpawned = false;
-    private bool BombCooldown = false;
     private GameObject ParrotObject;
     private bool ParrotSpawnLock = false;
+
+    [Header("Shield")]
     public GameObject shieldPrefab;
     public float shieldCooldownTime;
     public float shieldUseTime;
@@ -50,11 +55,13 @@ public class InventoryManager : MonoBehaviour
     public bool CanOpen = true;
     private GameObject spawnedObject = null;
     private int ItemQuantity = 1;
+
     [Header("Sprites")]
     public Sprite Basic;
     public Sprite Sword;
     public Sprite Bomb;
     public Sprite Upgrade;
+    
     [Header("Upgrades")]
     public static bool LoseBejeweledSkull = false;
 

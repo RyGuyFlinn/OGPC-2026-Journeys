@@ -8,6 +8,8 @@ public class NPCInteraction : MonoBehaviour
     public GameObject InteractDisplay;
     public GameObject Chatbox;
     public GameObject AllUI;
+    public GameObject buttons;
+    public bool hasButtons = false;
     private bool Chatting = false;
     public string[] Dialogues;
     private int TalkPercent = 1;
@@ -45,6 +47,7 @@ public class NPCInteraction : MonoBehaviour
                 {
                     TalkPercent = Dialogues.Length;
                     Chatbox.GetComponent<NPCChatBoxData>().text.text = Dialogues[TalkPercent - 1];
+                    buttons.SetActive(hasButtons);
                 }
             }
         }
@@ -64,6 +67,13 @@ public class NPCInteraction : MonoBehaviour
                     Chatting = false;
                     FinishChatting = true;
                     Chatbox.SetActive(false);
+                    buttons.SetActive(false);
+                }
+                else if (TalkPercent == Dialogues.Length - 1)
+                {
+                    buttons.SetActive(hasButtons);
+                    TalkPercent += 1;
+                    Chatbox.GetComponent<NPCChatBoxData>().text.text = Dialogues[TalkPercent - 1];
                 }
                 else
                 {
@@ -72,5 +82,16 @@ public class NPCInteraction : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void exitDialoge()
+    {
+        Chatbox = AllUI.GetComponentInChildren<NPCChatBoxData>(true).gameObject;
+        Inventory.GetComponent<InventoryManager>().CanOpen = true;
+        Time.timeScale = 1f;
+        Chatting = false;
+        FinishChatting = true;
+        Chatbox.SetActive(false);
+        buttons.SetActive(false);
     }
 }

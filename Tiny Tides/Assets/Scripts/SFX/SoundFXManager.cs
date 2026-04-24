@@ -22,7 +22,7 @@ public class SoundFXManager : MonoBehaviour
         audioSource.clip = audioClip;
         audioSource.volume = volume;
         audioSource.pitch = pitch;
-        if (RandomPitch) audioSource.pitch = pitch + Random.Range(-.7f, -.3f);
+        if (RandomPitch) audioSource.pitch = pitch + Random.Range(-.4f, -.2f);
         audioSource.Play();
         float clipLength = audioSource.clip.length;
         Destroy(audioSource.gameObject, clipLength);
