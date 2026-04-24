@@ -52,7 +52,10 @@ public class WorldGenSimple : MonoBehaviour
         Instantiate(OpenOcean, transform.position, Quaternion.identity);
 
         //spawn main island
-        Instantiate(spawnIsland, new Vector2(10.39f, 3.87f), Quaternion.identity);
+        GameObject mMinimapIsland = Instantiate(mapIsland, new Vector2(10.39f, 3.87f), Quaternion.identity);
+        GameObject mIsland = Instantiate(spawnIsland, new Vector2(10.39f, 3.87f), Quaternion.identity);
+        mIsland.transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland = mMinimapIsland;
+        mIsland.transform.SetParent(worldIslands.transform);
 
         //instantiate islands accross a grid
         for (int col = 0; col < spawnGridLength; col++)
@@ -126,38 +129,47 @@ public class WorldGenSimple : MonoBehaviour
             }
         }
 
-        //replace 1 island in shallows with mainIsland
-        int randIsland = Random.Range(0,spawnedIslands.Count);
-        Vector3 oldPos = spawnedIslands[randIsland].transform.position;
+        int randBiome = Random.Range(0, 3);
 
-        GameObject minimapIslandX = spawnedIslands[randIsland].transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland;
-        minimapIslandX.GetComponent<MapIsland>().SetMarkedSprite();
+        if (randBiome == 0)
+        {
+            //replace 1 island in shallows with mainIsland
+            int randIsland = Random.Range(0,spawnedIslands.Count);
+            Vector3 oldPos = spawnedIslands[randIsland].transform.position;
 
-        GameObject islandX = Instantiate(mainIsland, oldPos, Quaternion.identity);
-        islandX.transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland = minimapIslandX;
-        Destroy(spawnedIslands[randIsland]);
+            GameObject minimapIslandX = spawnedIslands[randIsland].transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland;
+            minimapIslandX.GetComponent<MapIsland>().SetMarkedSprite();
 
-        //replace 1 island in rocky with mainRockyIsland
-        randIsland = Random.Range(0, spawnedRockyIslands.Count);
-        oldPos = spawnedRockyIslands[randIsland].transform.position;
+            GameObject islandX = Instantiate(mainIsland, oldPos, Quaternion.identity);
+            islandX.transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland = minimapIslandX;
+            Destroy(spawnedIslands[randIsland]);
+        }
+        else if (randBiome == 1)
+        {
+            //replace 1 island in rocky with mainRockyIsland
+            int randIsland = Random.Range(0, spawnedRockyIslands.Count);
+            Vector3 oldPos = spawnedRockyIslands[randIsland].transform.position;
 
-        minimapIslandX = spawnedRockyIslands[randIsland].transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland;
-        minimapIslandX.GetComponent<MapIsland>().SetMarkedSprite();
+            GameObject minimapIslandX = spawnedRockyIslands[randIsland].transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland;
+            minimapIslandX.GetComponent<MapIsland>().SetMarkedSprite();
 
-        islandX = Instantiate(mainRockyIsland, oldPos, Quaternion.identity);
-        islandX.transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland = minimapIslandX;
-        Destroy(spawnedRockyIslands[randIsland]);
+            GameObject islandX = Instantiate(mainRockyIsland, oldPos, Quaternion.identity);
+            islandX.transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland = minimapIslandX;
+            Destroy(spawnedRockyIslands[randIsland]);
+        }
+        else
+        {
+            //replace 1 island in glacier with mainGlacierIsland
+            int randIsland = Random.Range(0, spawnedGlacierIslands.Count);
+            Vector3 oldPos = spawnedGlacierIslands[randIsland].transform.position;
 
-        //replace 1 island in glacier with mainGlacierIsland
-        randIsland = Random.Range(0, spawnedGlacierIslands.Count);
-        oldPos = spawnedGlacierIslands[randIsland].transform.position;
+            GameObject minimapIslandX = spawnedGlacierIslands[randIsland].transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland;
+            minimapIslandX.GetComponent<MapIsland>().SetMarkedSprite();
 
-        minimapIslandX = spawnedGlacierIslands[randIsland].transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland;
-        minimapIslandX.GetComponent<MapIsland>().SetMarkedSprite();
-
-        islandX = Instantiate(mainGlacierIsland, oldPos, Quaternion.identity);
-        islandX.transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland = minimapIslandX;
-        Destroy(spawnedGlacierIslands[randIsland]);
+            GameObject islandX = Instantiate(mainGlacierIsland, oldPos, Quaternion.identity);
+            islandX.transform.GetChild(1).gameObject.GetComponent<EnterIsland>().mapIsland = minimapIslandX;
+            Destroy(spawnedGlacierIslands[randIsland]);
+        }
     }
 
     public GameObject GetIsland(int biome)
