@@ -51,7 +51,7 @@ public class InventoryManager : MonoBehaviour
     private SlotClass tempSlot;
     bool isMovingItem;
 
-    private bool isOpen = false;
+    public bool isOpen = false;
     public bool CanOpen = true;
     private GameObject spawnedObject = null;
     private int ItemQuantity = 1;

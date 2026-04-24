@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 6772187305615174582}
   m_Layer: 0
   m_Name: PlayerDetector
-  m_TagString: Untagged
+  m_TagString: NoBulletCollisions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

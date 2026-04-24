@@ -37,7 +37,8 @@ public class EnemyFlintLock : MonoBehaviour
     private float randomswitch = 1f;
     private float switchtime = 2f;
     [Header("Macaw Boss")]
-    public bool UsingFlintLock = false;
+    public bool FlintLockActive = true;
+    public bool IsCaptainMacaw = false;
     void Awake()
     {
         instance = this;
@@ -47,6 +48,7 @@ public class EnemyFlintLock : MonoBehaviour
     }
     void Update()
     {
+        if (FlintLockActive == true){
         float playerdistance = Vector3.Distance(player.transform.position, transform.position);
 
         if (playerdistance <= minDistance)
@@ -80,6 +82,7 @@ public class EnemyFlintLock : MonoBehaviour
             enemy.GetComponent<NavMeshAgent>().enabled = true;
             enemymovement.enabled = true;
         }
+        }
     }
     private void CallAttack()
     {
@@ -111,8 +114,13 @@ public class EnemyFlintLock : MonoBehaviour
         */
         Debug.Log("Shoot");
         float Randomaim = Random.Range(-20f, 21f);
+        if (IsCaptainMacaw) {
+            Randomaim = Random.Range(-40f, 41f);
+            StartCoroutine(SecondAttack());
+        }
         Quaternion offset = Quaternion.Euler(0, 0, Randomaim);
         GameObject bullet = Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation * offset);
+        if (IsCaptainMacaw) bullet.GetComponent<Bullet>().speed = 10;
         /*
          * 
         GameObject bullet = Instantiate(bulletPrefab, muzzle.transform.position, Quaternion.Euler(muzzle.transform.rotation.x, muzzle.transform.rotation.y, muzzle.transform.rotation.z + Randomaim));
@@ -121,8 +129,15 @@ public class EnemyFlintLock : MonoBehaviour
         attacking = false;
 
         // Wait for cooldown before allowing next attack
+        
         yield return new WaitForSeconds(attackDelay);
         canAttack = true;
     }
-
+    IEnumerator SecondAttack(){
+        yield return new WaitForSeconds(0.1f);
+        float Randomaim = Random.Range(-40f, 41f);
+        Quaternion offset = Quaternion.Euler(0, 0, Randomaim);
+        GameObject bullet = Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation * offset);
+        bullet.GetComponent<Bullet>().speed = 10;
+    }
 }

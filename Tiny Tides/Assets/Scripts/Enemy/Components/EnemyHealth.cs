@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [Header("Health Settings")]
     public int maxHealth = 5;
-    private int currentHealth;
+    public int currentHealth;
 
     private Rigidbody2D rb;
 

@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
     {
         if (IsEnemy == false)
         {
-            if (other.tag == "Enemy")
+            if (other.tag == "Enemy" || other.tag == "Boss")
             {
                 EnemyHealth enemy = other.gameObject.GetComponent<EnemyHealth>();
                 Vector2 direction = (other.transform.position - transform.position).normalized;

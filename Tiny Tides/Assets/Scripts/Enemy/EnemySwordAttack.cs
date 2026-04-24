@@ -50,7 +50,7 @@ public class EnemySwordAttack : MonoBehaviour
     [Header("Others")]
     public EnemyMovement enemymovement;
     public bool SwordActive;
-
+    public bool IsCaptainMacaw = false;
     //[Header("Sound Effects")]
    // public GameObject Ching;
     void Awake()
@@ -71,6 +71,7 @@ public class EnemySwordAttack : MonoBehaviour
 
     void Update()
     {
+        if (SwordActive == true){
         if (SwordAttack.instance != null)playerAttacking = SwordAttack.instance.attacking;
         if (SwordAttack.instance != null) playerBlocking = SwordAttack.instance.blocking;
 
@@ -93,7 +94,9 @@ public class EnemySwordAttack : MonoBehaviour
         }
         else if ((attacking == false) && (playerdistance > 2.25f))
         {
-            enemymovement.agent.speed = 2.5f;
+            if (IsCaptainMacaw) enemymovement.agent.speed = 4f;
+            else enemymovement.agent.speed = 2.5f;
+        }
         }
     }
 
@@ -121,7 +124,9 @@ public class EnemySwordAttack : MonoBehaviour
         attacking = true;
         Telegraph.SetActive(true);
         enemymovement.agent.speed = 1f;
-        yield return new WaitForSeconds(0.5f);
+        float WaitTime = 0.5f;
+        if (IsCaptainMacaw) WaitTime = 0.8f;
+        yield return new WaitForSeconds(WaitTime);
         Telegraph.SetActive(false);
         // Play SFX or animation if you have them
         //if (audioSource && swingSound)
@@ -133,7 +138,8 @@ public class EnemySwordAttack : MonoBehaviour
         swordHitbox.enabled = true;
         
         yield return new WaitForSeconds(attackDuration);
-        enemymovement.agent.speed = 2.5f;
+        if (IsCaptainMacaw) enemymovement.agent.speed = 4f;
+        else enemymovement.agent.speed = 2.5f;
         swordHitbox.enabled = false;
         attacking = false;
     }

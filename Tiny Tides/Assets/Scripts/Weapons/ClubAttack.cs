@@ -87,7 +87,7 @@ public class ClubAttack : MonoBehaviour
     {
         if (attacking)
         {
-            if (other.tag == "Enemy")
+            if (other.tag == "Enemy" || other.tag == "Boss")
             {
                 // Check if the object has an enemy health component
                 EnemyHealth enemy = other.GetComponent<EnemyHealth>();

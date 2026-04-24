@@ -74,7 +74,7 @@ public class Parrot : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
         {
             collision.GetComponent<EnemyHealth>().TakeDamage(1, new Vector2(0f, 0f));
         }

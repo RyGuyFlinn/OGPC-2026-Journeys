@@ -64,14 +64,11 @@ public class EnemySwordPoint : MonoBehaviour
 
             transform.rotation = Quaternion.RotateTowards(
                 transform.rotation,
-                targetRotation,
+                targetRotation * Quaternion.Euler(0f, 0f, 180f),
                 rotationSpeed * Time.deltaTime
                 
             );
-Vector3 scale = transform.localScale;
-        //scale.x *= -1;
-        scale.y = -1;
-            
+                
             }
         }
     }

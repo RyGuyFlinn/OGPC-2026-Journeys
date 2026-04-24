@@ -17,6 +17,8 @@ TagManager:
   - ChatBox
   - UI
   - PlayerBomb
+  - Boss
+  - BossBar
   layers:
   - Default
   - TransparentFX
