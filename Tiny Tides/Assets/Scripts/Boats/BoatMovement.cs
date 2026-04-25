@@ -22,6 +22,10 @@ public class BoatMovement : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip fireSFX;
 
+    [Header("Particle Settings")]
+    public ParticleSystem trail1;
+    public ParticleSystem trail2;
+
     private Rigidbody2D rb;
     private float moveInput;
     private float turnInput;
@@ -40,6 +44,12 @@ public class BoatMovement : MonoBehaviour
 
     void Update()
     {
+        var main1 = trail1.main;
+        var main2 = trail2.main;
+
+        main1.startLifetime = currentSpeed * 2;
+        main2.startLifetime = currentSpeed * 2;
+
         moveInput = Input.GetAxisRaw("Vertical");
         turnInput = Input.GetAxisRaw("Horizontal");
 

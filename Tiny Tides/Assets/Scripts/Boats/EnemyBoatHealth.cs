@@ -31,7 +31,7 @@ public class EnemyBoatHealth : MonoBehaviour
     {
         if (collision.CompareTag("CannonBall"))
         {
-            health -= 10;
+            health -= 5;
         }
     }
 }
