@@ -11,6 +11,7 @@ public class ShopManager : MonoBehaviour
     {
         InventoryManager manager = Object.FindFirstObjectByType<InventoryManager>();
         Inventory = manager.gameObject;
+        Debug.Log(Inventory);
         gameObject.SetActive(false);
     }
 

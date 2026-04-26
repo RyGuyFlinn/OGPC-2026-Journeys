@@ -52,7 +52,6 @@ public class EnterBoarding : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(player);
         if (health.health <= 50)
         {
             canBoard = true;
