@@ -50,10 +50,10 @@ public class CannonBall : MonoBehaviour
     private IEnumerator ExplodeAndDestroy()
     {
         FireSFX();
-        GameObject explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
+        Debug.Log("Boom");
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
         yield return new WaitForSeconds(0.1f);
-        Destroy(explosion);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     void FireSFX()

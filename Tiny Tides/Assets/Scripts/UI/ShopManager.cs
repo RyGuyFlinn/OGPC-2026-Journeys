@@ -6,27 +6,33 @@ public class ShopManager : MonoBehaviour
 {
     private bool isActive = false;
     private GameObject Inventory;
+    public GameObject panel;
 
     void Start()
     {
         InventoryManager manager = Object.FindFirstObjectByType<InventoryManager>();
         Inventory = manager.gameObject;
-        Debug.Log(Inventory);
-        gameObject.SetActive(false);
+
+        panel.SetActive(false);
     }
 
     public void ToggleVisibility()
     {
         isActive = !isActive;
-        gameObject.SetActive(isActive);
+
+        var invManager = Inventory.GetComponent<InventoryManager>();
 
         if (isActive)
         {
-            Inventory.GetComponent<InventoryManager>().CanOpen = false;
+            Time.timeScale = 0f;
+            invManager.CanOpen = false;
         }
         else
         {
-            Inventory.GetComponent<InventoryManager>().CanOpen = true;
+            Time.timeScale = 1f;
+            invManager.CanOpen = true;
         }
+
+        panel.SetActive(isActive);
     }
 }
