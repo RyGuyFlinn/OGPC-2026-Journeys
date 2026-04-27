@@ -27,5 +27,9 @@ public class BossBarUI : MonoBehaviour
         else if (bossSummoned == true){
             BossBar.SetActive(true);
         }
+        if (Boss == null && bossSummoned == true)
+        { 
+            BossBar.SetActive(false);
+        }
     }
 }

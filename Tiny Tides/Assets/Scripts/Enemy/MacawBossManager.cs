@@ -83,6 +83,8 @@ IEnumerator SwitchWeapons(){
             SwordScript.SwordActive = false;
             FlintLockScript.FlintLockActive = true;
         }
-        
+        FlintLockScript.canAttack = false;
+        yield return new WaitForSeconds(1f);
+        FlintLockScript.canAttack = true;
 }
 }

@@ -14,6 +14,7 @@ public class Parrot : MonoBehaviour
     private bool CanAttack = true;
     public bool ReturnToPlayer = false;
     private bool SpawnDelayBool = true;
+    private GameObject Boss;
     void Start()
     {
         rb= GetComponent<Rigidbody2D>();
@@ -56,20 +57,28 @@ public class Parrot : MonoBehaviour
     private GameObject NearestEnemy()
     {
         CloseEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        float distance = 10f;
-        foreach (GameObject target in CloseEnemies)
+        Boss = GameObject.FindGameObjectWithTag("Boss");
+        if (Boss == null)
         {
-            float diff = Vector3.Distance(target.transform.position, transform.position);
-            
-            if (diff < distance)
+            float distance = 10f;
+            foreach (GameObject target in CloseEnemies)
             {
-                ClosestEnemy = target;
-                distance = diff;
-                
+                float diff = Vector3.Distance(target.transform.position, transform.position);
+
+                if (diff < distance)
+                {
+                    ClosestEnemy = target;
+                    distance = diff;
+
+                }
+
             }
-            
+            return ClosestEnemy;
         }
-        return ClosestEnemy;
+        else
+        {
+            return Boss;
+        }
      
     }
     private void OnTriggerEnter2D(Collider2D collision)

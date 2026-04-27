@@ -32,7 +32,7 @@ public class EnterBoarding : MonoBehaviour
         buttonPrompt.SetActive(false);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "PlayerBoat" && canBoard == true)
         {
@@ -52,6 +52,7 @@ public class EnterBoarding : MonoBehaviour
 
     void Update()
     {
+        transform.rotation = Quaternion.identity;
         if (health.health <= 50)
         {
             canBoard = true;

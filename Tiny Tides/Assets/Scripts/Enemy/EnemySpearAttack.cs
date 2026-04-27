@@ -83,7 +83,7 @@ public class EnemySpearAttack : MonoBehaviour
 
             Rigidbody2D enemyrb = enemy.GetComponent<Rigidbody2D>();
 
-            enemyrb.velocity = pushDir.normalized * 3.5f;
+            enemyrb.velocity = pushDir.normalized * 2.5f;
         }
         float playerdistance = Vector3.Distance(player.position, transform.position);
         if ((playerdistance <= minDistance))
@@ -125,10 +125,10 @@ public class EnemySpearAttack : MonoBehaviour
         canAttack = false;
         attacking = true;
         Telegraph.SetActive(true);
-        
-        
+        enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 0.7f;
 
-        yield return new WaitForSeconds(0.5f);
+
+        yield return new WaitForSeconds(0.7f);
         Telegraph.SetActive(false);
         oldplayerpos = player.position;
         enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
@@ -160,7 +160,8 @@ public class EnemySpearAttack : MonoBehaviour
         enemyrb.velocity = new Vector2(0f, 0f);
         enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
         enemymovement.enabled = true;
-      
+        enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 2.5f;
+        yield return new WaitForSeconds(1f);
         canAttack = true;
         enemymovement.agent.speed = 2.5f;
     }

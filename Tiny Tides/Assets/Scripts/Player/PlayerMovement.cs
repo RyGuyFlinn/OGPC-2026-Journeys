@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
     public float TimeDashing = 0f;
     public bool CanDash = true;
     private Vector2 LastInput;
+    public Animator LegsAnimator;
+    public Animator TorsoAnimator;
+    public Animator HeadAnimator;
+    public Animator HatAnimator;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,7 +26,87 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
+        if (moveInput.x < 0 && moveInput.y == 0)
+        {
+            LegsAnimator.SetBool("WalkLeft", true);
+            LegsAnimator.SetBool("WalkRight", false);
+            LegsAnimator.SetBool("WalkVertical", false);
 
+            TorsoAnimator.SetBool("WalkLeft", true);
+            TorsoAnimator.SetBool("WalkRight", false);
+            TorsoAnimator.SetBool("WalkVertical", false);
+
+            HeadAnimator.SetBool("WalkLeft", true);
+            HeadAnimator.SetBool("WalkRight", false);
+            HeadAnimator.SetBool("WalkVertical", false);
+
+            HatAnimator.SetBool("WalkLeft", true);
+            HatAnimator.SetBool("WalkRight", false);
+            HatAnimator.SetBool("WalkVertical", false);
+        }
+        if (moveInput.x > 0 && moveInput.y == 0)
+        {
+            LegsAnimator.SetBool("WalkLeft", false);
+            LegsAnimator.SetBool("WalkRight", true);
+            LegsAnimator.SetBool("WalkVertical", false);
+
+            TorsoAnimator.SetBool("WalkLeft", false);
+            TorsoAnimator.SetBool("WalkRight", true);
+            TorsoAnimator.SetBool("WalkVertical", false);
+
+            HeadAnimator.SetBool("WalkLeft", false);
+            HeadAnimator.SetBool("WalkRight", true);
+            HeadAnimator.SetBool("WalkVertical", false);
+
+            HatAnimator.SetBool("WalkLeft", false);
+            HatAnimator.SetBool("WalkRight", true);
+            HatAnimator.SetBool("WalkVertical", false);
+        }
+        if (moveInput.y != 0)
+        {
+            LegsAnimator.SetBool("WalkLeft", false);
+            LegsAnimator.SetBool("WalkRight", false);
+            LegsAnimator.SetBool("WalkVertical", true);
+
+            TorsoAnimator.SetBool("WalkLeft", false);
+            TorsoAnimator.SetBool("WalkRight", false);
+
+            HeadAnimator.SetBool("WalkLeft", false);
+            HeadAnimator.SetBool("WalkRight", false);
+
+            HatAnimator.SetBool("WalkLeft", false);
+            HatAnimator.SetBool("WalkRight", false);
+            if (moveInput.y > 0)
+            {
+                TorsoAnimator.SetBool("WalkVertical", true);
+                HeadAnimator.SetBool("WalkVertical", true);
+                HatAnimator.SetBool("WalkVertical", true);
+            }
+            else
+            { 
+                TorsoAnimator.SetBool("WalkVertical", false);
+                HeadAnimator.SetBool("WalkVertical", false);
+                HatAnimator.SetBool("WalkVertical", false);
+            }
+        }
+        if (moveInput.x == 0 && moveInput.y == 0)
+        {
+            LegsAnimator.SetBool("WalkLeft", false);
+            LegsAnimator.SetBool("WalkRight", false);
+            LegsAnimator.SetBool("WalkVertical", false);
+
+            TorsoAnimator.SetBool("WalkLeft", false);
+            TorsoAnimator.SetBool("WalkRight", false);
+            TorsoAnimator.SetBool("WalkVertical", false);
+
+            HeadAnimator.SetBool("WalkLeft", false);
+            HeadAnimator.SetBool("WalkRight", false);
+            HeadAnimator.SetBool("WalkVertical", false);
+
+            HatAnimator.SetBool("WalkLeft", false);
+            HatAnimator.SetBool("WalkRight", false);
+            HatAnimator.SetBool("WalkVertical", false);
+        }
         //Normalize input to prevent faster diagonal movement
         moveInput.Normalize();
         if (Input.GetKeyDown(KeyCode.Space) && DashAbility == true && !IsDashing && CanDash)

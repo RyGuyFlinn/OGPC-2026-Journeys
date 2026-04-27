@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "treasureData", menuName = "Custom/tresureData")]
 public class TreasureData : ScriptableObject
 {
-    public static int treasure = 99;
+    public static int treasure = 0;
     
     public int GetTreasure()
     {

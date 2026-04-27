@@ -90,6 +90,10 @@ public class AIBoatMovement : MonoBehaviour
 
     void Update()
     {
+        if (PlayerManager.IsOnIsland == true)
+        {
+            Destroy(gameObject);
+        }
         var main1 = trail1.main;
         var main2 = trail2.main;
 
