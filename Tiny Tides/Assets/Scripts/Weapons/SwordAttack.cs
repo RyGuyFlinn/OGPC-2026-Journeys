@@ -61,12 +61,7 @@ public class SwordAttack : MonoBehaviour
             //playermovement.speed = 5f;
             attackDelay = 0.1f;
         }
-        try {
-            enemyBlocking = EnemySwordAttack.instance.blocking;
-        }
-        catch {
-            
-        }
+        
     }
 
     private void callAttack()
@@ -145,15 +140,22 @@ public class SwordAttack : MonoBehaviour
                     Vector2 direction = (other.transform.position - transform.position).normalized;
                     Debug.Log("Player Attack");
 
-                    if (!enemyBlocking)
+                    if (enemysword == null)
                     {
                         // Apply damage + knockback
                         enemy.TakeDamage(attackDamage, direction * knockback);
                     }
                     else {
-                        Debug.Log("Blocked!");
-                        StartCoroutine(SpecialFunctions.FreezeFrames(swordBlock, transform));
-                        enemysword.blocking = false;
+                        if (!enemysword.blocking)
+                        {
+                            enemy.TakeDamage(attackDamage, direction * knockback);
+                        }
+                        else
+                        {
+                            Debug.Log("Blocked!");
+                            StartCoroutine(SpecialFunctions.FreezeFrames(swordBlock, transform));
+                            enemysword.blocking = false;
+                        }
                     }
                 }
             }

@@ -18,7 +18,6 @@ public class PlayerBoatRenderer : MonoBehaviour
     void Update()
     {
         transform.rotation = Quaternion.identity;
-        Debug.Log((int)Mathf.Round((boat.transform.eulerAngles.z / 360)) % shipSprites.Length);
         int spriteNum = (int)Mathf.Round(shipSprites.Length * (boat.transform.eulerAngles.z / 360)) % shipSprites.Length;
         spriteRenderer.sprite = shipSprites[spriteNum];
     }

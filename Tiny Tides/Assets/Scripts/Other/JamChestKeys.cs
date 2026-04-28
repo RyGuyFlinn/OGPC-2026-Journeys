@@ -7,7 +7,8 @@ public class JamChestKeys : MonoBehaviour
     public InventoryManager invman;
     public ItemClass key;
     public SetObjectsActiveOnCollision KeyIcons;
-    private int keysleft = 2;
+    public Sprite ChestOpen;
+    private int keysleft = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class JamChestKeys : MonoBehaviour
     void Update()
     {
         //SlotClass slot = invman.Contains(key);
-        if (Input.GetKeyDown(KeyCode.E) && KeyIcons.IsColliding == true)
+        if (Input.GetKeyDown(KeyCode.E) && KeyIcons.IsColliding == true && keysleft >= 0)
         {
             foreach (SlotClass items in invman.items)
             {
@@ -35,6 +36,7 @@ public class JamChestKeys : MonoBehaviour
         }
         if (keysleft < 0)
         {
+            transform.GetComponent<SpriteRenderer>().sprite = ChestOpen;
             Debug.Log("You WIN!!!");
             //This is the code to detect when you put all keys in the chest;
         }

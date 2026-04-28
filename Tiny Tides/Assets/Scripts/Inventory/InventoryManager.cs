@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using TMPro.Examples;
-
+using System.Linq;
+using System;
 public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private GameObject itemPlaceHolder;
@@ -45,6 +46,7 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject[] slots;
 
+    public ItemClass[] CheatItems;
     public SlotClass movingSlot;
     public SlotClass lastSelectedItem;
     public SlotClass originalSlot;
@@ -73,7 +75,7 @@ public class InventoryManager : MonoBehaviour
     {
         slots = new GameObject[slotHolder.transform.childCount];
         items = new SlotClass[slots.Length];
-
+        
         for (int i = 0; i < items.Length; i++)
         {
             items[i] = new SlotClass();
@@ -94,6 +96,7 @@ public class InventoryManager : MonoBehaviour
     
     private void Update()
     {
+        
         if (PlayerManager.IsOnIsland)
         {
             ShowItems();
@@ -101,7 +104,13 @@ public class InventoryManager : MonoBehaviour
             UpgradesManager();
             UpdateSlotsSprites();
         }
-
+        if (Input.GetKeyDown(KeyCode.G) && PlayerManager.CheatsActivated == true)
+        {
+           foreach (ItemClass item in CheatItems)
+            {
+                Add(item);
+            }
+        }
         if (!isOpen)
         {
             itemPlaceHolder.SetActive(isMovingItem);
@@ -578,6 +587,23 @@ public class InventoryManager : MonoBehaviour
         }
 
         return new Vector3(6700, 6700, 6700);
+    }
+    public bool CheckIfInventoryFull()
+    {
+        int Count = 0;
+        var subset = items.Take(15);
+        foreach (SlotClass items in subset) 
+        {
+            if (items.GetItem() != null)
+            {
+                Count++;
+            }
+        }
+        if (Count >= 15)
+        {
+            return true;
+        }
+        else return false;
     }
     #endregion Moving Stuff
 

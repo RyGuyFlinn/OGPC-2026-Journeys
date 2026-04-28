@@ -38,9 +38,12 @@ public class PickUpItem : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                inventory.Add(itemToAdd, 1);
+                if (inventory.CheckIfInventoryFull() == false)
+                {
+                    inventory.Add(itemToAdd, 1);
 
-                Destroy(gameObject);
+                    Destroy(gameObject);
+                }
             }
         }
     }

@@ -12,6 +12,7 @@ public class EnemySpawnPoint : MonoBehaviour
     public int Difficulty = 5;
     private bool Active = true;
     private BoxCollider2D boxcollider;
+    public bool BossSpawnPoint = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +23,10 @@ public class EnemySpawnPoint : MonoBehaviour
     void Update()
     {
         //reset (become active again) whenever the player is off the island
-        //if (PlayerManager.IsOnIsland == false)
-        //{
-        //    ResetSpawnPoint();
-        //}
+        if (PlayerManager.IsOnIsland == false && BossSpawnPoint == true)
+        {
+            ResetSpawnPoint();
+        }
     }
 
     public void ResetSpawnPoint()

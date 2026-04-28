@@ -31,5 +31,10 @@ public class BossBarUI : MonoBehaviour
         { 
             BossBar.SetActive(false);
         }
+        if (PlayerManager.IsOnIsland == false)
+        {
+            Boss.SetActive(false);
+            bossSummoned = false;
+        }
     }
 }

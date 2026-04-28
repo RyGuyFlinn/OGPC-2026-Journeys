@@ -46,7 +46,10 @@ public class MacawBossManager : MonoBehaviour
             SwitchingTime = -1f;
         }
         SwitchingTime += Time.deltaTime;
-        
+        if (PlayerManager.IsOnIsland == false)
+        {
+            Destroy(gameObject);
+        }
     }
 IEnumerator SummonParrot()
 {

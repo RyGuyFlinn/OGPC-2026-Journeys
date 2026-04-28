@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator TorsoAnimator;
     public Animator HeadAnimator;
     public Animator HatAnimator;
+    public AudioClip DashSound;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,6 +26,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            PlayerManager.CheatsActivated = true;
+        }
+        if (Input.GetKeyDown(KeyCode.H) && PlayerManager.CheatsActivated == true)
+        {
+            speed = 20f;
+        }
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         if (moveInput.x < 0 && moveInput.y == 0)
@@ -112,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && DashAbility == true && !IsDashing && CanDash)
         {
             IsDashing = true;
+            SoundFXManager.Instance.PlaySoundFXClip(DashSound, transform, 250f, 1f);
             LastInput = moveInput;
             TimeDashing = 0f;
         }

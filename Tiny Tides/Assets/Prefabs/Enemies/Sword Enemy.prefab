@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 7979774837916051966}
   - component: {fileID: 4481193853996319527}
   - component: {fileID: 6771022169127689040}
+  - component: {fileID: 9211387021017355549}
   m_Layer: 0
   m_Name: Sword Enemy
   m_TagString: Enemy
@@ -301,6 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 4
   currentHealth: 0
+  Hurt: {fileID: 8300000, guid: 6d5516d18e481354fb509cbbcdf3fdda, type: 3}
+  DieSound: {fileID: 8300000, guid: e0fecfd4d30748e49b65a28ec03c039b, type: 3}
 --- !u!114 &4481193853996319527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +345,21 @@ NavMeshAgent:
   m_BaseOffset: 2
   m_WalkableMask: 5
   m_ObstacleAvoidanceType: 4
+--- !u!114 &9211387021017355549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664025471220192365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e83f4e9b3e26c46b74aee0477ed4b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LegsAnimator: {fileID: 7249673913531168394}
+  TorsoAnimator: {fileID: 8577488188478242827}
+  HeadAnimator: {fileID: 7008415098707333588}
 --- !u!1 &5006248621666945009
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3932472822121749144}
   - component: {fileID: 2759030345796599055}
+  - component: {fileID: 7249673913531168394}
   m_Layer: 0
   m_Name: Pants
   m_TagString: Untagged
@@ -510,6 +529,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7249673913531168394
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7161521207317877004}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8c6a07b1d26ff4488900fd76b6213a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7246535796355264249
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,6 +648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6998828244914472903}
   - component: {fileID: 6069716684796342593}
+  - component: {fileID: 8577488188478242827}
   m_Layer: 0
   m_Name: Shirt
   m_TagString: Untagged
@@ -682,6 +723,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8577488188478242827
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7635134896079213383}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0460cc8b17098447905ea396737765b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7851200167488844307
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 905934881161180280}
   - component: {fileID: 4110020210541849795}
+  - component: {fileID: 7008415098707333588}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -708,7 +771,7 @@ Transform:
   m_GameObject: {fileID: 7851200167488844307}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -766,6 +829,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7008415098707333588
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7851200167488844307}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ca3b26de766a9f418e2f3e90281aea1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8490408338184608134
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,5 +997,5 @@ MonoBehaviour:
   AttackCooldown: 2
   Telegraph: {fileID: 1102874737848777839}
   enemymovement: {fileID: 4481193853996319527}
-  SwordActive: 0
+  SwordActive: 1
   IsCaptainMacaw: 0

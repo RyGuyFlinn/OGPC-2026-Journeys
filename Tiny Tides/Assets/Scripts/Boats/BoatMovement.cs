@@ -46,7 +46,12 @@ public class BoatMovement : MonoBehaviour
     {
         var main1 = trail1.main;
         var main2 = trail2.main;
-
+        if (Input.GetKeyDown(KeyCode.H) && PlayerManager.CheatsActivated == true)
+        {
+            maxSpeed = 20f;
+            acceleration = 99f;
+            rotationSpeed = 360f;
+        }
         main1.startLifetime = currentSpeed * 2;
         main2.startLifetime = currentSpeed * 2;
 

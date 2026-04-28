@@ -15,7 +15,7 @@ public class EnemyDetector : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Enemy" || other.tag == "Boss")
         {
             enemySeconds = 5;
             enemyInRange = true;

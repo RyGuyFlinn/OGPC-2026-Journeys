@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
     private Rigidbody2D rb;
 
     private bool isKnocked = false;
+    public AudioClip Hurt;
+    public AudioClip DieSound;
 
     void Start()
     {
@@ -21,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage, Vector2 knockback)
     {
         if (isKnocked) return; // prevent stacking knockbacks
-
+        SoundFXManager.Instance.PlaySoundFXClip(Hurt, transform, 25f, 1f);
         currentHealth -= damage;
         Debug.Log($"{gameObject.name} took {damage} damage! Remaining: {currentHealth}");
 
@@ -54,6 +56,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         Debug.Log($"{gameObject.name} died!");
+        SoundFXManager.Instance.PlaySoundFXClip(DieSound, transform, 250f, 1f);
         Destroy(gameObject);
     }
 }

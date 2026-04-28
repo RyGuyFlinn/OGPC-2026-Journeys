@@ -49,7 +49,7 @@ public class EnemySwordAttack : MonoBehaviour
 
     [Header("Others")]
     public EnemyMovement enemymovement;
-    public bool SwordActive;
+    public bool SwordActive = true;
     public bool IsCaptainMacaw = false;
     //[Header("Sound Effects")]
    // public GameObject Ching;

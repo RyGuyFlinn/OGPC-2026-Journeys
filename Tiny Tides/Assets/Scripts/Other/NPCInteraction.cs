@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class NPCInteraction : MonoBehaviour
 {
     public Transform player;
@@ -9,6 +9,7 @@ public class NPCInteraction : MonoBehaviour
     public GameObject Chatbox;
     public GameObject AllUI;
     public GameObject buttons;
+    public Sprite Head;
     public bool hasButtons = false;
     private bool Chatting = false;
     public string[] Dialogues;
@@ -38,6 +39,7 @@ public class NPCInteraction : MonoBehaviour
                 Chatting = true;
                 Time.timeScale = 0f;
                 Chatbox.SetActive(true);
+                Chatbox.GetComponent<NPCChatBoxData>().head.sprite = Head;
                 if (!FinishChatting)
                 {  
                     TalkPercent = 1;

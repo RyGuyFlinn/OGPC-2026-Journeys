@@ -129,7 +129,7 @@ public class WorldGenSimple : MonoBehaviour
             }
         }
 
-        int randBiome = Random.Range(0, 3);
+        int randBiome = 0;
 
         if (randBiome == 0)
         {

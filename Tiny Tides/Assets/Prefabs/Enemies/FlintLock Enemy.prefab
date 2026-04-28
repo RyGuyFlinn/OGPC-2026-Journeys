@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 6193712840271550659}
   - component: {fileID: 112288012122894544}
   - component: {fileID: 6193801705111714024}
+  - component: {fileID: 8169844448687418316}
   m_Layer: 0
   m_Name: FlintLock Enemy
   m_TagString: Enemy
@@ -217,6 +218,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
+  Hurt: {fileID: 8300000, guid: 6d5516d18e481354fb509cbbcdf3fdda, type: 3}
+  DieSound: {fileID: 8300000, guid: e0fecfd4d30748e49b65a28ec03c039b, type: 3}
 --- !u!114 &112288012122894544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +261,21 @@ NavMeshAgent:
   m_BaseOffset: 2
   m_WalkableMask: 5
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8169844448687418316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278359756824666995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e83f4e9b3e26c46b74aee0477ed4b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LegsAnimator: {fileID: 1336236190983257384}
+  TorsoAnimator: {fileID: 887769089729820298}
+  HeadAnimator: {fileID: 821343259099435784}
 --- !u!1 &1790745897776064604
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2693239063017497033}
   - component: {fileID: 282745244417007020}
+  - component: {fileID: 821343259099435784}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -368,7 +387,7 @@ Transform:
   m_GameObject: {fileID: 1820175255601018554}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -426,6 +445,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &821343259099435784
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820175255601018554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ca3b26de766a9f418e2f3e90281aea1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2525123097753624663
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7480474806689897997}
   - component: {fileID: 8599848711344614594}
+  - component: {fileID: 887769089729820298}
   m_Layer: 0
   m_Name: Shirt
   m_TagString: Untagged
@@ -841,6 +882,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &887769089729820298
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4644470923439043436}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0460cc8b17098447905ea396737765b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5871998555959298375
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6953770979436502258}
   - component: {fileID: 5424546896321421623}
+  - component: {fileID: 1336236190983257384}
   m_Layer: 0
   m_Name: Pants
   m_TagString: Untagged
@@ -925,6 +988,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1336236190983257384
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5871998555959298375}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8c6a07b1d26ff4488900fd76b6213a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6698740245551646653
 GameObject:
   m_ObjectHideFlags: 0
