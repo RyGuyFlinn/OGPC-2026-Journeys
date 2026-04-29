@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Bomb
   Description: 'Create a bomb projectile which explodes after 4 seconds '
-  Stats: Press SPACE to use
+  Stats: Press SPACE to use, equip in second slot
   itemIcon: {fileID: -840199858, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
   isHoldable: 0

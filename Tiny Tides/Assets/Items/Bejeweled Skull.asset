@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Bejeweled Skull
   Description: Saves you from death, one time use
-  Stats: When going to die, heal half health instead and lose this item
+  Stats: When going to die, heal half health instead and lose this item, equip in
+    third slot
   itemIcon: {fileID: -1900224149, guid: 2a923229276d9bb4591d2f12c7b7636b, type: 3}
   maxStack: 1
   isHoldable: 0
   holdingObject: {fileID: 0}
-  IsUpgrade: 1
   GroundObject: {fileID: 6168247737014214685, guid: 82d012c97f0543c4bbbff53b0c031179, type: 3}
   toolType: 4

@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Silver Skull
   Description: Gain an extra skull for protection!
-  Stats: +2 Max Health
+  Stats: +2 Max Health, equip in third slot
   itemIcon: {fileID: -1958535834, guid: 2a923229276d9bb4591d2f12c7b7636b, type: 3}
   maxStack: 1
   isHoldable: 0
   holdingObject: {fileID: 0}
-  IsUpgrade: 1
   GroundObject: {fileID: 6168247737014214685, guid: 0be15c28fb01f934eaa76132a6df7598, type: 3}
   toolType: 4

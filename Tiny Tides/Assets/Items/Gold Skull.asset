@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Gold Skull
   m_EditorClassIdentifier: 
   itemName: Gold Skull
-  Description: You gotta pay or you're gonna get hurt
-  Stats: Small chance of losing treasure instead of health on damage taken
+  Description: pay up or you're gonna get hurt!
+  Stats: Small chance of losing treasure instead of health on damage taken, equip
+    in third slot
   itemIcon: {fileID: -1726090062, guid: 2a923229276d9bb4591d2f12c7b7636b, type: 3}
   maxStack: 1
   isHoldable: 0
   holdingObject: {fileID: 0}
-  IsUpgrade: 1
   GroundObject: {fileID: 6168247737014214685, guid: 57aa4df8faaae9c4189cc47f1b0bf27d, type: 3}
   toolType: 4

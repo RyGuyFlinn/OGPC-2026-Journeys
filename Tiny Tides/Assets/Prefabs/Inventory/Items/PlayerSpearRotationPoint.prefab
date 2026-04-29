@@ -113,7 +113,7 @@ MonoBehaviour:
   attackDuration: 1
   attackDelay: 0.1
   attackDamage: 1
-  knockback: 5
+  knockback: 10
   blockTime: 1
   blockDelay: 0.5
   blockReduction: 0.5

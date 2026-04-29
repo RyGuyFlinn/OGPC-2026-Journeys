@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Parrot
   Description: Send out a homing parrot to harrass enemies
-  Stats: Press SPACE to use
+  Stats: Press SPACE to use, equip in second slot
   itemIcon: {fileID: -302102599, guid: 7094dafd68c83c94584077316d6847c8, type: 3}
   maxStack: 1
   isHoldable: 0
