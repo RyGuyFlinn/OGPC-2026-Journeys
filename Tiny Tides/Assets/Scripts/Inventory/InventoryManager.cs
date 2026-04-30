@@ -356,17 +356,17 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            try
+            if (items[i].GetItem() != null)
             {
-                slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
                 slots[i].transform.GetChild(0).GetComponent<Image>().sprite = items[i].GetItem().itemIcon;
+                slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
                 if (items[i].GetItem().maxStack > 1)
                     slots[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = items[i].GetQuantity() + "";
                 else
                     slots[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
 
             }
-            catch
+            else
             {
                 slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
                 slots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;

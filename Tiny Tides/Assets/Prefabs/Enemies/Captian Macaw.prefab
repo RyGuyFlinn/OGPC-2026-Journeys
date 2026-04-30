@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e3a94f6248604479aa1ca8070fc66d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 25
+  maxHealth: 35
   currentHealth: 0
   Hurt: {fileID: 8300000, guid: 6d5516d18e481354fb509cbbcdf3fdda, type: 3}
   DieSound: {fileID: 8300000, guid: e0fecfd4d30748e49b65a28ec03c039b, type: 3}

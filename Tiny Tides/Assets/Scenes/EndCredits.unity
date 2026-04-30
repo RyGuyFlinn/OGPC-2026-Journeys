@@ -179,9 +179,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You Just Beat Tiny Tides\nThankyou for Playing\n\nThis game was made for
-    the Oregon Game Project Competition OGPC \nAnd was made in 1 school year\n\nWe
-    are a team of 4 and all of the art music and code was made buy us\n\n\n\n\n\nThank
+  m_text: "You Just Beat Tiny Tides\nThank you for Playing\n\nThis game was made
+    for the Oregon Game Project Competition OGPC \nAnd was made in 1 school year\n\nWe
+    are a team of 4 and all of the art music and code was made by us\n\n\n\n\n\nThank
     You"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
