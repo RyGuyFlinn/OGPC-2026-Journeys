@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JamChestKeys : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class JamChestKeys : MonoBehaviour
             transform.GetComponent<SpriteRenderer>().sprite = ChestOpen;
             Debug.Log("You WIN!!!");
             //This is the code to detect when you put all keys in the chest;
+
+            SceneManager.LoadScene("EndCredits");
         }
     }
 }
